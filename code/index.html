@@ -7,12 +7,99 @@
     <meta name="description" content="">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-
     <meta http-equiv="cleartype" content="on">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/styles.css">
   </head>
-  <body>
-
+  <body data-dingo="closePopouts">
+    <div class="nav">
+      <div class="container">
+        <a class="wizz-logo" href="index.html"></a>
+        <div class="right">
+          <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">home</a></li>
+            <li class="nav-item"><a href="servers.html">servers</a></li>
+            <li class="nav-item" data-dingo="submenu">
+              virtual servers
+              <div class="nav-submenu-indicator"></div>
+              <ul class="submenu">
+                <span class="arrow"></span>
+                <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+                <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+              </ul>
+            </li>
+            <li class="nav-item" data-dingo="submenu">
+              solutions
+              <div class="nav-submenu-indicator"></div>
+              <ul class="submenu">
+                <span class="arrow"></span>
+                <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+                <li class="submenu-item"><a href="solutions_wizz-admin.html">WizzAdmin</a></li>
+              </ul>
+            </li>
+            <li class="nav-item" data-dingo="submenu">
+              about
+              <div class="nav-submenu-indicator"></div>
+              <ul class="submenu">
+                <span class="arrow"></span>
+                <li class="submenu-item"><a href="solutions_wizz-secure.html">Our Mission</a></li>
+                <li class="submenu-item"><a href="solutions_wizz-admin.html">Contact Us</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="nav-control">
+            <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
+            <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
+            <span class="btn-dark" href="https://client.wizzsolutions.com">login</span>
+          </div>
+        </div>
+        <div class="modal _is-popout" id="modal-contact">
+          <div class="arrow"></div>
+          <form action="#" name="MYFORM" id="MYFORM">
+            <div class="row">
+              <div class="g12 col1of2-sm">
+                <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
+              </div>
+              <div class="g12 col2of2-sm">
+                <input class="block" type="text" name="email" placeholder="Email" data-dingo="form-validate">
+              </div>
+            </div>
+            <div class="row">
+              <textarea class="block" name="message" placeholder="Message"></textarea>
+            </div>
+            <div class="row">
+              <div class="g12 col1of2-sm">
+                <img src="get_captcha.php" alt="" id="captcha-image" class="ib captcha-image">
+                <div class="captcha-refresh" data-dingo="captchaRefresh"></div>
+              </div>
+              <div class="g12 col2of2-sm">
+                <input class="block" name="code" type="text" id="code" placeholder="Enter the Captcha Text">
+              </div>
+            </div>
+            <div class="row-xl center">
+              <button class="btn-red" type="submit" id="Send">Contact Us</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="section hero">
+        <h1 class="hero-title">Enterprise Ready Hosting Solutions</h1>
+        <h2 class="hero-subtitle">Having Big Traffic, Doesn’t Mean Having Big Bills.</h2>
+        <div class="g8 col1of3">
+          <span class="hero_cloud-hosting"></span>
+        </div>
+        <div class="g8 col2of3">
+          <span class="hero_dedicated-servers"></span>
+        </div>
+        <div class="g8 col3of3">
+          <span class="hero_server-management"></span>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+    <!-- JavaScript -->
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/script.js"></script>
   </body>
