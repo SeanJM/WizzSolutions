@@ -8,7 +8,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta http-equiv="cleartype" content="on">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body data-dingo="closePopouts">
@@ -58,14 +58,32 @@
           <form action="#" name="MYFORM" id="MYFORM">
             <div class="row">
               <div class="g12 col1of2-sm">
-                <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
+                <div class="input-group">
+                  <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
+                  <div class="form-validate-prompt">
+                    <span class="arrow"></span>
+                    Enter Your Name
+                  </div>
+                </div>
               </div>
               <div class="g12 col2of2-sm">
-                <input class="block" type="text" name="email" placeholder="Email" data-dingo="form-validate">
+                <div class="input-group">
+                  <input class="block" type="text" name="email" placeholder="Email" data-dingo="form-validate">
+                  <div class="form-validate-prompt">
+                    <span class="arrow"></span>
+                    Enter An Email Address
+                  </div>
+                </div>
               </div>
             </div>
             <div class="row">
-              <textarea class="block" name="message" placeholder="Message"></textarea>
+              <div class="input-group">
+                <textarea class="block" name="message" placeholder="Message" data-dingo="form-validate"></textarea>
+                <div class="form-validate-prompt">
+                    <span class="arrow"></span>
+                    Enter A Valid Message
+                  </div>
+              </div>
             </div>
             <div class="row">
               <div class="g12 col1of2-sm">
@@ -73,11 +91,17 @@
                 <div class="captcha-refresh" data-dingo="captchaRefresh"></div>
               </div>
               <div class="g12 col2of2-sm">
-                <input class="block" name="code" type="text" id="code" placeholder="Enter the Captcha Text">
+                <div class="input-group">
+                  <input class="block" name="code" type="text" id="code" placeholder="Enter the Captcha Text" data-dingo="form-validate">
+                  <div class="form-validate-prompt">
+                    <span class="arrow"></span>
+                    Please Enter The Captcha Text
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="row-xl center">
-              <button class="btn-red" type="submit" id="Send">Contact Us</button>
+            <div class="row center">
+              <button class="btn-red" type="submit" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
             </div>
           </form>
         </div>
@@ -181,78 +205,131 @@
           <hr>
           <div class="row">
             <h1>Packages</h1>
-            <div class="g6 col1of4">
+            <div class="g6 col1of4-sm">
               <div class="package-micro center">
                 <span class="package-micro_currency">$</span>
                 <span class="package-micro_amount">99</span>
                 <span class="package-micro_text">1 Day</span>
               </div>
             </div>
-            <div class="g6 col2of4">
+            <div class="g6 col2of4-sm">
               <div class="package-micro center">
                 <span class="package-micro_currency">$</span>
-                <span class="package-micro_amount">99</span>
-                <span class="package-micro_text">1 Day</span>
+                <span class="package-micro_amount">299</span>
+                <span class="package-micro_text">3 Day</span>
               </div>
             </div>
-            <div class="g6 col3of4">
+            <div class="g6 col3of4-sm">
               <div class="package-micro center">
                 <span class="package-micro_currency">$</span>
-                <span class="package-micro_amount">99</span>
-                <span class="package-micro_text">1 Day</span>
+                <span class="package-micro_amount">649</span>
+                <span class="package-micro_text">7 Day</span>
               </div>
             </div>
-            <div class="g6 col4of4">
+            <div class="g6 col4of4-sm">
               <div class="package-micro center">
                 <span class="package-micro_currency">$</span>
-                <span class="package-micro_amount">99</span>
-                <span class="package-micro_text">1 Day</span>
+                <span class="package-micro_amount">1,999</span>
+                <span class="package-micro_text">Monthly</span>
               </div>
             </div>
           </div>
-          <div class="row-xl">
-            <div class="center">
-              <a class="btn-red">Read More<span class="carat"></span></a>
-            </div>
+          <div class="row-xl center">
+            <a class="btn-red" href="http://wizzadmin.wizzsolutions.com/">Read More<span class="carat"></span></a>
           </div>
         </div>
       </div>
       <div class="section section-dark">
         <div class="container">
           <h1>What People Are Saying</h1>
-          <div class="carousel">
-            <div class="carousel-control_left"></div>
-            <div class="carousel-control_right"></div>
+          <div class="carousel" id="carousel-testimonial">
+            <div class="carousel-control_left" data-dingo="carouselPrev{which:testimonial}"></div>
+            <div class="carousel-control_right" data-dingo="carouselNext{which:testimonial}"></div>
             <div class="carousel-scroll">
               <div class="carousel-item-container">
-                <div class="carousel-item">
-                  <span class="g5">
-                    <span class="portrait-sm">
-                      <img src="img/testimonials/test01.png">
-                    </span>
-                  </span>
-                  <span class="g19">
-                    <div class="row">
-                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.”</p>
-                    </div>
-                    <div class="row-xl">
-                      <p>John Smith</p>
-                      <p><a href="http://wwww.123Go.com">123Go.com</a></p>
-                    </div>
-                  </span>
-                </div>
+                <!-- Contains the carousel items for testimonials -->
               </div>
             </div>
             <div class="carousel-pills">
-              <div class="carousel-pill carousel-pill_active"></div>
-              <div class="carousel-pill"></div>
-              <div class="carousel-pill"></div>
+              <!-- Contains the navigation pills -->
             </div>
           </div>
         </div>
       </div>
+      <div class="section section-dark-grey">
+        <img class="fs_background" src="img/section-background01.jpg">
+        <div class="container">
+          <div class="row">
+            <h1>Leave The Hosting And Server Management To Us</h1>
+            <p>We understand the challenges that come along with hosting a business online. We’ve been there. We want you to focus on doing what you do best; building your business and getting more users to your site. Here are some of the people that help make all of this happen.</p>
+          </div>
+          <div class="row-xl">
+            <div class="g8 col1of3 center">
+              <span class="portrait row">
+                <img src="img/about/michael.jpg">
+              </span>
+              <span class="med-text row">Michael Kahn</span>
+              <p class="grey">Operations</p>
+            </div>
+            <div class="g8 col2of3 center">
+              <span class="portrait row">
+                <img src="img/about/roman.jpg">
+              </span>
+              <span class="med-text row">Roman Markuze</span>
+              <p class="grey">Sales</p>
+            </div>
+            <div class="g8 col3of3 center">
+              <span class="portrait row">
+                <img src="img/about/empty-male.jpg">
+              </span>
+              <span class="med-text row">Anuraj M</span>
+              <p class="grey">Support</p>
+            </div>
+          </div>
+          <div class="row-xl center">
+            <a class="btn-red" href="about.html">Read More<span class="carat"></span></a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer"></div>
+    <div class="section section-red" id="footer">
+      <div class="container">
+        <div class="wizz-logo"></div>
+        <div class="right">
+          <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">home</a></li>
+            <li class="nav-item"><a href="servers.html">servers</a></li>
+            <li class="nav-item" data-dingo="submenu">
+              virtual servers
+              <div class="nav-submenu-indicator"></div>
+              <ul class="submenu">
+                <span class="arrow"></span>
+                <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+                <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+              </ul>
+            </li>
+            <li class="nav-item" data-dingo="submenu">
+              solutions
+              <div class="nav-submenu-indicator"></div>
+              <ul class="submenu">
+                <span class="arrow"></span>
+                <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+                <li class="submenu-item"><a href="solutions_wizz-admin.html">WizzAdmin</a></li>
+              </ul>
+            </li>
+            <li class="nav-item" data-dingo="submenu">
+              about
+              <div class="nav-submenu-indicator"></div>
+              <ul class="submenu">
+                <span class="arrow"></span>
+                <li class="submenu-item"><a href="solutions_wizz-secure.html">Our Mission</a></li>
+                <li class="submenu-item"><a href="solutions_wizz-admin.html">Contact Us</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/script.js"></script>
