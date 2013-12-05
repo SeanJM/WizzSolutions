@@ -797,6 +797,11 @@ var dingoEvents = {
   },
   closePopouts: function (options) {
     var target = $(options.event.target);
+
+    if ($('body').hasClass('touch-delay')) {
+      options.event.preventDefault();
+    }
+
     function popouts() {
       var activeClass = '._is-popout._animated-in';
       var activePopout = $(activeClass);
@@ -830,12 +835,6 @@ var dingoEvents = {
         $('body').addClass('navmenu-safe');
       }
     }
-    function hasDelay(callback) {
-      if ($('body').hasClass('touch-delay')) {
-        options.event.preventDefault();
-      }
-    }
-    hasDelay();
     popouts();
     submenu();
     nav();
