@@ -65,6 +65,10 @@ select,
   *display: inline;
 }
 
+.is-mobile {
+  display: none;
+}
+
 /* Grid Layout */
 .g1  { width: 4.16666666666667%;  }
 .g2  { width: 8.33333333333334%;  }
