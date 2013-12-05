@@ -833,15 +833,12 @@ var dingoEvents = {
     function hasDelay(callback) {
       if ($('body').hasClass('touch-delay')) {
         options.event.preventDefault();
-      } else {
-        callback();
       }
     }
-    hasDelay(function () {
-      popouts();
-      submenu();
-      nav();
-    });
+    hasDelay();
+    popouts();
+    submenu();
+    nav();
   },
   modal: function (options) {
     animate($('#modal-' + options.which)).start();
