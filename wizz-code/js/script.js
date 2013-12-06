@@ -709,16 +709,17 @@ function carousel(el) {
   var container     = el.find('.carousel-item-container');
   var items         = el.find('.carousel-item');
   var index         = items.filter('._animated-in').index();
-  var pillContainer = el.find('.carousel-pills');
+  var selections    = el.find('.carousel-selections');
   return {
     select: function (newIndex) {
+      console.log(newIndex);
       if (newIndex > items.size()-1) {
         newIndex = 0;
       } else if (newIndex < 0) {
         newIndex = items.size()-1;
       }
-      var activePill = pillContainer.find('._animated-in');
-      var newPill    = pillContainer.find('.carousel-pill').eq(newIndex);
+      var activePill = selections.find('._animated-in');
+      var newPill    = selections.find('[data-dingo*="carouselSelect"]').eq(newIndex);
       if (index > -1) {
         animate(items.eq(index)).end(function () {
           animate(items.eq(newIndex)).start();
@@ -735,32 +736,6 @@ function carousel(el) {
     prev: function () {
       carousel(el).select(index-1)
     },
-    create: function () {
-      function makePills() {
-        var pilltemplate  = '<div class="carousel-pill {{class}}" data-dingo="carouselPill{which: {{carousel}}}"><div class="carousel-pill-background"></div></div>';
-        var pills         = [];
-        var data;
-        items.each(function (i) {
-          data = {
-            carousel : el.attr('id').replace(/carousel-/,''),
-            id       : i
-          }
-          if (i<1) { data.class = '_animated-in' }
-          pills.push(template(pilltemplate).fill(data));
-        });
-        pillContainer.append(pills.join(''));
-        dingo.on(pillContainer.find('[data-dingo]'));
-      };
-      makePills();
-      carousel(el).select(0);
-    },
-    init: function () {
-      el.each(function () {
-        if (!$(this).attr('id').match(/carousel-[a-zA-Z-]+item/)) {
-          carousel($(this)).create();
-        }
-      });
-    }
   }
 };
 
@@ -854,7 +829,7 @@ var dingoEvents = {
   carouselNext: function (options) {
     carousel($('#carousel-'+options.which)).next();
   },
-  carouselPill: function (options) {
+  carouselSelect: function (options) {
     carousel($('#carousel-'+options.which)).select(options.el.index());
   },
   navMenuInit: function (options) {
@@ -864,6 +839,15 @@ var dingoEvents = {
       setTimeout(function () {
         $('body').removeClass('touch-delay');
       },100);
+    }
+  },
+  featureBannerToggle: function (options) {
+    var featureBanner = options.el.closest('.feature-banner');
+    options.el.toggleClass('_on');
+    if (options.el.hasClass('_on')) {
+      animate(featureBanner).start();
+    } else {
+      animate(featureBanner).end();
     }
   }
 }
@@ -899,10 +883,13 @@ dingo.touchend = {
   carouselPrev: function (options) {
     dingoEvents[options.dingo](options);
   },
-  carouselPill: function (options) {
+  carouselSelect: function (options) {
     dingoEvents[options.dingo](options);
   },
   navMenuInit: function (options) {
+    dingoEvents[options.dingo](options);
+  },
+  featureBannerToggle: function (options) {
     dingoEvents[options.dingo](options);
   }
 };
@@ -938,10 +925,13 @@ dingo.click = {
   carouselPrev: function (options) {
     dingoEvents[options.dingo](options);
   },
-  carouselPill: function (options) {
+  carouselSelect: function (options) {
     dingoEvents[options.dingo](options);
   },
   navMenuInit: function (options) {
+    dingoEvents[options.dingo](options);
+  },
+  featureBannerToggle: function (options) {
     dingoEvents[options.dingo](options);
   }
 };
@@ -960,7 +950,7 @@ dingo.blur = {
   }
 };
 
-
+var templates = {};
 function template(context) {
   return {
     load: function (templateFile,callback) {
@@ -1011,6 +1001,67 @@ function template(context) {
         m = m.match(/(?:\{\{)([a-zA-Z0-9_-]+)(?:\}\})/)[1];
         return (object.hasOwnProperty(m))?object[m]:'';
       });
+    },
+    init: function (options) {
+      function init(object) {
+        var processed = template(templates[object.file][object.which]).fill(object.data);
+        object.el.replaceWith(processed);
+      }
+      function getFile(string) {
+        return $.trim(string.match(/([\/a-zA-Z0-9_-]+\.[a-z]+)(\s+|):/)[1]);
+      }
+      function getWhich(string) {
+        return $.trim(string.match(/[^{]*:([a-zA-Z0-9_-]+)\{/)[1]);
+      }
+      function getData(string) {
+        var contents = string.match(/\{([^}]*)}/)[1].split(';');
+        var out = {};
+        $.each(contents,function (i,k) {
+          if ($.trim(k).length > 0) {
+            var match = k.match(/([a-zA-Z0-9_-]+)(?:\s+|):(?:\s+|)([^}]*)/);
+            out[match[1]] = $.trim(match[2]);
+          }
+        });
+        return out;
+      }
+      function scan(string) {
+        var temp = string.match(/<template name="[a-zA-Z0-9_-]+">[\s\S]*?<\/template>/g);
+        var out = {};
+        if (temp) {
+          $.each(temp,function (i,k) {
+            var match   = k.match(/<template name="([a-zA-Z0-9_-]+)">([\s\S]*?)<\/template>/);
+            var name    = match[1].replace(/^\s+|\s+$/g);
+            var content = match[2];
+            out[name] = content;
+          });
+          return out;
+        }
+        return false;
+      }
+
+      var templateElements = $(context).find('[data-template]');
+
+      $.each(templateElements,function () {
+        var string = $(this).html();
+        var file   = getFile(string);
+        var which  = getWhich(string);
+        var data   = getData(string);
+        var out = {
+            file: file,
+            which: which,
+            data: data,
+            el: $(this)
+          }
+        if (templates.hasOwnProperty(file)) {
+          init(out);
+        } else {
+          // Load it
+          $('<div/>').load(file,function (i,k) {
+            templates[file] = scan(i);
+            init(out);
+          });
+        }
+      });
     }
   }
 };
@@ -1019,9 +1070,7 @@ function template(context) {
 
 $(function() {
   dingo.init();
-  template($('#carousel-testimonial .carousel-item-container')).load('testimonials.txt',function () {
-    carousel($('[id*="carousel"]')).init();
-  });
   changeCaptcha();
+  template('body').init();
   $('textarea,input').placeholder();
 });

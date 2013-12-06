@@ -1,0 +1,79 @@
+<template name="server">
+  <div class="server">
+    <div class="server_title">{{title}}</div>
+    <div class="server_price">
+      <span class="server_price_currency">$</span>
+      <span class="server_price_dollar">{{price}}</span>
+    </div>
+    <div class="server_specs">
+      <div class="g8 col1of3-sm center">
+        <div class="server_spec">
+          <div class="server_spec_desc">RAM</div>
+          <div class="server_spec_text">{{ram}}</div>
+          <div class="server_spec_desc">GB</div>
+        </div>
+      </div>
+      <div class="g8 col2of3-sm center">
+        <div class="g8 col2of3-sm server_spec">
+          <div class="server_spec_desc">HD</div>
+          <div class="server_spec_text">{{hd}}</div>
+          <div class="server_spec_desc">GB</div>
+        </div>
+      </div>
+      <div class="g8 col3of3-sm center">
+        <div class="server_spec">
+          <div class="server_spec_desc">UPLINK</div>
+          <div class="server_spec_text">{{uplink}}</div>
+          <div class="server_spec_desc">MBPS</div>
+        </div>
+      </div>
+    </div>
+    <div class="server_processor">{{processor}}</div>
+    <div class="server_features server_features_{{color}}">
+      <div class="server_regions">
+        <span class="g8 col1of3-sm"><span class="server_region server_region_{{region_us}}">USA</span></span>
+        <span class="g8 col2of3-sm"><span class="server_region server_region_{{region_eu}}">EUR</span></span>
+        <span class="g8 col3of3-sm"><span class="server_region server_region_{{region_other}}">OTHER</span></span>
+      </div>
+      <div class="server_feature server_feature_{{feature_streaming}}">
+        <i class="icon-round-tiny_{{color}}-streaming"></i>
+        <span class="tooltip">
+          <span class="arrow"></span>
+          Streaming
+        </span>
+      </div>
+      <div class="server_feature server_feature_{{feature_web}}">
+        <i class="icon-round-tiny_{{color}}-web"></i>
+        <span class="tooltip">
+          <span class="arrow"></span>
+          Web Hosting
+        </span>
+      </div>
+      <div class="server_feature server_feature_{{feature_vm}}">
+        <i class="icon-round-tiny_{{color}}-vm"></i>
+        <span class="tooltip">
+          <span class="arrow"></span>
+          Virtual Machine
+        </span>
+      </div>
+      <div class="server_feature server_feature_{{feature_game}}">
+        <i class="icon-round-tiny_{{color}}-game"></i>
+        <span class="tooltip">
+          <span class="arrow"></span>
+          Gaming
+        </span>
+      </div>
+      <div class="server_feature server_feature_{{feature_phone}}">
+        <i class="icon-round-tiny_{{color}}-phone"></i>
+        <span class="tooltip">
+          <span class="arrow"></span>
+          IP Phone &amp; Telephony
+        </span>
+      </div>
+      <span class="server_feature_tooltip-text server_feature_tooltip-text_{{color}}">Hover over the icon to learn it's meaning</span>
+    </div>
+    <div class="server_feature_cta">
+      <a class="btn-stroke g11" href="{{link}}">Buy</a>
+    </div>
+  </div>
+</template>
