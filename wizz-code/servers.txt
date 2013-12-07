@@ -67,7 +67,7 @@
         <i class="icon-round-tiny_{{color}}-phone"></i>
         <span class="tooltip">
           <span class="arrow"></span>
-          IP Phone &amp; Telephony
+          Internet Phone
         </span>
       </div>
       <span class="server_feature_tooltip-text server_feature_tooltip-text_{{color}}">Hover over the icon to learn it's meaning</span>
