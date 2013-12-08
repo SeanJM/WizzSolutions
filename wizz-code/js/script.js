@@ -957,25 +957,126 @@ dingo.click = {
   }
 };
 
-dingo.dragstart = {
-  sliderKnobLeft: function (options) {
-    console.log('drag start');
+dingo.mouseenter = {
+  sliderFocus: function (options) {
+    animate(options.el).start();
+    options.el.addClass('_focus');
   }
 }
+
+dingo.mouseleave = {
+  sliderFocus: function (options) {
+    if (!options.el.hasClass('_active')) {
+      animate(options.el).end();
+    }
+    options.el.removeClass('_focus');
+  }
+}
+
+dingo.dragstart = {
+  sliderKnobLeft: function (options) {
+    slider(options).slideStart('left');
+  },
+  sliderKnobRight: function (options) {
+    slider(options).slideStart('right');
+  }
+}
+
+dingo.dragend = {
+  sliderKnobLeft: function (options) {
+    slider(options).slideEnd('left');
+  },
+  sliderKnobRight: function (options) {
+    slider(options).slideEnd('right');
+  }
+}
+
+/* Slider */
+
+var sliderFn = {
+  ram: function (options) {
+
+  }
+};
 
 function slider(options) {
   var bar    = options.el.closest('.slider-bar');
   var slider = options.el.closest('.slider');
-  var steps  = parseInt(slider.attr('data-range'));
+  var range  = slider.attr('data-range').split(',');
+  var steps  = range.length;
+  var fun    = slider.attr('data-function');
+  function position(direction) {
+    function setPos() {
+      function currentPos(direction) {
+        return parseInt(parseInt(bar.css(direction))/slider.width()*steps);
+      }
+      if (direction === 'left') {
+        return {
+          left: parseInt((options.event.pageX-slider.offset().left)/slider.width()*steps),
+          right: currentPos('right')
+        }
+      } else {
+        return {
+          left: currentPos('left'),
+          right: parseInt((slider.width()-(options.event.pageX-slider.offset().left))/slider.width()*steps)
+        }
+      }
+    }
+    var pos = setPos();
+    var selectedRange = {
+      left: range[pos.left],
+      right: range[(steps-1)-pos.right]
+    }
+    function toFunction() {
+      options.range = pos;
+      if (typeof sliderFn[fun] === 'function') {
+        sliderFn[fun]({
+          slider: slider,
+          range: selectedRange,
+          left: pos.left,
+          right: pos.right,
+          options: options
+        });
+      }
+    }
+    function updateValues() {
+      slider.find('.slider-text_'+direction).html(selectedRange[direction]);
+    }
+    function condition(direction) {
+      var limit = steps-pos[{left:'right',right:'left'}[direction]]-1;
+      if (limit < steps-1) {
+        limit--;
+      }
+      return (pos[direction] >= 0 && pos[direction] < limit);
+    }
+    setPos();
+    if (condition(direction)) {
+      bar.css(direction,(pos[direction]/steps*100)+'%');
+      toFunction();
+      updateValues(direction);
+    }
+  }
   return {
     slideLeft: function () {
-      var pos = (parseInt(((options.event.pageX-slider.offset().left)/slider.width())*steps)/steps*100)+'%';
-      bar.css('left',pos);
+      position('left');
     },
     slideRight: function () {
-      var pos = (parseInt((slider.width()-(options.event.pageX-slider.offset().left))/slider.width()*steps)/steps*100)+'%';
-      bar.css('right',pos);
-    }
+      position('right');
+    },
+    slideStart: function (direction) {
+      $('body').addClass('select-none');
+      slider.find('.slider_knob-'+direction).addClass('_active');
+      slider.addClass('_active');
+      animate(slider).start();
+    },
+    slideEnd: function (direction) {
+      $('body').removeClass('select-none');
+      slider.find('.slider_knob-'+direction).removeClass('_active');
+      slider.removeClass('_active');
+      if (!slider.hasClass('_focus')) {
+        animate(slider).end();
+      }
+    },
   }
 }
 
@@ -1002,7 +1103,7 @@ dingo.blur = {
   }
 };
 
-var templates = {};
+var template_store = {};
 function template(context) {
   return {
     load: function (templateFile,callback) {
@@ -1055,18 +1156,8 @@ function template(context) {
       });
     },
     init: function (options) {
-      function init(object) {
-        var processed = template(templates[object.file][object.which]).fill(object.data);
-        object.el.replaceWith(processed);
-      }
-      function getFile(string) {
-        return $.trim(string.match(/([\/a-zA-Z0-9_-]+\.[a-z]+)(\s+|):/)[1]);
-      }
-      function getWhich(string) {
-        return $.trim(string.match(/[^{]*:([a-zA-Z0-9_-]+)\{/)[1]);
-      }
       function getData(string) {
-        var contents = string.match(/\{([^}]*)}/)[1].split(';');
+        var contents = string.match(/^(\s+|)[a-zA-Z0-9_-]+(\s+|):(\s+|)([\s\S]*?$)/gm);
         var out = {};
         $.each(contents,function (i,k) {
           if ($.trim(k).length > 0) {
@@ -1075,44 +1166,58 @@ function template(context) {
           }
         });
         return out;
-      }
-      function scan(string) {
+      };
+      function scan(string,file) {
         var temp = string.match(/<template name="[a-zA-Z0-9_-]+">[\s\S]*?<\/template>/g);
         var out = {};
         if (temp) {
           $.each(temp,function (i,k) {
             var match   = k.match(/<template name="([a-zA-Z0-9_-]+)">([\s\S]*?)<\/template>/);
-            var name    = match[1].replace(/^\s+|\s+$/g);
+            var name    = $.trim(match[1]);
             var content = match[2];
-            out[name] = content;
+            template_store[name] = {
+              file: file,
+              content: content
+            }
           });
-          return out;
         }
         return false;
       }
 
-      var templateElements = $(context).find('[data-template]');
-
-      $.each(templateElements,function () {
-        var string = $(this).html();
-        var file   = getFile(string);
-        var which  = getWhich(string);
-        var data   = getData(string);
-        var out = {
-            file: file,
-            which: which,
-            data: data,
-            el: $(this)
-          }
-        if (templates.hasOwnProperty(file)) {
-          init(out);
-        } else {
-          // Load it
-          $('<div/>').load(file,function (i,k) {
-            templates[file] = scan(i);
-            init(out);
+      function load(callback) {
+        var arr = [];
+        $('link[template]').each(function () {
+          arr.push($.trim($(this).attr('template')));
+        });
+        function loadIt(i) {
+          $('<div/>').load(arr[i],function (a,b) {
+            scan(a,arr[i]);
+            if (i+1 === arr.length) {
+              callback();
+            } else {
+              loadIt(i+1);
+            }
           });
         }
+        loadIt(0);
+      }
+
+      load(function () {
+        function init(object) {
+          var processed = $(template(template_store[object.which].content).fill(object.data));
+          object.el.replaceWith(processed);
+          dingo.on(processed.find('[data-dingo]'));
+        }
+        $('[data-template]').each(function () {
+          var el     = $(this);
+          var string = el.html();
+          var out    = {
+            el    : el,
+            which : el.attr('data-template'),
+            data  : getData(string)
+          }
+          init(out);
+        });
       });
     }
   }
@@ -1123,6 +1228,6 @@ function template(context) {
 $(function() {
   dingo.init();
   changeCaptcha();
-  template('body').init();
+  template().init();
   $('textarea,input').placeholder();
 });
