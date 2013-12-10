@@ -468,61 +468,368 @@
             <div class="container">
               <h1>Find The Right Server For Me</h1>
               <h3>Adjust the filter settings to highlight the servers that fit your need</h3>
-              <div class="tabs">
-                <span class="tab _first">
-                  Enterprise
-                </span>
-                <span class="tab _last">
-                  Budget
-                </span>
-              </div>
-              <div class="box">
+              <div class="box filter">
                 <div class="g8 filter-module">
-                  <div data-template="slider">
+                  <div data-template="range-slider">
+                    label         : CPU
+                    range         : Dual Core,Quad Core,Six Core,8 Core
+                    function      : all
+                    default-left  : Dual Core
+                    default-right : 8 Core
+                    color         : blue
+                    id            : slider_servers_cpu
+                  </div>
+                  <div data-template="range-slider">
                     label         : RAM
                     range         : 2GB,4GB,8GB,12GB,16GB,32GB,64GB,128GB
-                    function      : ram
+                    function      : all
                     default-left  : 2GB
                     default-right : 128GB
                     color         : green
+                    id            : slider_servers_ram
                   </div>
-                  <div data-template="slider">
+                  <div data-template="range-slider">
                     label         : Hard Drive
-                    range         : 500GB,1TB,1.5TB,2x500GB,4x500GB,2x1.5TB,2x2TB,4x1.5TB,1x120GB SSD + 3x2TB,4x2TB,3x3TB,4x3TB,8x3TB
-                    function      : hd
+                    range         : 500GB,1TB,2TB,3TB,4TB,6TB,8TB,10TB,12TB,24TB
+                    function      : all
                     default-left  : 500GB
                     default-right : 8x3TB
                     color         : orange
+                    id            : slider_servers_hd
                   </div>
-                  <div data-template="slider">
+                </div>
+                <div class="g8 filter-module">
+                  <div data-template="range-slider">
                     label         : Uplink
                     range         : 100Mbps,1Gbps,10Gbps,10Gbps Fiber
-                    function      : ul
+                    function      : all
                     default-left  : 100Mbps
                     default-right : 10Gbps Fiber
                     color         : blue
+                    id            : slider_servers_uplink
+                  </div>
+                  <div data-template="range-slider">
+                    label         : Price
+                    range         : $99,$199,$299,$399,$499,$599,$699,$799,$899,$999,$1099,$1199
+                    function      : all
+                    default-left  : $99
+                    default-right : $1199
+                    color         : green
+                    id            : slider_servers_price
                   </div>
                 </div>
                 <div class="g8 filter-module">
-                  <div class="g24 slider-group">
-                    <label>Dual Core</label>
+                  <div class="g24">
+                    <div data-template="toggle">
+                      label : USA
+                      group : server-filters
+                      id    : toggle_servers_location-usa
+                    </div>
                   </div>
-                  <div class="g24 slider-group">
-                    <label>Quad Core</label>
+                  <div class="g24">
+                    <div data-template="toggle">
+                      label : Europe
+                      group : server-filters
+                      id    : toggle_servers_location-eur
+                    </div>
+                  </div>
+                  <div class="g24">
+                    <div data-template="toggle">
+                      label : Other
+                      group : server-filters
+                      id    : toggle_servers_location-other
+                    </div>
                   </div>
                 </div>
-                <div class="g8 filter-module">
-                  <div class="g24 slider-group">
-                    <label>USA</label>
-                  </div>
-                  <div class="g24 slider-group">
-                    <label>Europe</label>
-                  </div>
-                  <div class="g24 slider-group">
-                    <label>Other</label>
-                  </div>
-                </div>
-              </div>
+              </div> <!-- Filter -->
+              <div id="servers" class="slider-target">
+                <table>
+                  <thead>
+                    <th class="table_cpu">CPU</th>
+                    <th class="table_ram">RAM</th>
+                    <th class="table_hd">HD</th>
+                    <th class="table_uplink">UPLINK</th>
+                    <th class="table_bandwidth">BANDWIDTH</th>
+                    <th class="table_price">PRICE</th>
+                    <th class="table_buy"></th>
+                  </thead>
+                  <tbody>
+                    <tr class="filter-target_servers cpu_0 ram_0 hd_0 uplink_0 price_0 location-usa">
+                      <td>Intel® Dual Core Atom 1.6 GHz</td>
+                      <td>2GB</td>
+                      <td>500GB</td>
+                      <td>100Mbps</td>
+                      <td>Unmetered</td>
+                      <td>$99</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=9&amp;product=72">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_0 ram_1 hd_2 uplink_0 price_1 location-usa">
+                      <td>Intel® Dual Core Atom 1.6 GHz</td>
+                      <td>4GB</td>
+                      <td>1.5TB</td>
+                      <td>100Mbps</td>
+                      <td>Unmetered</td>
+                      <td>$125</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=9&amp;product=73">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_0 ram_1 hd_2 uplink_0 price_1 location-eur">
+                      <td>Intel® Dual Core E5200 2.5 GHz</td>
+                      <td>4GB</td>
+                      <td>1.5TB</td>
+                      <td>100Mbps</td>
+                      <td>Unmetered</td>
+                      <td>$159</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=9&amp;product=74">Buy</a></td>
+                    </tr>
+
+
+                    <tr class="filter-target_servers cpu_0 ram_1 hd_0 uplink_1 price_1 location-eur">
+                      <td>Intel® Core i3-2100 Sandy Bridge Dual Core 3.10 GHz</td>
+                      <td>4GB</td>
+                      <td>500GB</td>
+                      <td>1Gbps</td>
+                      <td>125TB</td>
+                      <td>$229</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=21&amp;product=69">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_2 hd_1 uplink_1 price_3 location-usa">
+                      <td>Intel® Xeon E3-1230 Sandy Bridge Quad Core 3.20 GHz</td>
+                      <td>8GB</td>
+                      <td>1TB</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$399</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=21&amp;product=70">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_3 hd_2 uplink_1 price_4 location-usa">
+                      <td>Intel® Xeon E3-1230 Sandy Bridge Quad Core 3.20 GHz</td>
+                      <td>12GB</td>
+                      <td>4 x 500GB</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$515</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=21&amp;product=71">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_0 ram_0 hd_0 uplink_1 price_1 location-usa">
+                      <td>Intel® Dual Core Atom 1.6Ghz</td>
+                      <td>2GB</td>
+                      <td>500GB SATA</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$249</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=40">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_2 ram_2 hd_3 uplink_1 price_3 location-usa">
+                      <td>Six Core AMD® Phenom II X6 6 x 2.8ghz</td>
+                      <td>8GB</td>
+                      <td>2 x 1.5TB</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$399</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=41">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_2 ram_2 hd_3 uplink_1 price_5 location-usa">
+                      <td>Six Core AMD® Phenom II X6 6 x 2.8ghz</td>
+                      <td>8GB</td>
+                      <td>2 x 1.5TB</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$599</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=42">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_2 ram_2 hd_3 uplink_1 price_3 location-usa">
+                      <td>AMD® Phenom II X6 Thuban 2.8 GHz</td>
+                      <td>8GB</td>
+                      <td>2 x 1.5TB</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$399</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=75">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_2 ram_4 hd_3 uplink_1 price_4 location-usa">
+                      <td>AMD® Phenom II X6 Thuban 2.8 GHz</td>
+                      <td>16GB</td>
+                      <td>2 x 1.5TB</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$499</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=76">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_2 ram_4 hd_3 uplink_1 price_5 location-usa">
+                      <td>AMD® Phenom II X6 Thuban 2.8 GHz</td>
+                      <td>16GB</td>
+                      <td>2 x 1.5TB</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$599</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=77">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_3 ram_5 hd_5 uplink_1 price_5 location-usa">
+                      <td>AMD® Opteron 6128 2.0 x 8 Cores</td>
+                      <td>32GB</td>
+                      <td>4 x 1.5TB</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$615</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=78">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_0 ram_1 hd_1 uplink_1 price_3 location-usa">
+                      <td>Intel® Dual Core Xeon 3060 2.4 GHz</td>
+                      <td>4GB</td>
+                      <td>2 x 500GB</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$399</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=10&amp;product=65">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_1 hd_1 uplink_1 price_3 location-usa">
+                      <td>Intel® Quad Core Xeon 3220 2.4 GHz</td>
+                      <td>4GB</td>
+                      <td>2 x 500GB</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$450</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=10&amp;product=66">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_2 hd_4 uplink_1 price_5 location-usa">
+                      <td>Intel® Quad Core Xeon 3460 2.8 GHz</td>
+                      <td>8GB</td>
+                      <td>2 x 2TB</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$599</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=10&amp;product=67">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_1 hd_6 uplink_1 price_6 location-usa">
+                      <td>Intel® Quad Core Xeon 3220 2.4 GHz</td>
+                      <td>4GB</td>
+                      <td>4 x 2TB</td>
+                      <td>1Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$699</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=10&amp;product=68">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_7 hd_7 uplink_2 price_8 location-usa">
+                      <td>Intel® Xeon E5-2603</td>
+                      <td>128GB</td>
+                      <td>3 x 3TB</td>
+                      <td>10Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$899</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=102">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_6 hd_8 uplink_2 price_9 location-usa">
+                      <td>Intel® Xeon E5-2603</td>
+                      <td>64GB</td>
+                      <td>4 x 3TB</td>
+                      <td>10Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$999</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=121">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_7 hd_8 uplink_2 price_11 location-usa">
+                      <td>Intel® Xeon E5-2603</td>
+                      <td>128GB</td>
+                      <td>4 x 3TB</td>
+                      <td>10Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$1199</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=120">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_6 hd_8 uplink_2 price_11 location-usa">
+                      <td>Intel® Xeon E5-2603</td>
+                      <td>64GB</td>
+                      <td>4 x 3TB</td>
+                      <td>10Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$1199</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=123">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_0 ram_4 hd_4 uplink_3 price_4 location-usa">
+                      <td>Intel® Xeon 540 2.33 Ghz</td>
+                      <td>16GB</td>
+                      <td>2 x 2TB</td>
+                      <td>10Gbps Fiber</td>
+                      <td>Unmetered</td>
+                      <td>$499</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=119">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_5 hd_8 uplink_3 price_7 location-usa">
+                      <td>Intel® Core i7-3820 3.6 GHz</td>
+                      <td>32GB</td>
+                      <td>1 x 120GB SSD + 3 x 2TB</td>
+                      <td>10Gbps Fiber</td>
+                      <td>Unmetered</td>
+                      <td>$799</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=122">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_6 hd_5 uplink_2 price_8 location-usa">
+                      <td>Intel® Xeon E5-2603 1.8 GHz</td>
+                      <td>64GB</td>
+                      <td>2 x 3TB</td>
+                      <td>10Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$899</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=102">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_6 hd_8 uplink_2 price_9 location-usa">
+                      <td>Intel® Xeon E5-2603 1.8 GHz</td>
+                      <td>64GB</td>
+                      <td>4 x 3TB</td>
+                      <td>10Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$999</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=121">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_7 hd_8 uplink_2 price_11 location-usa">
+                      <td>Intel® Xeon E5-2603 1.8 GHz</td>
+                      <td>128GB</td>
+                      <td>4 x 3TB</td>
+                      <td>10Gbps</td>
+                      <td>Unmetered</td>
+                      <td>$1199</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=120">Buy</a></td>
+                    </tr>
+
+                    <tr class="filter-target_servers cpu_1 ram_2 hd_9 uplink_2 price_9 location-usa">
+                      <td>Intel® Core 2 Quad Q8200 2.33 GHz</td>
+                      <td>8GB</td>
+                      <td>8 x 3TB</td>
+                      <td>10Gbps</td>
+                      <td>100TB</td>
+                      <td>$999</td>
+                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=124">Buy</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <span class="slider-target_empty">
+                  <p>No matches to your specifications, <a href="#custom">contact us</a> to create a custom solution</p>
+                </span>
+              </div> <!-- Slider Target -->
             </div>
           </div>
         </div>

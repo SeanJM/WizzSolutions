@@ -84,21 +84,53 @@
     <div class="slider" data-range="{{range}}" data-function="{{function}}" data-dingo="sliderFocus">
       <div class="slider-bar">
         <div class="slider_handle slider_handle_{{color}}" data-dingo="sliderBar"></div>
+        <div class="slider_knob slider_knob-right" data-dingo="sliderKnobRight">
+          <div class="slider_knob-element"></div>
+          <div class="slider-value slider-value_dark slider-value_right_dark slider-value_right">
+            <div class="arrow"></div>
+            <span class="slider-text slider-text_right">{{default-right}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="range-slider">
+  <div class="g24 slider-group">
+    <label>{{label}}</label>
+    <div class="slider" data-range="{{range}}" data-function="{{function}}" data-dingo="sliderFocus" id="{{id}}">
+      <div class="slider-bar">
+        <div class="slider_handle slider_handle_{{color}}" data-dingo="sliderBar"></div>
         <div class="slider_knob slider_knob-left" data-dingo="sliderKnobLeft">
           <div class="slider_knob-element"></div>
-          <div class="slider-value slider-value_{{color}} slider-value_left_{{color}} slider-value_left">
+          <div class="slider-value slider-value_dark slider-value_left_dark slider-value_left">
             <div class="arrow"></div>
             <span class="slider-text slider-text_left">{{default-left}}</span>
           </div>
         </div>
         <div class="slider_knob slider_knob-right" data-dingo="sliderKnobRight">
           <div class="slider_knob-element"></div>
-          <div class="slider-value slider-value_{{color}} slider-value_right_{{color}} slider-value_right">
+          <div class="slider-value slider-value_dark slider-value_right_dark slider-value_right">
             <div class="arrow"></div>
             <span class="slider-text slider-text_right">{{default-right}}</span>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</template>
+
+<template name="toggle">
+  <div class="switch-group" id="{{id}}">
+    <label>{{label}}</label>
+    <div class="switch _on" data-dingo="switchControl{which:{{group}}}">
+      <input type="checkbox" class="switch-checkbox" checked>
+      <span class="switch-track">
+        <span class="switch-knob"></span>
+        <span class="switch-off"></span>
+        <span class="switch-on"></span>
+      </span>
     </div>
   </div>
 </template>
