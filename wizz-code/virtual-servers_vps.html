@@ -1,0 +1,802 @@
+<!DOCTYPE HTML>
+<HTML>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UX-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta http-equiv="cleartype" content="on">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/styles.css">
+    <link template="servers.txt">
+  </head>
+  <body data-dingo="closePopouts drag">
+    <div class="page-container">
+      <div class="nav">
+        <div class="container">
+          <a class="wizz-logo" href="index.html"></a>
+          <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
+            <i class="icon-nav-menu"></i>
+          </span>
+          <div class="right">
+            <ul class="nav-menu" id="main-navigation">
+              <li class="nav-item"><a class="nav-item_trigger" href="index.html">home</a></li>
+              <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+              <li class="nav-item _active" data-dingo="submenu">
+                <span class="nav-item_trigger">virtual servers</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+                  <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">solutions</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+                  <li class="submenu-item"><a href="solutions_wizz-admin.html">WizzAdmin</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">about</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="solutions_wizz-secure.html">Our Mission</a></li>
+                  <li class="submenu-item"><a href="solutions_wizz-admin.html">Contact Us</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="nav-control is-desktop">
+              <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
+              <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
+              <span class="btn-dark" href="https://client.wizzsolutions.com">login</span>
+            </div>
+          </div>
+          <div class="modal _is-popout" id="modal-contact">
+            <div class="arrow"></div>
+            <form action="#" name="MYFORM" id="MYFORM">
+              <div class="row">
+                <div class="g12 col1of2-sm">
+                  <div class="input-group">
+                    <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter Your Name
+                    </div>
+                  </div>
+                </div>
+                <div class="g12 col2of2-sm">
+                  <div class="input-group">
+                    <input class="block" type="text" name="email" placeholder="Email" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter An Email Address
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-group">
+                  <textarea class="block" name="message" placeholder="Message" data-dingo="form-validate"></textarea>
+                  <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter A Valid Message
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="g12 col1of2-sm">
+                  <img src="get_captcha.php" alt="" id="captcha-image" class="ib captcha-image">
+                  <div class="captcha-refresh" data-dingo="captchaRefresh"></div>
+                </div>
+                <div class="g12 col2of2-sm">
+                  <div class="input-group">
+                    <input class="block" name="code" type="text" id="code" placeholder="Enter the Captcha Text" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Please Enter The Captcha Text
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row center">
+                <button class="btn-red" type="submit" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="page">
+        <div class="main">
+          <div class="section feature-banner">
+            <div class="container">
+              <div class="g6 col1of4">
+                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-ticket"></i></span>
+                <span class="feature-banner_title">24/7</span>
+                <span class="feature-banner_text">Fully Managed Support</span>
+              </div>
+              <div class="g6 col2of4">
+                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-guarantee"></i></span>
+                <span class="feature-banner_title">99.9%</span>
+                <span class="feature-banner_text">Uptime Guarantee</span>
+              </div>
+              <div class="g6 col3of4">
+                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-free"></i></span>
+                <span class="feature-banner_title">FREE</span>
+                <span class="feature-banner_text">VPS Control Panel With Linux</span>
+              </div>
+              <div class="g6 col4of4">
+                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-fast"></i></span>
+                <span class="feature-banner_title">3-6 Hour</span>
+                <span class="feature-banner_text">Average Activation Time</span>
+              </div>
+              <!-- More text, which is hidden unless toggled -->
+              <div class="feature-banner_more-info">
+                <div class="g6 col1of4">
+                  <span class="feature-banner_more-info_text">When you have a problem, do not hesitate to get in touch; create a ticket or use our livechat, we’re always standing by.</span>
+                </div>
+                <div class="g6 col2of4">
+                  <span class="feature-banner_more-info_text">We understand that we’re in the business of keeping you online. We will uphold this promise and ensure you remain online.</span>
+                </div>
+                <div class="g6 col3of4">
+                  <span class="feature-banner_more-info_text">Have full control &amp; manage your virtual environment independently; start, stop and rebuild it at any time.</span>
+                </div>
+                <div class="g6 col4of4">
+                  <span class="feature-banner_more-info_text">Because most of our VPS activations are done within a few hours, you can gain access to your server on the same day.</span>
+                </div>
+              </div>
+            </div>
+            <div class="feature-banner_toggle" data-dingo="featureBannerToggle">
+              <div class="feature-banner_toggle-icon"></div>
+            </div>
+          </div> <!-- Section Feature Banner -->
+          <div class="section">
+            <div class="container">
+              <div class="center">
+                <div class="vps" id="vps-module">
+                  <div class="tab-container">
+                    <div class="tab _active g12" data-dingo="tabs{which:vps-tabs}">Standard</div>
+                    <div class="tab g12" data-dingo="tabs{which:vps-tabs}">SSD</div>
+                  </div>
+                  <div class="tab_content-container" id="vps-tabs">
+                    <div class="tab_content _active _linux" id="vps_standard">
+                      <div data-template="vps_item">
+                        title: Standard Virtual Private Server 1
+                        linux-price: 9<sup>95</sup>
+                        windows-price: 12<sup>95</sup>
+                        cpu: 2.6
+                        ram: 2
+                        hd: 500
+                        uplink: 100
+                        bandwidth: 1000
+                        state: active
+                      </div>
+                      <div data-template="vps_item">
+                        title: Standard Virtual Private Server 2
+                        linux-price: 19<sup>95</sup>
+                        windows-price: 22<sup>95</sup>
+                        cpu: 3.6
+                        ram: 4
+                        hd: 1000
+                        uplink: 100
+                        bandwidth: 1000
+                      </div>
+                      <div data-template="vps_item">
+                        title: Standard Virtual Private Server 3
+                        linux-price: 29<sup>95</sup>
+                        windows-price: 32<sup>95</sup>
+                        cpu: 3.6
+                        ram: 4
+                        hd: 1000
+                        uplink: 100
+                        os: linux
+                        bandwidth: 1000
+                      </div>
+                      <div data-template="vps_item">
+                        title: Standard Virtual Private Server 4
+                        linux-price: 39<sup>95</sup>
+                        windows-price: 42<sup>95</sup>
+                        cpu: 3.6
+                        ram: 4
+                        hd: 1000
+                        uplink: 100
+                        bandwidth: 1000
+                      </div>
+                      <div class="vps_power-meter">
+                        <div class="vps_power-meter_title">VPS POWER METER</div>
+                        <div class="vps_power-meter_control">
+                          <div class="vps_power-meter_next" data-dingo="sliderNext{which: standard_vps-power-slider}"></div>
+                          <div class="vps_power-meter_prev" data-dingo="sliderPrev{which: standard_vps-power-slider}"></div>
+                          <div data-template="slider">
+                            range: Basic,Advanced,Elite,Super Elite
+                            default-right: Basic
+                            function: vpsPower
+                            which: standard
+                            id: standard_vps-power-slider
+                          </div>
+                        </div>
+                        <div class="vps_segment-control">
+                          <div class="segment-control _dark block">
+                            <div class="segment _active _first g12" data-dingo="segmentSelect{function: standardVps; which: linux}">Linux</div>
+                            <div class="segment _last g12" data-dingo="segmentSelect{function: standardVps; which: windows}">Windows</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab_content _linux" id="vps_ssd">
+                      <div data-template="vps_item">
+                        title: SSD Virtual Private Server 1
+                        linux-price: 19<sup>95</sup>
+                        windows-price: 22<sup>95</sup>
+                        cpu: 2.6
+                        ram: 2
+                        hd: 500
+                        uplink: 100
+                        bandwidth: 1000
+                        state: active
+                      </div>
+                      <div data-template="vps_item">
+                        title: SSD Virtual Private Server 2
+                        linux-price: 29<sup>95</sup>
+                        windows-price: 32<sup>95</sup>
+                        cpu: 3.6
+                        ram: 4
+                        hd: 1000
+                        uplink: 100
+                        bandwidth: 1000
+                      </div>
+                      <div data-template="vps_item">
+                        title: SSD Virtual Private Server 3
+                        linux-price: 39<sup>95</sup>
+                        windows-price: 42<sup>95</sup>
+                        cpu: 3.6
+                        ram: 4
+                        hd: 2000
+                        uplink: 1000
+                        bandwidth: 1000
+                      </div>
+                      <div data-template="vps_item">
+                        title: SSD Virtual Private Server 4
+                        linux-price: 49<sup>95</sup>
+                        windows-price: 52<sup>95</sup>
+                        cpu: 3.6
+                        ram: 4
+                        hd: 3000
+                        uplink: 1000
+                        bandwidth: 1000
+                      </div>
+                      <div class="vps_power-meter">
+                        <div class="vps_power-meter_title">VPS POWER METER</div>
+                        <div class="vps_power-meter_control">
+                          <div class="vps_power-meter_next" data-dingo="sliderNext{which: ssd_vps-power-slider}"></div>
+                          <div class="vps_power-meter_prev" data-dingo="sliderPrev{which: ssd_vps-power-slider}"></div>
+                          <div data-template="slider">
+                            range: Basic,Advanced,Elite,Super Elite
+                            default-right: Basic
+                            function: vpsPower
+                            which: ssd
+                            id: ssd_vps-power-slider
+                          </div>
+                        </div>
+                        <div class="vps_segment-control">
+                          <div class="segment-control _dark block">
+                            <div class="segment _active _first g12" data-dingo="segmentSelect{function: ssdVps; which: linux}">Linux</div>
+                            <div class="segment _last g12" data-dingo="segmentSelect{function: ssdVps; which: windows}">Windows</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- Container -->
+          </div> <!-- Section -->
+          <div class="section section-dark">
+            <div class="container">
+              <div class="g8 col1of3 m24 mrow">
+                <div class="center">
+                  <i class="icon-round_windows row"></i>
+                  <h2 class="row blue">Windows</h2>
+                  <ul>
+                    <li>Windows Server 2003, 2008 or 2012</li>
+                    <li>Full Administrator Access via RDP</li>
+                    <li>Excellent for Application Hosting</li>
+                    <li>No Setup Fees</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="g8 col2of3 m24 mrow">
+                <div class="center">
+                  <i class="icon-round_linux row"></i>
+                  <h2 class="row green">Linux</h2>
+                  <ul>
+                    <li>Many Linux Distros Available</li>
+                    <li>Full Root Access</li>
+                    <li>cPanel available</li>
+                    <li>No Setup Fees</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="g8 col3of3 m24 mrow">
+                <div class="center">
+                  <i class="icon-round_all-os row"></i>
+                  <h2 class="row">All Servers</h2>
+                  <ul>
+                    <li>Fully Managed with WizzSecure Lite</li>
+                    <li>Root / Administrator</li>
+                    <li>Accounts Migration</li>
+                    <li>Monitoring &amp; RDNS Management</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div> <!-- Section -->
+          <div class="section" id="section_all-servers">
+            <div class="container">
+              <h1>All of our VPS servers</h1>
+              <h4 class="row">This list is the same as the VPS server widget featured above</h4>
+              <div class="center row">
+                <div class="segment-control g14">
+                  <div class="segment _first _active g12" data-dingo="segmentSelect{function: segmentToggle; which: vps-table_standard}">Standard</div>
+                  <div class="segment _last g12" data-dingo="segmentSelect{function: segmentToggle; which: vps-table_ssd}">SSD</div>
+                </div>
+              </div>
+              <!-- Standard Hard Drive -->
+              <div class="special-table row-xl segment-toggle _active" id="vps-table_standard">
+                <!-- Ranking Row -->
+                <div class="g20 l4">
+                  <div class="special-table_rank g4">
+                    <span class="indicator"></span>Popular
+                  </div>
+                  <div class="special-table_rank g4 l4">
+                    <span class="indicator"></span>Popular
+                  </div>
+                </div>
+                <div class="g20 l4">
+                  <!-- Price, Label -->
+                  <div class="special-table_heading g4">
+                    <span class="special-table_heading_title">Small</span>
+                    <span class="special-table_heading_price"><span class="currency">$</span>9<sup>95</sup></span>
+                  </div>
+                  <div class="special-table_heading g4">
+                    <span class="special-table_heading_title">Small+</span>
+                    <span class="special-table_heading_price"><span class="currency">$</span>14<sup>45</sup></span>
+                  </div>
+                  <div class="special-table_heading g4">
+                    <span class="special-table_heading_title">Medium</span>
+                    <span class="special-table_heading_price"><span class="currency">$</span>28<sup>55</sup></span>
+                  </div>
+                  <div class="special-table_heading g4">
+                    <span class="special-table_heading_title">Medium+</span>
+                    <span class="special-table_heading_price"><span class="currency">$</span>42<sup>45</sup></span>
+                  </div>
+                  <div class="special-table_heading g4">
+                    <span class="special-table_heading_title">Large</span>
+                    <span class="special-table_heading_price"><span class="currency">$</span>56<sup>45</sup></span>
+                  </div>
+                  <div class="special-table_heading g4">
+                    <span class="special-table_heading_title">Large+</span>
+                    <span class="special-table_heading_price"><span class="currency">$</span>69<sup>95</sup></span>
+                  </div>
+                </div>
+                <div class="special-table_body">
+                  <div class="g4 special-table_column _label">
+                    <span class="data">CPU</span>
+                    <span class="data">RAM</span>
+                    <span class="data">Hard Drive</span>
+                    <span class="data">Bandwidth</span>
+                    <span class="data">Connectivity Type</span>
+                    <span class="data">IP Addresses</span>
+                    <span class="data">Locations</span>
+                  </div>
+                  <div class="g20 l4 special-table_column _data">
+                    <!-- Data -->
+                    <div class="special-table_column g4 center">
+                      <span class="data">1Ghz</span>
+                      <span class="data">512MB</span>
+                      <span class="data">20GB</span>
+                      <span class="data">1,000GB</span>
+                      <span class="data">Premium</span>
+                      <span class="data">1</span>
+                      <span class="data"> Miami, FL<br> Los Angeles, CA<br> Scranton, PA<br> Chicaco, IL<br> </span>
+                    </div>
+                    <div class="special-table_column g4 center">
+                      <span class="data">1.5Ghz</span>
+                      <span class="data">1GB</span>
+                      <span class="data">50GB</span>
+                      <span class="data">1,000GB</span>
+                      <span class="data">Premium</span>
+                      <span class="data">1</span>
+                      <span class="data"> Miami, FL<br> Los Angeles, CA<br> Scranton, PA<br> Chicaco, IL<br> </span>
+                    </div>
+                    <div class="special-table_column g4 center">
+                      <span class="data">2Ghz</span>
+                      <span class="data">1.5GB</span>
+                      <span class="data">100GB</span>
+                      <span class="data">2,000GB</span>
+                      <span class="data">Premium</span>
+                      <span class="data">1</span>
+                      <span class="data"> Miami, FL<br> Los Angeles, CA<br> Scranton, PA<br> Chicaco, IL<br> </span>
+                    </div>
+                    <div class="special-table_column g4 center">
+                      <span class="data">2.5Ghz</span>
+                      <span class="data">2.5GB</span>
+                      <span class="data">150GB</span>
+                      <span class="data">2,000GB</span>
+                      <span class="data">Premium</span>
+                      <span class="data">1</span>
+                      <span class="data"> Miami, FL<br> Los Angeles, CA<br> Scranton, PA<br> Chicaco, IL<br> </span>
+                    </div>
+                    <div class="special-table_column g4 center">
+                      <span class="data">3Ghz</span>
+                      <span class="data">3GB</span>
+                      <span class="data">200GB</span>
+                      <span class="data">4,000GB</span>
+                      <span class="data">Premium</span>
+                      <span class="data">1</span>
+                      <span class="data"> Miami, FL<br> Los Angeles, CA<br> Scranton, PA<br> Chicaco, IL<br> </span>
+                    </div>
+                    <div class="special-table_column g4 center">
+                      <span class="data">4Ghz</span>
+                      <span class="data">4GB</span>
+                      <span class="data">250GB</span>
+                      <span class="data">4,000GB</span>
+                      <span class="data">Premium</span>
+                      <span class="data">1</span>
+                      <span class="data"> Miami, FL<br> Los Angeles, CA<br> Scranton, PA<br> Chicaco, IL<br> </span>
+                    </div>
+                  </div> <!-- Special Table Data -->
+                </div> <!-- Special Table Body -->
+                <div class="g20 l4">
+                  <div class="special-table_footer g4 center">
+                    <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=22">Buy Now</a>
+                  </div>
+                  <div class="special-table_footer g4 center">
+                    <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=23">Buy Now</a>
+                  </div>
+                  <div class="special-table_footer g4 center">
+                    <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=24">Buy Now</a>
+                  </div>
+                  <div class="special-table_footer g4 center">
+                    <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=25">Buy Now</a>
+                  </div>
+                  <div class="special-table_footer g4 center">
+                    <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=26">Buy Now</a>
+                  </div>
+                  <div class="special-table_footer g4 center">
+                    <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=27">Buy Now</a>
+                  </div>
+                </div> <!-- Special Table Footer -->
+              </div> <!-- Special Table -->
+
+              <!-- Special Table SSD -->
+              <div class="special-table row-xl segment-toggle" id="vps-table_ssd">
+                <!-- Ranking Row -->
+                <div class="g20 l4">
+                  <div class="special-table_rank g4">
+                    <span class="indicator"></span>Popular
+                  </div>
+                  <div class="special-table_rank g4 l4">
+                    <span class="indicator"></span>Popular
+                  </div>
+                </div>
+                <div class="g20 l4">
+                  <!-- Price, Label -->
+                  <div class="special-table_heading g4">
+                    <span class="special-table_heading_title">Small</span>
+                    <span class="special-table_heading_price"><span class="currency">$</span>19<sup>95</sup></span>
+                  </div>
+                  <div class="special-table_heading g4">
+                    <span class="special-table_heading_title">Small+</span>
+                    <span class="special-table_heading_price"><span class="currency">$</span>24<sup>45</sup></span>
+                  </div>
+                  <div class="special-table_heading g4">
+                    <span class="special-table_heading_title">Medium</span>
+                    <span class="special-table_heading_price"><span class="currency">$</span>38<sup>55</sup></span>
+                  </div>
+                  <div class="special-table_heading g4">
+                    <span class="special-table_heading_title">Medium+</span>
+                    <span class="special-table_heading_price"><span class="currency">$</span>52<sup>45</sup></span>
+                  </div>
+                  <div class="special-table_heading g4">
+                    <span class="special-table_heading_title">Large</span>
+                    <span class="special-table_heading_price"><span class="currency">$</span>66<sup>45</sup></span>
+                  </div>
+                  <div class="special-table_heading g4">
+                    <span class="special-table_heading_title">Large+</span>
+                    <span class="special-table_heading_price"><span class="currency">$</span>79<sup>95</sup></span>
+                  </div>
+                </div>
+                <div class="special-table_body">
+                  <div class="g4 special-table_column _label">
+                    <span class="data">CPU</span>
+                    <span class="data">RAM</span>
+                    <span class="data">Hard Drive</span>
+                    <span class="data">Bandwidth</span>
+                    <span class="data">Connectivity Type</span>
+                    <span class="data">IP Addresses</span>
+                    <span class="data">Locations</span>
+                  </div>
+                  <div class="g20 l4 special-table_column _data">
+                    <!-- Data -->
+                    <div class="special-table_column g4 center">
+                      <span class="data">1Ghz</span>
+                      <span class="data">512MB</span>
+                      <span class="data">20GB</span>
+                      <span class="data">1,000GB</span>
+                      <span class="data">Premium</span>
+                      <span class="data">1</span>
+                      <span class="data"> Miami, FL<br> Los Angeles, CA<br> Scranton, PA<br> Chicaco, IL<br> </span>
+                    </div>
+                    <div class="special-table_column g4 center">
+                      <span class="data">1.5Ghz</span>
+                      <span class="data">1GB</span>
+                      <span class="data">50GB</span>
+                      <span class="data">1,000GB</span>
+                      <span class="data">Premium</span>
+                      <span class="data">1</span>
+                      <span class="data"> Miami, FL<br> Los Angeles, CA<br> Scranton, PA<br> Chicaco, IL<br> </span>
+                    </div>
+                    <div class="special-table_column g4 center">
+                      <span class="data">2Ghz</span>
+                      <span class="data">1.5GB</span>
+                      <span class="data">100GB</span>
+                      <span class="data">2,000GB</span>
+                      <span class="data">Premium</span>
+                      <span class="data">1</span>
+                      <span class="data"> Miami, FL<br> Los Angeles, CA<br> Scranton, PA<br> Chicaco, IL<br> </span>
+                    </div>
+                    <div class="special-table_column g4 center">
+                      <span class="data">2.5Ghz</span>
+                      <span class="data">2.5GB</span>
+                      <span class="data">150GB</span>
+                      <span class="data">2,000GB</span>
+                      <span class="data">Premium</span>
+                      <span class="data">1</span>
+                      <span class="data"> Miami, FL<br> Los Angeles, CA<br> Scranton, PA<br> Chicaco, IL<br> </span>
+                    </div>
+                    <div class="special-table_column g4 center">
+                      <span class="data">3Ghz</span>
+                      <span class="data">3GB</span>
+                      <span class="data">200GB</span>
+                      <span class="data">4,000GB</span>
+                      <span class="data">Premium</span>
+                      <span class="data">1</span>
+                      <span class="data"> Miami, FL<br> Los Angeles, CA<br> Scranton, PA<br> Chicaco, IL<br> </span>
+                    </div>
+                    <div class="special-table_column g4 center">
+                      <span class="data">4Ghz</span>
+                      <span class="data">4GB</span>
+                      <span class="data">250GB</span>
+                      <span class="data">4,000GB</span>
+                      <span class="data">Premium</span>
+                      <span class="data">1</span>
+                      <span class="data"> Miami, FL<br> Los Angeles, CA<br> Scranton, PA<br> Chicaco, IL<br> </span>
+                    </div>
+                  </div> <!-- Special Table Data -->
+                </div> <!-- Special Table Body -->
+                <div class="g20 l4">
+                  <div class="special-table_footer g4 center">
+                    <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=22">Buy Now</a>
+                  </div>
+                  <div class="special-table_footer g4 center">
+                    <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=23">Buy Now</a>
+                  </div>
+                  <div class="special-table_footer g4 center">
+                    <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=24">Buy Now</a>
+                  </div>
+                  <div class="special-table_footer g4 center">
+                    <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=25">Buy Now</a>
+                  </div>
+                  <div class="special-table_footer g4 center">
+                    <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=26">Buy Now</a>
+                  </div>
+                  <div class="special-table_footer g4 center">
+                    <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=27">Buy Now</a>
+                  </div>
+                </div> <!-- Special Table Footer -->
+              </div> <!-- Special Table -->
+            </div>
+          </div> <!-- VPS Table Section -->
+          <div class="section section-grey">
+            <div class="container">
+              <h1>Upgrades</h1>
+              <h4>All prices are billed on a montly cycle</h4>
+              <div class="row">
+                <div class="g12 col1of2">
+                  <div class="center">
+                    <i class="icon-round_os row"></i>
+                    <h4 class="row">Operating System</h4>
+                    <div class="row">
+                      <div class="g20">
+                        <p>Linux OS
+                          <span class="more-popout-container" data-dingo="morePopout">
+                            <span class="icon_more-arrow"></span>
+                            <span class="more-popout _is-popout">
+                              <span class="arrow"></span>
+                              <span class="more-popout_item">CentOS 5.x</span>
+                              <span class="more-popout_item">Debian</span>
+                              <span class="more-popout_item">Fedora</span>
+                              <span class="more-popout_item">Ubuntu</span>
+                            </span>
+                          </span>
+                        </p>
+                        <p class="small grey">Click the arrow to see a list of Linux OS's</p>
+                      </div>
+                      <div class="g4">
+                        <p>$0.00</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="g20">
+                        <p>Windows OS
+                          <span class="more-popout-container" data-dingo="morePopout">
+                            <span class="icon_more-arrow"></span>
+                            <span class="more-popout _is-popout">
+                              <span class="arrow"></span>
+                              <span class="more-popout_item">2012 Standard</span>
+                              <span class="more-popout_item">2008 Web</span>
+                              <span class="more-popout_item">2006 Standard R2</span>
+                              <span class="more-popout_item">2008 Enterprise</span>
+                              <span class="more-popout_item">2003 Web</span>
+                              <span class="more-popout_item">2003 Standard</span>
+                              <span class="more-popout_item">2003 Enterprise</span>
+                            </span>
+                          </span>
+                        </p>
+                        <p class="small grey">Click the arrow to see a list of Windows OS's</p>
+                      </div>
+                      <div class="g4">
+                        <p>$6.00</p>
+                      </div>
+                    </div>
+                  </div>
+                </div> <!-- Operating System -->
+                <div class="g12 col2of2">
+                  <div class="center">
+                    <i class="icon-round_control-panel row"></i>
+                    <h4 class="row">Control Panel</h4>
+                    <div class="row">
+                      <div class="row-sm">
+                        <p class="g20">cPanel / WHM</p>
+                        <p class="g4">$14.95</p>
+                      </div>
+                      <div class="row-sm">
+                        <p class="g20">Direct Admin</p>
+                        <p class="g4">$9.95</p>
+                      </div>
+                      <div class="row-sm">
+                        <p class="g20">Plesk 100 Domains</p>
+                        <p class="g4">$12.95</p>
+                      </div>
+                      <div class="row-sm">
+                        <p class="g20">Plesk Unlimited Domains</p>
+                        <p class="g4">$19.95</p>
+                      </div>
+                    </div>
+                  </div>
+                </div> <!-- Control Panel -->
+              </div> <!-- Row -->
+              <div class="row-xl">
+                <div class="g12 col1of2">
+                  <div class="center">
+                    <i class="icon-round_home row"></i>
+                    <h4 class="row">IP Addresses</h4>
+                    <div class="row">
+                      <div class="row-sm">
+                        <p class="g20">/ 29 (5 Usable)</p>
+                        <p class="g4">$7.00</p>
+                      </div>
+                      <div class="row-sm">
+                        <p class="g20">/ 28 (13 Usable)</p>
+                        <p class="g4">$12.00</p>
+                      </div>
+                      <div class="row-sm">
+                        <p class="g20">/ 27 (20 Usable)</p>
+                        <p class="g4">$15.00</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="g12 col2of2">
+                  <div class="center">
+                    <i class="icon-round_install row"></i>
+                    <h4 class="row">Auto Installers</h4>
+                    <div class="row">
+                      <div class="row-sm">
+                        <p class="g20">Fantastico Deluxe</p>
+                        <p class="g4">$4.95</p>
+                      </div>
+                      <div class="row-sm">
+                        <div class="g20"><p>Softaculous</p></div>
+                        <p class="g4">$3.95</p></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- Section Grey -->
+          <div class="section section-dark">
+            <div class="container">
+              <h3 class="row">All Upgrades are configurable at checkout</h3>
+              <div class="center row-xl">
+                <a class="btn-red" href="#section_all-servers">Select A Server</a>
+              </div>
+            </div>
+          </div> <!-- Section Dark -->
+        </div>
+      </div> <!-- Page -->
+      <div class="section section-red footer" id="footer">
+        <div class="container">
+          <div class="mcenter">
+            <div class="wizz-logo"></div>
+          </div>
+          <div class="right mcenter">
+            <ul class="nav-menu">
+              <li class="nav-item"><a class="nav-item_trigger" href="index.html">home</a></li>
+              <li class="nav-item _active"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">virtual servers</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+                  <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">solutions</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+                  <li class="submenu-item"><a href="solutions_wizz-admin.html">WizzAdmin</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">about</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="solutions_wizz-secure.html">Our Mission</a></li>
+                  <li class="submenu-item"><a href="solutions_wizz-admin.html">Contact Us</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="social-links">
+              <a href="http://plus.google.com/u/0/116200730376494781301/posts" class="icon-social_google-plus"></a>
+              <a href="http://twitter.com/wizzsolutions" class="icon-social_twitter"></a>
+              <a href="https://www.facebook.com/wizzsolutions" class="icon-social_facebook"></a>
+            </div>
+          </div>
+          <hr>
+          <div class="g12 m24 mrow">
+            <a class="btn-stroke mblock mrow" href="terms-of-service.html">Terms Of Service</a>
+            <a class="btn-stroke mblock mrow" href="acceptable-use-policy.html">Acceptable Use Policy</a>
+          </div>
+          <div class="g12 right m24 mrow mcenter">
+            <div class="fb-like" data-href="http://www.wizzsolutions.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+          </div>
+        </div> <!-- Footer Container -->
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</HTML>

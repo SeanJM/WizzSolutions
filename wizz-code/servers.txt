@@ -1,6 +1,6 @@
 <template name="server">
   <div class="server">
-    <div class="server_title">{{title}}</div>
+    <div class="server_title is-desktop">{{title}}</div>
     <div class="server_price">
       <span class="server_price_currency">$</span>
       <span class="server_price_dollar">{{price}}</span>
@@ -35,42 +35,49 @@
         <span class="g8 col2of3-sm"><span class="server_region server_region_{{region_eu}}">EUR</span></span>
         <span class="g8 col3of3-sm"><span class="server_region server_region_{{region_other}}">OTHER</span></span>
       </div>
-      <div class="server_feature server_feature_{{feature_streaming}}">
+      <div class="server_feature server_feature_{{feature_streaming}}" data-dingo="mobileTooltip">
         <i class="icon-round-tiny_{{color}}-streaming"></i>
         <span class="tooltip">
           <span class="arrow"></span>
           Streaming
         </span>
       </div>
-      <div class="server_feature server_feature_{{feature_web}}">
+      <div class="server_feature server_feature_{{feature_web}}" data-dingo="mobileTooltip">
         <i class="icon-round-tiny_{{color}}-web"></i>
         <span class="tooltip">
           <span class="arrow"></span>
           Web Hosting
         </span>
       </div>
-      <div class="server_feature server_feature_{{feature_vm}}">
+      <div class="server_feature server_feature_{{feature_vm}}" data-dingo="mobileTooltip">
         <i class="icon-round-tiny_{{color}}-vm"></i>
         <span class="tooltip">
           <span class="arrow"></span>
           Virtual Machine
         </span>
       </div>
-      <div class="server_feature server_feature_{{feature_game}}">
+      <div class="server_feature server_feature_{{feature_game}}" data-dingo="mobileTooltip">
         <i class="icon-round-tiny_{{color}}-game"></i>
         <span class="tooltip">
           <span class="arrow"></span>
           Gaming
         </span>
       </div>
-      <div class="server_feature server_feature_{{feature_phone}}">
+      <div class="server_feature server_feature_{{feature_phone}}" data-dingo="mobileTooltip">
         <i class="icon-round-tiny_{{color}}-phone"></i>
         <span class="tooltip">
           <span class="arrow"></span>
           Internet Phone
         </span>
       </div>
-      <span class="server_feature_tooltip-text server_feature_tooltip-text_{{color}}">Hover over the icon to learn it's meaning</span>
+      <span class="server_feature_tooltip-text server_feature_tooltip-text_{{color}}" data-dingo="mobileTooltip">
+        <span class="is-desktop">
+          Hover over the icon to learn it's meaning
+        </span>
+        <span class="is-mobile">
+          Touch the icon to learn it's meaning
+        </span>
+      </span>
     </div>
     <div class="server_feature_cta">
       <a class="btn-stroke g11" href="{{link}}">Buy</a>
@@ -78,18 +85,18 @@
   </div>
 </template>
 
+<template name="vps-power">
+</template>
+
 <template name="slider">
-  <div class="g24 slider-group">
-    <label>{{label}}</label>
-    <div class="slider" data-range="{{range}}" data-function="{{function}}" data-dingo="sliderFocus">
-      <div class="slider-bar">
-        <div class="slider_handle slider_handle_{{color}}" data-dingo="sliderBar"></div>
-        <div class="slider_knob slider_knob-right" data-dingo="sliderKnobRight">
-          <div class="slider_knob-element"></div>
-          <div class="slider-value slider-value_dark slider-value_right_dark slider-value_right">
-            <div class="arrow"></div>
-            <span class="slider-text slider-text_right">{{default-right}}</span>
-          </div>
+  <div class="slider" data-range="{{range}}" data-function="{{function}}:{{which}}" data-dingo="sliderFocus" id="{{id}}">
+    <div class="slider-bar">
+      <div class="slider_handle slider_handle_{{color}}" data-dingo="sliderBar"></div>
+      <div class="slider_knob slider_knob-right" data-dingo="rangeSliderKnobRight">
+        <div class="slider_knob-element"></div>
+        <div class="slider-value slider-value_dark slider-value_right_dark slider-value_right">
+          <div class="arrow"></div>
+          <span class="slider-text slider-text_right">{{default-right}}</span>
         </div>
       </div>
     </div>
@@ -99,17 +106,17 @@
 <template name="range-slider">
   <div class="g24 slider-group">
     <label>{{label}}</label>
-    <div class="slider" data-range="{{range}}" data-function="{{function}}" data-dingo="sliderFocus" id="{{id}}">
+    <div class="slider _range" data-range="{{range}}" data-function="{{function}}" data-dingo="sliderFocus" id="{{id}}">
       <div class="slider-bar">
         <div class="slider_handle slider_handle_{{color}}" data-dingo="sliderBar"></div>
-        <div class="slider_knob slider_knob-left" data-dingo="sliderKnobLeft">
+        <div class="slider_knob slider_knob-left" data-dingo="rangeSliderKnobLeft">
           <div class="slider_knob-element"></div>
           <div class="slider-value slider-value_dark slider-value_left_dark slider-value_left">
             <div class="arrow"></div>
             <span class="slider-text slider-text_left">{{default-left}}</span>
           </div>
         </div>
-        <div class="slider_knob slider_knob-right" data-dingo="sliderKnobRight">
+        <div class="slider_knob slider_knob-right" data-dingo="rangeSliderKnobRight">
           <div class="slider_knob-element"></div>
           <div class="slider-value slider-value_dark slider-value_right_dark slider-value_right">
             <div class="arrow"></div>
@@ -131,6 +138,88 @@
         <span class="switch-off"></span>
         <span class="switch-on"></span>
       </span>
+    </div>
+  </div>
+</template>
+
+<template name="table-row">
+  <td>
+    <span class="is-desktop">{{processor}}</span>
+    <span class="is-mobile">
+      <span class="td_title">{{processor}}</span>
+      <span class="td_spec">
+        <span class="td_label">RAM:</span>
+      <span class="td_text">{{ram}}</span>
+      </span>
+      <span class="td_spec">
+        <span class="td_label">HD:</span>
+        <span class="td_text">{{hd}}</span>
+      </span>
+      <span class="td_spec">
+        <span class="td_label">Uplink:</span>
+        <span class="td_text">{{uplink}}</span>
+      </span>
+      <span class="td_spec">
+        <span class="td_label">Bandwidth:</span>
+        <span class="td_text">{{bandwidth}}</span>
+      </span>
+    </span>
+  </td>
+  <td class="is-desktop">{{ram}}</td>
+  <td class="is-desktop">{{hd}}</td>
+  <td class="is-desktop">{{uplink}}</td>
+  <td class="is-desktop">{{bandwidth}}</td>
+  <td class="td_currency">{{price}}</td>
+  <td><a class="btn-red" href="https://client.wizzsolutions.com/{{buy}}">Buy</a></td>
+</template>
+
+<template name="vps_item">
+  <div class="vps_item block _{{state}}">
+    <div class="server_title is-desktop">{{title}}</div>
+    <div class="server_price">
+      <span class="server_price_currency">$</span>
+      <span class="server_price_dollar _linux">{{linux-price}}</span>
+      <span class="server_price_dollar _windows">{{windows-price}}</span>
+    </div>
+    <div class="server_specs">
+      <div class="vps_spec">
+        <div class="server_spec">
+          <div class="server_spec_desc">CPU</div>
+          <div class="server_spec_text">{{cpu}}</div>
+          <div class="server_spec_desc">GHz</div>
+        </div>
+      </div>
+      <div class="vps_spec">
+        <div class="g8 col2of3-sm server_spec">
+          <div class="server_spec_desc">RAM</div>
+          <div class="server_spec_text">{{ram}}</div>
+          <div class="server_spec_desc">GB</div>
+        </div>
+      </div>
+      <div class="vps_spec">
+        <div class="server_spec">
+          <div class="server_spec_desc">HD</div>
+          <div class="server_spec_text">{{hd}}</div>
+          <div class="server_spec_desc">GB</div>
+        </div>
+      </div>
+      <div class="vps_spec">
+        <div class="server_spec">
+          <div class="server_spec_desc">UPLINK</div>
+          <div class="server_spec_text">{{uplink}}</div>
+          <div class="server_spec_desc">MBPS</div>
+        </div>
+      </div>
+      <div class="vps_spec">
+        <div class="server_spec">
+          <div class="server_spec_desc">BAND.</div>
+          <div class="server_spec_text">{{bandwidth}}</div>
+          <div class="server_spec_desc">GB</div>
+        </div>
+      </div>
+    </div>
+    <div class="server_feature_cta">
+      <a class="btn-stroke g11" href="{{link}}">Buy</a>
     </div>
   </div>
 </template>

@@ -115,7 +115,7 @@
       <div class="page">
         <div class="main">
           <div class="section feature-banner">
-            <div class="container">
+            <div class="container is-desktop">
               <div class="g6 col1of4">
                 <span class="g24 center feature-banner_icon"><i class="icon-round_feature-ticket"></i></span>
                 <span class="feature-banner_title">24/7</span>
@@ -152,15 +152,57 @@
                 </div>
               </div>
             </div>
+            <div class="container is-mobile">
+              <div class="row">
+                <div class="m12 col1of2">
+                  <span class="g24 center feature-banner_icon"><i class="icon-round_feature-ticket"></i></span>
+                  <span class="feature-banner_title">24/7</span>
+                  <span class="feature-banner_text">Managed Support</span>
+                </div>
+                <div class="m12 col2of2">
+                  <span class="g24 center feature-banner_icon"><i class="icon-round_feature-guarantee"></i></span>
+                  <span class="feature-banner_title">99.9%</span>
+                  <span class="feature-banner_text">Uptime Guarantee</span>
+                </div>
+                <div class="feature-banner_more-info">
+                  <div class="m12 col1of2">
+                    <span class="feature-banner_more-info_text">When you have a problem, do not hesitate to get in touch; create a ticket or use our livechat, we’re always standing by.</span>
+                  </div>
+                  <div class="m12 col2of2">
+                    <span class="feature-banner_more-info_text">We understand that we’re in the business of keeping you online. We will uphold this promise and ensure you remain online.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="m12 col1of2">
+                  <span class="g24 center feature-banner_icon"><i class="icon-round_feature-free"></i></span>
+                  <span class="feature-banner_title">FREE</span>
+                  <span class="feature-banner_text">OS Reinstalls</span>
+                </div>
+                <div class="m12 col2of2">
+                  <span class="g24 center feature-banner_icon"><i class="icon-round_feature-optimize"></i></span>
+                  <span class="feature-banner_title">OPTIMIZED</span>
+                  <span class="feature-banner_text">Networks</span>
+                </div>
+                <div class="feature-banner_more-info">
+                  <div class="m12 col1of2">
+                    <span class="feature-banner_more-info_text">No surprise charges and no hidden fees. We won’t for charge small server maintenance tasks.</span>
+                  </div>
+                  <div class="m12 col2of2">
+                    <span class="feature-banner_more-info_text">The networks that we choose, are robust. They can handle the traffic required for high bandwidth streaming.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="feature-banner_toggle" data-dingo="featureBannerToggle">
               <div class="feature-banner_toggle-icon"></div>
             </div>
-          </div>
+          </div> <!-- Section Feature Banner -->
           <div class="section">
             <div class="container">
               <div class="carousel carousel-servers row" id="carousel-servers">
                 <div class="carousel-selections">
-                  <div class="g12 center">
+                  <div class="g12 center m24">
                     <div class="g6 center carousel-select _animated-in" data-dingo="carouselSelect{which: servers}">
                       <p>POPULAR</p>
                       <div class="carousel-pill">
@@ -179,7 +221,7 @@
                         <div class="carousel-pill-background"></div>
                       </div>
                     </div>
-                    <div class="g6 center carousel-select" data-dingo="carouselSelect{which: servers}">
+                    <div class="g6 center carousel-select is-desktop" data-dingo="carouselSelect{which: servers}">
                       <p>BUDGET</p>
                       <div class="carousel-pill">
                         <div class="carousel-pill-background"></div>
@@ -191,7 +233,7 @@
                   <div class="carousel-item-container carousel-server-item-container">
                     <!-- Contains the carousel items for testimonials -->
                     <div class="carousel-item _animated-in" id="carousel-servers-item_0">
-                      <div class="g8 col1of3-sm">
+                      <div class="g8 col1of3-sm m24">
                         <div data-template="server">
                           title             : Entry Level Server
                           price             : 99
@@ -211,7 +253,8 @@
                           feature_phone     : off
                         </div>
                       </div>
-                      <div class="g8 col2of3-sm">
+                      <!-- Will not appear on mobile devices -->
+                      <div class="g8 col2of3-sm is-desktop">
                         <div data-template="server">
                           title             : Elite Server
                           price             : 199
@@ -231,7 +274,8 @@
                           feature_phone     : on
                         </div>
                       </div>
-                      <div class="g8 col3of3-sm">
+                      <!-- Will not appear on mobile devices -->
+                      <div class="g8 col3of3-sm is-desktop">
                         <div data-template="server">
                           title             : Super Elite Server
                           price             : 399
@@ -253,7 +297,7 @@
                       </div>
                     </div>
                     <div class="carousel-item " id="carousel-servers-item_1">
-                      <div class="g8 col1of3-sm">
+                      <div class="g8 col1of3-sm m24">
                         <div data-template="server">
                           title             : Entry Level Server
                           price             : 99
@@ -273,7 +317,8 @@
                           feature_phone     : off
                         </div>
                       </div>
-                      <div class="g8 col2of3-sm">
+                      <!-- Will not appear on mobile devices -->
+                      <div class="g8 col2of3-sm is-desktop">
                         <div data-template="server">
                           title             : Elite Server
                           price             : 199
@@ -293,7 +338,8 @@
                           feature_phone     : on
                         </div>
                       </div>
-                      <div class="g8 col3of3-sm">
+                      <!-- Will not appear on mobile devices -->
+                      <div class="g8 col3of3-sm is-desktop">
                         <div data-template="server">
                           title             : Super Elite Server
                           price             : 399
@@ -316,7 +362,7 @@
                     </div>
                     <!-- Enterprise Servers -->
                     <div class="carousel-item " id="carousel-servers-item_2">
-                      <div class="g8 col1of3-sm">
+                      <div class="g8 col1of3-sm m24">
                         <div data-template="server">
                           title             : Entry Level Server
                           price             : 399
@@ -336,7 +382,8 @@
                           feature_phone     : off
                         </div>
                       </div>
-                      <div class="g8 col2of3-sm">
+                      <!-- Will not appear on mobile devices -->
+                      <div class="g8 col2of3-sm is-desktop">
                         <div data-template="server">
                           title             : Elite Server
                           price             : 699
@@ -356,7 +403,8 @@
                           feature_phone     : on
                         </div>
                       </div>
-                      <div class="g8 col3of3-sm">
+                      <!-- Will not appear on mobile devices -->
+                      <div class="g8 col3of3-sm is-desktop">
                         <div data-template="server">
                           title             : Super Elite Server
                           price             : 999
@@ -378,6 +426,7 @@
                       </div>
                     </div>
                     <!-- Budget Servers -->
+                    <!-- All Budget Servers will not appear on mobile devices -->
                     <div class="carousel-item " id="carousel-servers-item_2">
                       <div class="g8 col1of3-sm">
                         <div data-template="server">
@@ -443,19 +492,19 @@
                   </div>
                 </div> <!-- Carousel Scroll -->
               </div> <!-- Carousel -->
-              <p class="row-xl center">All plans are billed on a monthly cycle</p>
+              <p class="row-xl center mrow">All plans are billed on a monthly cycle</p>
             </div> <!-- Container -->
           </div> <!-- Section -->
           <div class="section section-dark">
             <div class="container">
-              <div class="g12 col1of2">
+              <div class="g12 col1of2 m24 mrow">
                 <div class="center row">
                   <i class="icon-round_wizz-monitor"></i>
                 </div>
                 <h2 class="row">wizzmonitor</h2>
                 <p>Our Linux and Windows servers include access to our WizzMonitor graphing portal. WizzMonitor will provide you with the data to know how your service is performing. It includes details such as load average, memory usage, and port traffic. Once sigend up, you will receive a login and password with your login information.</p>
               </div>
-              <div class="g12 col2of2">
+              <div class="g12 col2of2 m24 mrow-xl">
                 <div class="center row">
                   <i class="icon-round_wizz-secure"></i>
                 </div>
@@ -467,9 +516,9 @@
           <div class="section">
             <div class="container">
               <h1>Find The Right Server For Me</h1>
-              <h3>Adjust the filter settings to highlight the servers that fit your need</h3>
+              <h4>Adjust the filter settings to highlight the servers that fit your need</h4>
               <div class="box filter">
-                <div class="g8 filter-module">
+                <div class="g8 filter-module is-desktop">
                   <div data-template="range-slider">
                     label         : CPU
                     range         : Dual Core,Quad Core,Six Core,8 Core
@@ -498,7 +547,7 @@
                     id            : slider_servers_hd
                   </div>
                 </div>
-                <div class="g8 filter-module">
+                <div class="g8 m24 filter-module mrow">
                   <div data-template="range-slider">
                     label         : Uplink
                     range         : 100Mbps,1Gbps,10Gbps,10Gbps Fiber
@@ -510,7 +559,7 @@
                   </div>
                   <div data-template="range-slider">
                     label         : Price
-                    range         : $99,$199,$299,$399,$499,$599,$699,$799,$899,$999,$1099,$1199
+                    range         : $99,$399,$699,$999,$1299
                     function      : all
                     default-left  : $99
                     default-right : $1199
@@ -518,22 +567,22 @@
                     id            : slider_servers_price
                   </div>
                 </div>
-                <div class="g8 filter-module">
-                  <div class="g24">
+                <div class="g8 m24 filter-module mrow">
+                  <div class="g24 toggle-group">
                     <div data-template="toggle">
                       label : USA
                       group : server-filters
                       id    : toggle_servers_location-usa
                     </div>
                   </div>
-                  <div class="g24">
+                  <div class="g24 toggle-group">
                     <div data-template="toggle">
                       label : Europe
                       group : server-filters
                       id    : toggle_servers_location-eur
                     </div>
                   </div>
-                  <div class="g24">
+                  <div class="g24 toggle-group">
                     <div data-template="toggle">
                       label : Other
                       group : server-filters
@@ -546,284 +595,50 @@
                 <table>
                   <thead>
                     <th class="table_cpu">CPU</th>
-                    <th class="table_ram">RAM</th>
-                    <th class="table_hd">HD</th>
-                    <th class="table_uplink">UPLINK</th>
-                    <th class="table_bandwidth">BANDWIDTH</th>
+                    <th class="table_ram is-desktop">RAM</th>
+                    <th class="table_hd is-desktop">HD</th>
+                    <th class="table_uplink is-desktop">UPLINK</th>
+                    <th class="table_bandwidth is-desktop">BANDWIDTH</th>
                     <th class="table_price">PRICE</th>
                     <th class="table_buy"></th>
                   </thead>
                   <tbody>
                     <tr class="filter-target_servers cpu_0 ram_0 hd_0 uplink_0 price_0 location-usa">
-                      <td>Intel® Dual Core Atom 1.6 GHz</td>
-                      <td>2GB</td>
-                      <td>500GB</td>
-                      <td>100Mbps</td>
-                      <td>Unmetered</td>
-                      <td>$99</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=9&amp;product=72">Buy</a></td>
+                      <td data-template="table-row">
+                        processor : Intel® Dual Core Atom 1.6 GHz
+                        ram       : 2GB
+                        hd        : 500GB
+                        uplink    : 100Mbps
+                        bandwidth : Unmetered
+                        price     : $99
+                        buy       : order.php?step=1&amp;productGroup=9&amp;product=72
+                      </td>
                     </tr>
 
-                    <tr class="filter-target_servers cpu_0 ram_1 hd_2 uplink_0 price_1 location-usa">
-                      <td>Intel® Dual Core Atom 1.6 GHz</td>
-                      <td>4GB</td>
-                      <td>1.5TB</td>
-                      <td>100Mbps</td>
-                      <td>Unmetered</td>
-                      <td>$125</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=9&amp;product=73">Buy</a></td>
+                    <tr class="filter-target_servers cpu_0 ram_1 hd_2 uplink_0 price_0 location-usa">
+                      <td data-template="table-row">
+                        processor : Intel® Dual Core E5200 2.5 GHz
+                        ram       : 4GB
+                        hd        : 1.5TB
+                        uplink    : 100Mbps
+                        bandwidth : Unmetered
+                        price     : $125
+                        buy       : order.php?step=1&amp;productGroup=9&amp;product=73
+                      </td>
                     </tr>
 
-                    <tr class="filter-target_servers cpu_0 ram_1 hd_2 uplink_0 price_1 location-eur">
-                      <td>Intel® Dual Core E5200 2.5 GHz</td>
-                      <td>4GB</td>
-                      <td>1.5TB</td>
-                      <td>100Mbps</td>
-                      <td>Unmetered</td>
-                      <td>$159</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=9&amp;product=74">Buy</a></td>
+                    <tr class="filter-target_servers cpu_0 ram_1 hd_0 uplink_1 price_0 location-eur">
+                      <td data-template="table-row">
+                        processor : Intel® Core i3-2100 Sandy Bridge Dual Core 3.10 GHz
+                        ram       : 4GB
+                        hd        : 500GB
+                        uplink    : 1Gbps
+                        bandwidth : 125TB
+                        price     : $229
+                        buy       : order.php?step=1&amp;productGroup=21&amp;product=69
+                      </td>
                     </tr>
 
-
-                    <tr class="filter-target_servers cpu_0 ram_1 hd_0 uplink_1 price_1 location-eur">
-                      <td>Intel® Core i3-2100 Sandy Bridge Dual Core 3.10 GHz</td>
-                      <td>4GB</td>
-                      <td>500GB</td>
-                      <td>1Gbps</td>
-                      <td>125TB</td>
-                      <td>$229</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=21&amp;product=69">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_2 hd_1 uplink_1 price_3 location-usa">
-                      <td>Intel® Xeon E3-1230 Sandy Bridge Quad Core 3.20 GHz</td>
-                      <td>8GB</td>
-                      <td>1TB</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$399</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=21&amp;product=70">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_3 hd_2 uplink_1 price_4 location-usa">
-                      <td>Intel® Xeon E3-1230 Sandy Bridge Quad Core 3.20 GHz</td>
-                      <td>12GB</td>
-                      <td>4 x 500GB</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$515</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=21&amp;product=71">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_0 ram_0 hd_0 uplink_1 price_1 location-usa">
-                      <td>Intel® Dual Core Atom 1.6Ghz</td>
-                      <td>2GB</td>
-                      <td>500GB SATA</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$249</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=40">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_2 ram_2 hd_3 uplink_1 price_3 location-usa">
-                      <td>Six Core AMD® Phenom II X6 6 x 2.8ghz</td>
-                      <td>8GB</td>
-                      <td>2 x 1.5TB</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$399</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=41">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_2 ram_2 hd_3 uplink_1 price_5 location-usa">
-                      <td>Six Core AMD® Phenom II X6 6 x 2.8ghz</td>
-                      <td>8GB</td>
-                      <td>2 x 1.5TB</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$599</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=42">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_2 ram_2 hd_3 uplink_1 price_3 location-usa">
-                      <td>AMD® Phenom II X6 Thuban 2.8 GHz</td>
-                      <td>8GB</td>
-                      <td>2 x 1.5TB</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$399</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=75">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_2 ram_4 hd_3 uplink_1 price_4 location-usa">
-                      <td>AMD® Phenom II X6 Thuban 2.8 GHz</td>
-                      <td>16GB</td>
-                      <td>2 x 1.5TB</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$499</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=76">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_2 ram_4 hd_3 uplink_1 price_5 location-usa">
-                      <td>AMD® Phenom II X6 Thuban 2.8 GHz</td>
-                      <td>16GB</td>
-                      <td>2 x 1.5TB</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$599</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=77">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_3 ram_5 hd_5 uplink_1 price_5 location-usa">
-                      <td>AMD® Opteron 6128 2.0 x 8 Cores</td>
-                      <td>32GB</td>
-                      <td>4 x 1.5TB</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$615</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=14&amp;product=78">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_0 ram_1 hd_1 uplink_1 price_3 location-usa">
-                      <td>Intel® Dual Core Xeon 3060 2.4 GHz</td>
-                      <td>4GB</td>
-                      <td>2 x 500GB</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$399</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=10&amp;product=65">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_1 hd_1 uplink_1 price_3 location-usa">
-                      <td>Intel® Quad Core Xeon 3220 2.4 GHz</td>
-                      <td>4GB</td>
-                      <td>2 x 500GB</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$450</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=10&amp;product=66">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_2 hd_4 uplink_1 price_5 location-usa">
-                      <td>Intel® Quad Core Xeon 3460 2.8 GHz</td>
-                      <td>8GB</td>
-                      <td>2 x 2TB</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$599</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=10&amp;product=67">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_1 hd_6 uplink_1 price_6 location-usa">
-                      <td>Intel® Quad Core Xeon 3220 2.4 GHz</td>
-                      <td>4GB</td>
-                      <td>4 x 2TB</td>
-                      <td>1Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$699</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=10&amp;product=68">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_7 hd_7 uplink_2 price_8 location-usa">
-                      <td>Intel® Xeon E5-2603</td>
-                      <td>128GB</td>
-                      <td>3 x 3TB</td>
-                      <td>10Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$899</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=102">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_6 hd_8 uplink_2 price_9 location-usa">
-                      <td>Intel® Xeon E5-2603</td>
-                      <td>64GB</td>
-                      <td>4 x 3TB</td>
-                      <td>10Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$999</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=121">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_7 hd_8 uplink_2 price_11 location-usa">
-                      <td>Intel® Xeon E5-2603</td>
-                      <td>128GB</td>
-                      <td>4 x 3TB</td>
-                      <td>10Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$1199</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=120">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_6 hd_8 uplink_2 price_11 location-usa">
-                      <td>Intel® Xeon E5-2603</td>
-                      <td>64GB</td>
-                      <td>4 x 3TB</td>
-                      <td>10Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$1199</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=123">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_0 ram_4 hd_4 uplink_3 price_4 location-usa">
-                      <td>Intel® Xeon 540 2.33 Ghz</td>
-                      <td>16GB</td>
-                      <td>2 x 2TB</td>
-                      <td>10Gbps Fiber</td>
-                      <td>Unmetered</td>
-                      <td>$499</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=119">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_5 hd_8 uplink_3 price_7 location-usa">
-                      <td>Intel® Core i7-3820 3.6 GHz</td>
-                      <td>32GB</td>
-                      <td>1 x 120GB SSD + 3 x 2TB</td>
-                      <td>10Gbps Fiber</td>
-                      <td>Unmetered</td>
-                      <td>$799</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=122">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_6 hd_5 uplink_2 price_8 location-usa">
-                      <td>Intel® Xeon E5-2603 1.8 GHz</td>
-                      <td>64GB</td>
-                      <td>2 x 3TB</td>
-                      <td>10Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$899</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=102">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_6 hd_8 uplink_2 price_9 location-usa">
-                      <td>Intel® Xeon E5-2603 1.8 GHz</td>
-                      <td>64GB</td>
-                      <td>4 x 3TB</td>
-                      <td>10Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$999</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=121">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_7 hd_8 uplink_2 price_11 location-usa">
-                      <td>Intel® Xeon E5-2603 1.8 GHz</td>
-                      <td>128GB</td>
-                      <td>4 x 3TB</td>
-                      <td>10Gbps</td>
-                      <td>Unmetered</td>
-                      <td>$1199</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=120">Buy</a></td>
-                    </tr>
-
-                    <tr class="filter-target_servers cpu_1 ram_2 hd_9 uplink_2 price_9 location-usa">
-                      <td>Intel® Core 2 Quad Q8200 2.33 GHz</td>
-                      <td>8GB</td>
-                      <td>8 x 3TB</td>
-                      <td>10Gbps</td>
-                      <td>100TB</td>
-                      <td>$999</td>
-                      <td><a class="btn-red" href="https://client.wizzsolutions.com/order.php?step=1&amp;productGroup=28&amp;product=124">Buy</a></td>
-                    </tr>
                   </tbody>
                 </table>
                 <span class="slider-target_empty">
@@ -831,9 +646,73 @@
                 </span>
               </div> <!-- Slider Target -->
             </div>
+          </div> <!-- Section -->
+          <div class="section section-grey">
+            <div class="container">
+              <h1>Don't see what you want here?</h1>
+              <h4>Let us design a custom solution for you </h4>
+              <form class="g10 l7 m24 ml0" id="custom-solution">
+                <div class="row">
+                  <div class="input-group">
+                    <label for="name">Name</label>
+                    <input class="block" type="text" name="name" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter your name
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input class="block" type="text" name="email" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter a valid email address
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-group">
+                    <label for="hosting">What Are You Hosting?</label>
+                    <input class="block" type="text" name="hosting" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter your kind of data (video, music, game server, etc...)
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="g8 col1of2">
+                    <div class="input-group">
+                      <label for="servers"># Of Servers</label>
+                      <input class="block" type="text" name="servers-number" data-dingo="form-validate">
+                      <div class="form-validate-prompt">
+                        <span class="arrow"></span>
+                        # of servers
+                      </div>
+                    </div>
+                  </div>
+                  <div class="g16 col12of2">
+                    <div class="input-group">
+                      <label for="budget-currency">Monthly Budget</label>
+                      <input class="block _has-type" type="text" name="budget-currency" data-dingo="form-validate">
+                      <span class="input-type">$</span>
+                      <div class="form-validate-prompt">
+                        <span class="arrow"></span>
+                        Enter your monthly budget
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row-xl">
+                  <button class="btn-red block" type="submit" data-dingo="form-validate-submit{which:custom-solution}">Contact Us</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
+      </div> <!-- Page -->
       <div class="section section-red footer" id="footer">
         <div class="container">
           <div class="mcenter">
@@ -841,8 +720,8 @@
           </div>
           <div class="right mcenter">
             <ul class="nav-menu">
-              <li class="nav-item _active"><a class="nav-item_trigger" href="index.html">home</a></li>
-              <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+              <li class="nav-item"><a class="nav-item_trigger" href="index.html">home</a></li>
+              <li class="nav-item _active"><a class="nav-item_trigger" href="servers.html">servers</a></li>
               <li class="nav-item" data-dingo="submenu">
                 <span class="nav-item_trigger">virtual servers</span>
                 <div class="nav-submenu-indicator"></div>
