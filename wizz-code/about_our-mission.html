@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<HTML>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UX-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta http-equiv="cleartype" content="on">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body data-dingo="closePopouts">
+    <div class="page-container">
+      <div class="nav">
+        <div class="container">
+          <a class="wizz-logo" href="index.html"></a>
+          <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
+            <i class="icon-nav-menu"></i>
+          </span>
+          <div class="right">
+            <ul class="nav-menu" id="main-navigation">
+              <li class="nav-item _active"><a class="nav-item_trigger" href="index.html">home</a></li>
+              <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">virtual servers</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+                  <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">solutions</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+                  <li class="submenu-item"><a href="http://wizzadmin.wizzsolutions.com/">WizzAdmin</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">about</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="about_our-mission.html">Our Mission</a></li>
+                  <li class="submenu-item"><a href="about_contact-us.html">Contact Us</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="nav-control is-desktop">
+              <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
+              <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
+              <span class="btn-dark" href="https://client.wizzsolutions.com">login</span>
+            </div>
+          </div>
+          <div class="modal _is-popout" id="modal-contact">
+            <div class="arrow"></div>
+            <form action="#" name="MYFORM" id="MYFORM">
+              <div class="row">
+                <div class="g12 col1of2-sm">
+                  <div class="input-group">
+                    <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter Your Name
+                    </div>
+                  </div>
+                </div>
+                <div class="g12 col2of2-sm">
+                  <div class="input-group">
+                    <input class="block" type="text" name="email" placeholder="Email" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter An Email Address
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-group">
+                  <textarea class="block" name="message" placeholder="Message" data-dingo="form-validate"></textarea>
+                  <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter A Valid Message
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="g12 col1of2-sm">
+                  <img src="get_captcha.php" alt="" id="captcha-image" class="ib captcha-image">
+                  <div class="captcha-refresh" data-dingo="captchaRefresh"></div>
+                </div>
+                <div class="g12 col2of2-sm">
+                  <div class="input-group">
+                    <input class="block" name="code" type="text" id="code" placeholder="Enter the Captcha Text" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Please Enter The Captcha Text
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row center">
+                <button class="btn-red" type="submit" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="page">
+        <div class="main">
+          <div class="section section-dark-grey overflow">
+            <img class="fs_background" src="img/section-background01.jpg">
+            <div class="container">
+              <h1>Our Mission</h1>
+              <p>Our mission is to provide an enterprise hosting solution for you, with quick turnaround and outstanding customer service. We learned early on in our business that your needs are unique. We feel that the competition offers a standard solution that is intended to fit all hosting needs, instead of fitting your hosting needs. We are passionate about our business and love helping people. How we do that is by making sure your online business has the right services and solutions behind it. We know hosting, we live and breathe it every single day.</p>
+            </div>
+          </div>
+          <div class="section">
+            <div class="container">
+              <h1>The First Company To Provide 1 Gbps Unmetered Servers</h1>
+              <p>We first started in late 2009 as the first company to provide 1 Gbps Unmetered servers. Other providers only offered metered bandwidth on networks with low capacity. This is because of the expense associated with operating high capacity networks. Previously, servers on high capacity networks that were capable of media streaming were only available to large companies. We invested in partnerships and the infrastructure required to bring these high capacity networks to you. Thanks to our long term collaboration with the major upstreams across the world, we can reduce your overall costs by delivering high bandwidth capacity at a fraction of the competition's price. Today we provide this high bandwidth infrastructure to many companies of varying scale, even to some of the major streaming destinations on the Internet. </p>
+              <hr>
+              <h1>Experience And Passion For Hosting</h1>
+              <p>We continue to stay close to hosting products and specialized industry demands. We are capable of doing this because we have experience and passion for hosting. We handle some of the most challenging mission critical projects in the industry. Most recently we began offering specialized server administration services. These services are served in daily and weekly packages that fit the unique demands in the hosting sphere. One of these services; WizzAdmin server administration services simplifies server administration tasks. WizzAdmin does this by supplying you with a highly skilled consultant. Our consultant will allow you to increase your technical capabilities and eliminate the need for dedicated in house technicians.</p>
+              <p>We also offer one of the most affordable security products in the market, WizzSecure. This product allows anyone to add a security layer onto their hosting server. WizzSecure provides additional protection and stability which will reduce your overall downtime and protect yours and your customer’s data.</p>
+              <hr>
+              <h1>Leading The Future</h1>
+              <p>Tomorrow we think that the internet will be a very different place, a place where petabytes of data will be traded in milliseconds. We want to help build that place. To accomplish this, we are actively working to shorten the gap between what our customers currently have and what they will need in the future.</p>
+              <p>By being forward thinking, we leverage the power of current technology to open the door to new and wonderful ideas. Whether it be by creating new software solutions to serve you better or by bringing in new infrastructure on seamlessly connected networks, we are here to serve you better. And one day we will retire to enjoy great sex and vodka.</p>
+            </div>
+          </div> <!-- Section -->
+          <div class="section section-dark">
+            <div class="container">
+              <h1>Our Department Leaders</h1>
+              <div class="row-xl">
+                <div class="g8 col1of3 center m24 mrow-xl">
+                  <span class="portrait row">
+                    <img src="img/about/michael.jpg">
+                  </span>
+                  <span class="med row">Michael Kahn</span>
+                  <p class="grey">Operations</p>
+                </div> <!-- Leader -->
+                <div class="g8 col2of3 center m24 mrow-xl">
+                  <span class="portrait row">
+                    <img src="img/about/roman.jpg">
+                  </span>
+                  <span class="med row">Roman Markuze</span>
+                  <p class="grey">Sales</p>
+                </div> <!-- Leader -->
+                <div class="g8 col3of3 center m24 mrow-xl">
+                  <span class="portrait row">
+                    <img src="img/about/empty-male.jpg">
+                  </span>
+                  <span class="med row">Anuraj M</span>
+                  <p class="grey">Support</p>
+                </div> <!-- Leader -->
+              </div> <!-- End Column Row -->
+              <div class="row-xl">
+                <div class="g8 col1of3 center m24 mrow-xl">
+                  <span class="portrait row">
+                    <img src="img/about/empty-male.jpg">
+                  </span>
+                  <span class="med row">Anuraj M</span>
+                  <p class="grey">Support</p>
+                </div> <!-- Leader -->
+                <div class="g8 col2of3 center m24 mrow-xl">
+                  <span class="portrait row">
+                    <img src="img/about/empty-female.jpg">
+                  </span>
+                  <span class="med row">Anuraj M</span>
+                  <p class="grey">Support</p>
+                </div> <!-- Leader -->
+                <div class="g8 col2of3 center m24 mrow-xl">
+                  <span class="portrait row">
+                    <img src="img/about/michael.jpg">
+                  </span>
+                  <span class="med row">Anuraj M</span>
+                  <p class="grey">Support</p>
+                </div> <!-- Leader -->
+              </div>
+            </div>
+          </div> <!-- Section -->
+        </div>
+        <div class="section section-red footer" id="footer">
+          <div class="container">
+            <div class="mcenter">
+              <div class="wizz-logo"></div>
+            </div>
+            <div class="right mcenter">
+              <ul class="nav-menu">
+                <li class="nav-item _active"><a class="nav-item_trigger" href="index.html">home</a></li>
+                <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+                <li class="nav-item" data-dingo="submenu">
+                  <span class="nav-item_trigger">virtual servers</span>
+                  <div class="nav-submenu-indicator"></div>
+                  <ul class="submenu">
+                    <span class="arrow"></span>
+                    <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+                    <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-dingo="submenu">
+                  <span class="nav-item_trigger">solutions</span>
+                  <div class="nav-submenu-indicator"></div>
+                  <ul class="submenu">
+                    <span class="arrow"></span>
+                    <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+                    <li class="submenu-item"><a href="http://wizzadmin.wizzsolutions.com/">WizzAdmin</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-dingo="submenu">
+                  <span class="nav-item_trigger">about</span>
+                  <div class="nav-submenu-indicator"></div>
+                  <ul class="submenu">
+                    <span class="arrow"></span>
+                    <li class="submenu-item"><a href="about_our-mission.html">Our Mission</a></li>
+                    <li class="submenu-item"><a href="about_contact-us.html">Contact Us</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="social-links">
+                <a href="http://plus.google.com/u/0/116200730376494781301/posts" class="icon-social_google-plus"></a>
+                <a href="http://twitter.com/wizzsolutions" class="icon-social_twitter"></a>
+                <a href="https://www.facebook.com/wizzsolutions" class="icon-social_facebook"></a>
+              </div>
+            </div>
+            <hr>
+            <div class="g12 m24 mrow">
+              <a class="btn-stroke mblock mrow" href="terms-of-service.html">Terms Of Service</a>
+              <a class="btn-stroke mblock mrow" href="acceptable-use-policy.html">Acceptable Use Policy</a>
+            </div>
+            <div class="g12 right m24 mrow mcenter">
+              <div class="fb-like" data-href="http://www.wizzsolutions.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+            </div>
+          </div> <!-- Footer Container -->
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</HTML>
