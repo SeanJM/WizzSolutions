@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<HTML>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UX-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta http-equiv="cleartype" content="on">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body data-dingo="closePopouts">
+    <div class="page-container">
+      <div class="nav" id="header">
+        <div class="container">
+          <a class="wizz-logo" href="index.html"></a>
+          <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
+            <i class="icon-nav-menu"></i>
+          </span>
+          <div class="right">
+            <ul class="nav-menu" id="main-navigation">
+              <li class="nav-item"><a class="nav-item_trigger" href="index.html">home</a></li>
+              <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">virtual servers</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+                  <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">solutions</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+                  <li class="submenu-item"><a href="http://wizzadmin.wizzsolutions.com/">WizzAdmin</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">about</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="about_our-mission.html">Our Mission</a></li>
+                  <li class="submenu-item"><a href="about_contact-us.html">Contact Us</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="nav-control is-desktop">
+              <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
+              <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
+              <a class="btn-dark" href="https://client.wizzsolutions.com">login</a>
+            </div>
+          </div>
+          <div class="modal _is-popout" id="modal-contact">
+            <div class="arrow"></div>
+            <form action="#" name="MYFORM" id="MYFORM">
+              <div class="row block">
+                <div class="g12 col1of2-sm">
+                  <div class="input-group">
+                    <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter Your Name
+                    </div>
+                  </div>
+                </div>
+                <div class="g12 col2of2-sm">
+                  <div class="input-group">
+                    <input class="block" type="text" name="email" placeholder="Email" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter An Email Address
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row block">
+                <div class="input-group">
+                  <textarea class="block" name="message" placeholder="Message" data-dingo="form-validate"></textarea>
+                  <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter A Valid Message
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="g12 col1of2-sm">
+                  <img src="get_captcha.php" alt="" id="captcha-image" class="ib captcha-image">
+                  <div class="captcha-refresh" data-dingo="captchaRefresh"></div>
+                </div>
+                <div class="g12 col2of2-sm">
+                  <div class="input-group">
+                    <input class="block" name="code" type="text" id="code" placeholder="Enter the Captcha Text" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Please Enter The Captcha Text
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row center block">
+                <button class="btn-red" type="submit" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="page">
+        <div class="main">
+          <div class="section">
+            <div class="container">
+              <h1>Acceptable Use Policy</h1>
+              <p>Subscriber acknowledges and agrees that the provision of services to Subscriber by Wizzsolutions.com Group LLC (“Wizzsolutions”), and Subscriber’s acceptance and use of Wizzsolution's services, constitute Subscriber’s acceptance of and agreement to the terms and conditions of this document -- Wizzsolution's Acceptable Use Policy (“Wizzsolution’s AUP”) -- and that Wizzsolution’s AUP is an integral part of, and is incorporated by reference into, the Terms Of Service (“TOS”) Agreement by and between Wizzsolution and Subscriber.</p>
+              <p>Wizzsolution may amend Wizzsolution's AUP from time to time by posting it at <a href="https://client.wizzsolutions.com/index.php?fuse=admin&amp;view=Announcements">https://client.wizzsolutions.com/index.php?fuse=admin&amp;view=Announcements</a>, and Subscriber’s use of Wizzsolution's services after Wizzsolution's posts any such changes on its website shall constitute Subscriber's acceptance of any/all such amendments.</p>
+              <div class="alert">
+                <span class="title">VIOLATIONS</span>
+                <span class="text">
+                  Doing, causing or allowing (whether by act or omission) any of the following, and/or any direct or indirect aiding or abetting of any person or entity to do, cause or allow (whether by act or omission) any of the following, is considered a violation of Wizzsolution's AUP and of the TOS Agreement between Wizzsolutions and Subscriber:
+                </span>
+              </div>
+              <hr>
+              <ol class="tos">
+                <li>
+                  Illegal Activities:
+                  <span class="text">Using Wizzsolutions’s services for illegal purposes or in support of illegal activities, including, but not limited to, transmitting (by email, uploading, posting or otherwise) or distributing, downloading, copying, caching, hosting or storing data, information or content which, in Wizzsolutions’s sole determination, constitutes a violation of any relevant law, regulation, ordinance or court order. Subscriber shall be responsible for determining what laws, regulations, ordinances and court orders are applicable to its use of Wizzsolutions’s services;</span>
+                </li>
+                <li>
+                  Threats:
+                  <span class="text">Using Wizzsolutions’s services to transmit (by email, uploading, posting or otherwise), distribute, download, copy, cache, host or store on a server any material that threatens or encourages bodily harm, destruction of property or any other type of harm;</span>
+                </li>
+                <li>
+                  Harrassment:
+                  <span class="text">Using Wizzsolutions’s services to transmit (by email, uploading, posting or otherwise), distribute, download, copy, cache, host or store on a server any material that harasses or stalks another;</span>
+                </li>
+                <li>
+                  Harmful:
+                  <span class="text">Using Wizzsolutions’s services to transmit (by email, uploading, posting or otherwise), distribute, download, copy, cache, host or store on a server any material that is harmful, abusive, defamatory or libelous;</span>
+                </li>
+                <li>
+                  Violation of Duty:
+                  <span class="text">Using Wizzsolutions’s services to transmit (by email, uploading, posting or otherwise), distribute, download, copy, cache, host or store on a server any material in violation of any duty under any law (including court order), contract or any fiduciary relationship;</span>
+                </li>
+                <li>
+                  Forgery or Impersonation:
+                  <span class="text">Adding, removing, modifying or forging any message header, network header, TCP/IP packet header or any part of any header or information in any transmission (including any email, upload, posting or other transmission), originating or passing through Wizzsolutions’s services, in an effort to deceive or mislead another; impersonating or attempting to impersonate any person or entity in any transmission (including any email, upload, posting or other transmission) originating or passing through Wizzsolutions’s services; misleading or attempting to mislead any person or entity by use of incorrect identifying information. The use of anonymous re-mailers or nicknames does not constitute a violation hereunder. Subscriber must maintain a policy requiring proper “From” and/or “Reply To” headers on all email and usenet postings.</span>
+                </li>
+                <li>
+                  Fraud/Fraudulent Activity:
+                  <span class="text">Using Wizzsolutions’s services in furtherance of or involving any fraudulent activity or fraudulent purpose, or to make any fraudulent offers to sell or buy products, items or services, or to advance any type of financial scam including, but not limited to, pyramid schemes, chain letters or any other financial scam; using Wizzsolutions’s services to effect a misrepresentation or misleading statement, writing or activity;</span>
+                </li>
+                <li>
+                  SPAM / Unsolicited Commercial Email (UCE) / Unsolicited Bulk Email (UBE)
+                  <span class="text">Using Wizzsolutions’s services to: transmit (by email, uploading, posting or otherwise), distribute, download, copy, cache, host or store on a server any spam, UCE or UBE; operate mailing lists, listservs or mailing services that target an audience that has not voluntarily signed up for email information using a double opt-in process or that has not made their email addresses available to Subscriber for distribution of information; effect spamming via third-party proxy, aggregation of proxy lists or installation of proxy mailing software; accept and process third-party messages for sending without user identification and authentication; host, or permit hosting of, web pages, sites or information advertised within SPAM, UCE or UBE from another network (such as spamvertising); violate the CAN-SPAM Act of 2003 (Controlling the Assault of Non-Solicited Pornography and Marketing Act), establishing requirements for sending certain types of commercial mail. IMPORTANT NOTICE: A Subscriber hosting websites or services on Subscriber’s server supporting spammers or resulting in any of Wizzsolutions’s IP space to be listed in any of the various Spam Databases or black hole lists will have its service immediately disconnected. Subscribers who operate mailing lists, listservs or mailing services must a) maintain complete and accurate records of all consents and opt-ins, including the actual emails and their headers, b) provide such records to Wizzsolutions upon request, and c) allow any party on the list to remove itself automatically and permanently. If Subscriber cannot provide proof of such consents and opt-ins, Wizzsolutions will consider the mass mailing to be unsolicited. Subscribers must maintain proper security on their servers to prevent them from being used as SPAM amplifiers by third parties;</span>
+                </li>
+                <li>
+                  Interference:
+                  <span class="text">(Several of the sites called this “threatening the integrity of the network” or “threatening the integrity of another network”)Interfering with, disrupting or adversely affecting, or attempting to interfere with, disrupt or adversely affect, the ability to use Wizzsolutions’s services, the Internet or any other services or equipment (this includes denial of service attacks against another network, host or individual user); using Wizzsolutions’s services to interfere with, disrupt or adversely affect, or to attempt to interfere with, disrupt or adversely affect, the service of any subscriber, subscriber’s sub-users, host, network or system, including, without limitation, via means of overloading, flooding, email bombing, news bombing, crashing or any similar activity; using Wizzsolutions’s services to impede another person’s use of electronic mail services or news; using any program, or sending messages of any kind, designed to interfere with or disable a user’s session;</span>
+                </li>
+                <li>
+                  Usenet SPAMing:
+                  <span class="text">Using Wizzsolutions services for the purpose of transmitting (by email, uploading, posting or otherwise), distribute, download, copy, cache, host or store on a server any material, messages or commercial advertisements that violate the regulations, FAQ’s, charters, policies or other rules of any newsgroup or mailing list. Usenet posts and content must conform to standards established by the Internet community and the applicable newsgroup rules; commercial messages deemed appropriate under the rules of a newsgroup or mailing list, or that are solicited by the recipients, are permitted;</span>
+                </li>
+                <li>
+                  Unauthorized Access (Cracking/Hacking):
+                  <span class="text">Accessing, corrupting or taking, or attempting to access, corrupt or take, any data, information or the accounts of others; logging into a server or account, or entering or using or attempting to enter or use another person’s or entity’s computer system which Subscriber/ Subscriber’s Sub-User is not authorized to access, enter or use; penetrating or attempting to penetrate Wizzsolutions’s security measures or another person’s or entity’s computer software or hardware, electronic communications system, or telecommunications system or security; and any similar activity prohibited by federal or state law;</span>
+                </li>
+                <li>
+                  Infringement on Intellectual Property Rights:
+                  <span class="text">Using Wizzsolutions’s services to transmit (by email, uploading, posting or otherwise), distribute, download, copy, cache, host or store on a server any information, data, content, material or work that infringes any copyright, trademark, service mark, patent, trade secret any or other intellectual property right(s) of any person or entity;</span>
+                </li>
+                <li>
+                  Collection of Personal Data:
+                  <span class="text">Using Wizzsolutions’s services to collect, or to attempt to collect, personal information about third parties without the third party’s(ies’) knowledge or consent;</span>
+                </li>
+                <li>
+                  Unfriendly Activity:
+                  <span class="text">Subscriber’s/ Subscriber’s Sub-User’s (as defined in the TOS Agreement) allowance of others to use its/their network, or permitting its/their network to be configured in such a way that affords a third party the capability to use its/their network, in an illegal, inappropriate or unfriendly manner; causing or initiating security breaches or disruptions of network communication or connectivity; executing any form of activity that intercepts data not intended for Subscriber’s/ Subscriber’s Sub-User’s server(s); evading or circumventing user authentication or security of any host, network or account; engaging in any conduct designed to avoid restrictions or access limits to specific services, hosts or networks; probing, scanning or testing, or attempting to probe, scan or test, the vulnerability of a system or network without proper authorization; breaching or attempting to breach security or authentication measures without proper authorization; taking any action in order to obtain, or attempting to obtain, services to which such Subscriber/ Subscriber’s Sub-User is not entitled;</span>
+                </li>
+                <li>
+                  Distribution of Unwanted Software:
+                  <span class="text">Using Wizzsolutions’s services to effect the intentional distribution of software or computer code, files or programs that causes, or attempts to cause, damage, harassment or annoyance to persons, entities, data and/or computer systems;</span>
+                </li>
+                <li>
+                  Inappropriate Use of Software:
+                  <span class="text">Using Wizzsolutions services to employ software or any device that would facilitate a continued connection (such as pinging) or would negatively affect a person’s or entity’s ability to engage in real time exchanges;</span>
+                </li>
+                <li>
+                  IRC Networks:
+                  <span class="text">Running IRC on Wizzsolutions’s standard network. IRC is allowed only on Wizzsolutions’s separate IRC network.;</span>
+                </li>
+                <li>
+                  IP Addresses:
+                  <span class="text">Using IP addresses that were not assigned to it by Wizzsolutions;</span>
+                </li>
+                <li>
+                  Support to Terrorists:
+                  <span class="text">Using Wizzsolutions services to provide support or resources (including concealing or disguising the nature, location, source, or ownership of support or resources) to any organization designated by the U.S. government as a terrorist organization pursuant Section 219 of the Immigration and Nationality Act;</span>
+                </li>
+                <li>
+                  Gambling:
+                  <span class="text">Using Wizzsolutions services for or to promote gambling that is or may be prohibited or restricted by any state or federal gambling laws or regulations;</span>
+                </li>
+                <li>
+                  Harm to Minors / Child Pornography:
+                  <span class="text">Harm to Minors / Child Pornography: Using Wizzsolutions services to harm minors in any way or transmitting (by email, uploading, posting or otherwise), distributing, downloading, copying, caching, hosting or storing on a server any child pornography as defined by U.S. law. Adult content is allowed; and</span>
+                </li>
+                <li>
+                  Violation of Security:
+                  <span class="text">Violating or attempting to violate the security of Wizzsolutions’s systems. It is Subscriber’s obligation to maintain and enforce these provisions against all of Subscriber’s Sub-users, to maintain its own abuse/postmaster email addresses for reporting abuses and to promptly and appropriately respond to all emails sent to these addresses. Please consult an attorney if you are uncertain of the legal status of your any of your activities. Wizzsolutions will comply with all orders and obligations of any court or government agency. Wizzsolutions expressly disclaims any liability for the data and content residing on its network and for the actions and inactions of its Subscribers, including Subscriber’s Sub-Users</span>
+                </li>
+                <li>
+                  Electrical circuit / Breaker usage:
+                  <span class="text">Maximum loading of any circuit breaker is 80% of rating for non-motor loads. I.E. Usage on 20A circuit breaker must not exceed 16A.</span>
+                </li>
+              </ol>
+            </div> <!-- Container -->
+          </div> <!-- Section -->
+        </div>
+        <div class="section section-red footer" id="footer">
+          <div class="container">
+            <div class="mcenter">
+              <div class="wizz-logo"></div>
+              <div class="footer-copy">&copy; 2013-2014 WizzSolutions</div>
+            </div>
+            <div class="right mcenter">
+              <ul class="nav-menu">
+                <li class="nav-item"><a class="nav-item_trigger" href="index.html">home</a></li>
+                <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+                <li class="nav-item" data-dingo="submenu">
+                  <span class="nav-item_trigger">virtual servers</span>
+                  <div class="nav-submenu-indicator"></div>
+                  <ul class="submenu">
+                    <span class="arrow"></span>
+                    <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+                    <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-dingo="submenu">
+                  <span class="nav-item_trigger">solutions</span>
+                  <div class="nav-submenu-indicator"></div>
+                  <ul class="submenu">
+                    <span class="arrow"></span>
+                    <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+                    <li class="submenu-item"><a href="http://wizzadmin.wizzsolutions.com/">WizzAdmin</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-dingo="submenu">
+                  <span class="nav-item_trigger">about</span>
+                  <div class="nav-submenu-indicator"></div>
+                  <ul class="submenu">
+                    <span class="arrow"></span>
+                    <li class="submenu-item"><a href="about_our-mission.html">Our Mission</a></li>
+                    <li class="submenu-item"><a href="about_contact-us.html">Contact Us</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="social-links">
+                <a href="http://plus.google.com/u/0/116200730376494781301/posts" class="icon-social_google-plus"></a>
+                <a href="http://twitter.com/wizzsolutions" class="icon-social_twitter"></a>
+                <a href="https://www.facebook.com/wizzsolutions" class="icon-social_facebook"></a>
+              </div>
+            </div>
+            <hr>
+            <div class="g12 m24 mrow">
+              <a class="btn-stroke mblock mrow" href="terms-of-service.html">Terms Of Service</a>
+              <a class="btn-stroke mblock mrow" href="acceptable-use-policy.html">Acceptable Use Policy</a>
+            </div>
+            <div class="g12 right m24 mrow mcenter">
+              <div class="fb-like" data-href="http://www.wizzsolutions.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+            </div>
+          </div> <!-- Footer Container -->
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</HTML>

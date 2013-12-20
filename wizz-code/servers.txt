@@ -174,8 +174,8 @@
 </template>
 
 <template name="vps_item">
-  <div class="vps_item block _{{state}}">
-    <div class="server_title is-desktop">{{title}}</div>
+  <div class="vps_item block _{{state?\inactive}}">
+    <div class="server_title">{{title}}</div>
     <div class="server_price">
       <span class="server_price_currency">$</span>
       <span class="server_price_dollar _linux">{{linux-price}}</span>
@@ -190,10 +190,10 @@
         </div>
       </div>
       <div class="vps_spec">
-        <div class="g8 col2of3-sm server_spec">
+        <div class="server_spec">
           <div class="server_spec_desc">RAM</div>
           <div class="server_spec_text">{{ram}}</div>
-          <div class="server_spec_desc">GB</div>
+          <div class="server_spec_desc">{{ram-unit?\GB}}</div>
         </div>
       </div>
       <div class="vps_spec">
@@ -219,7 +219,122 @@
       </div>
     </div>
     <div class="server_feature_cta">
-      <a class="btn-stroke g11" href="{{link}}">Buy</a>
+      <a class="btn-stroke g11" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product={{link}}">Buy</a>
     </div>
+  </div>
+</template>
+
+<template name="feature-banner">
+  <div class="section feature-banner">
+    <div class="container is-desktop">
+      <div class="g6 col1of4">
+        <span class="g24 center feature-banner_icon"><i class="icon-round_feature-{{feature-1_icon}}"></i></span>
+        <span class="feature-banner_title">{{feature-1_title}}</span>
+        <span class="feature-banner_text">{{feature-1_text}}</span>
+      </div>
+      <div class="g6 col2of4">
+        <span class="g24 center feature-banner_icon"><i class="icon-round_feature-{{feature-2_icon}}"></i></span>
+        <span class="feature-banner_title">{{feature-2_title}}</span>
+        <span class="feature-banner_text">{{feature-2_text}}</span>
+      </div>
+      <div class="g6 col3of4">
+        <span class="g24 center feature-banner_icon"><i class="icon-round_feature-{{feature-3_icon}}"></i></span>
+        <span class="feature-banner_title">{{feature-3_title}}</span>
+        <span class="feature-banner_text">{{feature-3_text}}</span>
+      </div>
+      <div class="g6 col4of4">
+        <span class="g24 center feature-banner_icon"><i class="icon-round_feature-{{feature-4_icon}}"></i></span>
+        <span class="feature-banner_title">{{feature-4_title}}</span>
+        <span class="feature-banner_text">{{feature-4_text}}</span>
+      </div>
+      <!-- More text, which is hidden unless toggled -->
+      <div class="feature-banner_more-info">
+        <div class="g6 col1of4">
+          <span class="feature-banner_more-info_text">{{feature-1_more}}</span>
+        </div>
+        <div class="g6 col2of4">
+          <span class="feature-banner_more-info_text">{{feature-2_more}}</span>
+        </div>
+        <div class="g6 col3of4">
+          <span class="feature-banner_more-info_text">{{feature-3_more}}</span>
+        </div>
+        <div class="g6 col4of4">
+          <span class="feature-banner_more-info_text">{{feature-4_more}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="container is-mobile">
+      <div class="row">
+        <div class="m12 col1of2">
+          <span class="g24 center feature-banner_icon"><i class="icon-round_feature-{{feature-1_icon}}"></i></span>
+          <span class="feature-banner_title">{{feature-1_title}}</span>
+          <span class="feature-banner_text">{{feature-1_text}}</span>
+        </div>
+        <div class="m12 col2of2">
+          <span class="g24 center feature-banner_icon"><i class="icon-round_feature-{{feature-2_icon}}"></i></span>
+          <span class="feature-banner_title">{{feature-2_title}}</span>
+          <span class="feature-banner_text">{{feature-2_text}}</span>
+        </div>
+        <div class="feature-banner_more-info">
+          <div class="m12 col1of2">
+            <span class="feature-banner_more-info_text">{{feature-1_more}}</span>
+          </div>
+          <div class="m12 col2of2">
+            <span class="feature-banner_more-info_text">{{feature-2_more}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="m12 col1of2">
+          <span class="g24 center feature-banner_icon"><i class="icon-round_feature-{{feature-3_icon}}"></i></span>
+          <span class="feature-banner_title">{{feature-3_title}}</span>
+          <span class="feature-banner_text">{{feature-3_text}}</span>
+        </div>
+        <div class="m12 col2of2">
+          <span class="g24 center feature-banner_icon"><i class="icon-round_feature-{{feature-4_icon}}"></i></span>
+          <span class="feature-banner_title">{{feature-4_title}}</span>
+          <span class="feature-banner_text">{{feature-4_text}}</span>
+        </div>
+        <div class="feature-banner_more-info">
+          <div class="m12 col1of2">
+            <span class="feature-banner_more-info_text">{{feature-3_more}}</span>
+          </div>
+          <div class="m12 col2of2">
+            <span class="feature-banner_more-info_text">{{feature-4_more}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-banner_toggle" data-dingo="featureBannerToggle">
+      <div class="feature-banner_toggle-icon"></div>
+    </div>
+  </div> <!-- Section Feature Banner -->
+</template>
+
+<template name="cloud-table_mobile">
+  <div class="special-table row-xl is-mobile block">
+    <span class="med g12 red">{{title}}</span>
+    <span class="med g12 right row-sm red"><span class="price">${{price}}</span></span>
+    <span class="g12 col1of2 row">
+      <span class="tiny block"><span class="g12 dark-grey">CPU</span><span class="g12 right grey">{{cpu}}GHz</span></span>
+    </span>
+    <span class="g12 col2of2 row">
+      <span class="tiny block"><span class="g12 dark-grey">RAM</span><span class="g12 right grey">{{ram}}{{ram-units?\GB}}</span></span>
+    </span>
+    <span class="g12 col1of2 row-sm">
+      <span class="tiny block"><span class="g12 dark-grey">HD</span><span class="g12 right grey">{{hd}}{{hd-units?\GB}}</span></span>
+    </span>
+    <span class="g12 col2of2 row-sm">
+      <span class="tiny block"><span class="g12 dark-grey">Bandwidth</span><span class="g12 right grey">{{bandwidth}}Mbps</span></span>
+    </span>
+    <hr class="sm">
+    <span class="block mrow">
+      <span class="tiny block row"><span class="g12 dark-grey">Connection</span><span class="g12 right grey">Premium</span></span>
+      <span class="tiny block row"><span class="g12 dark-grey">IP Addresses</span><span class="g12 right grey">1</span></span>
+      <span class="tiny block row-sm"><span class="g12 dark-grey">Location</span><span class="g12 right grey">Los Angeles, CA</span></span>
+    </span>
+    <span class="m24 center mrow">
+      <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=17&amp;product={{link}}">Buy Now</a>
+    </span>
   </div>
 </template>

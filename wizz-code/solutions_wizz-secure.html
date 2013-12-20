@@ -14,7 +14,7 @@
   </head>
   <body data-dingo="closePopouts drag">
     <div class="page-container">
-      <div class="nav">
+      <div class="nav" id="header">
         <div class="container">
           <a class="wizz-logo" href="index.html"></a>
           <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
@@ -55,13 +55,13 @@
             <div class="nav-control is-desktop">
               <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
               <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
-              <span class="btn-dark" href="https://client.wizzsolutions.com">login</span>
+              <a class="btn-dark" href="https://client.wizzsolutions.com">login</a>
             </div>
           </div>
           <div class="modal _is-popout" id="modal-contact">
             <div class="arrow"></div>
             <form action="#" name="MYFORM" id="MYFORM">
-              <div class="row">
+              <div class="row block">
                 <div class="g12 col1of2-sm">
                   <div class="input-group">
                     <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
@@ -81,13 +81,13 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row block">
                 <div class="input-group">
                   <textarea class="block" name="message" placeholder="Message" data-dingo="form-validate"></textarea>
                   <div class="form-validate-prompt">
                       <span class="arrow"></span>
                       Enter A Valid Message
-                    </div>
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -105,7 +105,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row center">
+              <div class="row center block">
                 <button class="btn-red" type="submit" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
               </div>
             </form>
@@ -120,7 +120,7 @@
                 <div class="row">
                   <i class="icon-round-xl_wizz-secure"></i>
                 </div>
-                <div class="row">
+                <div class="row block">
                   <h1 class="product-title_wizz-secure"></h1>
                   <h3>Managed Server Hardening</h3>
                   <h1 class="dark-grey xl">$29<sup>99</sup></h1>
@@ -134,15 +134,15 @@
           </div> <!-- Section -->
           <div class="section section-dark">
             <div class="container">
-              <div class="g8 col1of3">
+              <div class="g8 col1of3 m24 mrow">
                 <h2>Secure</h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis nato.</p>
               </div>
-              <div class="g8 col2of3">
+              <div class="g8 col2of3 m24 mrow-xl">
                 <h2>Managed</h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis nato.</p>
               </div>
-              <div class="g8 col3of3">
+              <div class="g8 col3of3 m24 mrow-xl">
                 <h2>Supported</h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis nato.</p>
               </div>
@@ -157,49 +157,49 @@
               </div>
               <div class="row-xl">
                 <div class="g12 col1of2 m24 mrow">
-                  <div class="center row">
+                  <div class="center row block">
                     <i class="icon-round_security"></i>
                   </div>
-                  <h3 class="row">Service Performance</h3>
+                  <h3 class="row block">Service Performance</h3>
                   <p>Ensure performance is at the highest possible level. Vulunerable PHP functions will be checked and disabled and MySQL configuration will be optimized for the best possible DB transaction rate.</p>
                 </div>
                 <div class="g12 col2of2 m24 mrow-xl">
-                  <div class="center row">
+                  <div class="center row block">
                     <i class="icon-round_firewall"></i>
                   </div>
-                  <h3 class="row">Firewall &amp; Brute Force Protection</h3>
+                  <h3 class="row block">Firewall &amp; Brute Force Protection</h3>
                   <p>Protect against unathorized access to your server and keep your important files secure.</p>
                 </div>
               </div>
               <div class="row-xl">
                 <div class="g12 col1of2 m24 mrow">
-                  <div class="center row">
+                  <div class="center row block">
                     <i class="icon-round_wizz-secure"></i>
                   </div>
-                  <h3 class="row">Access Lock Down</h3>
+                  <h3 class="row block">Access Lock Down</h3>
                   <p>We will secure your server access to stop intruders. SSH can be configured to disable root logins and restrict access to your home or office IP. </p>
                 </div>
                 <div class="g12 col2of2 m24 mrow-xl">
-                  <div class="center row">
+                  <div class="center row block">
                     <i class="icon-round_optimize"></i>
                   </div>
-                  <h3 class="row">Server Hardening &amp; Optimization</h3>
+                  <h3 class="row block">Server Hardening &amp; Optimization</h3>
                   <p>Harden your server on many levels; kernel, OS, application, and network. We resolve permissions and protect temp directory and shared memory space against attacks.</p>
                 </div>
               </div>
               <div class="row-xl">
                 <div class="g12 col1of2 m24 mrow">
-                  <div class="center row">
+                  <div class="center row block">
                     <i class="icon-round_ddos"></i>
                   </div>
-                  <h3 class="row">HTTP &amp; DoS Protection</h3>
+                  <h3 class="row block">HTTP &amp; DoS Protection</h3>
                   <p>Wizzsecure installs and configures Apache modules to prevent against web application and DoS attacks. Our customized rulesets are updated daily to ensure your server is fully protected.</p>
                 </div>
                 <div class="g12 col2of2 m24 mrow-xl">
-                  <div class="center row">
+                  <div class="center row block">
                     <i class="icon-round_virus"></i>
                   </div>
-                  <h3 class="row">Virus &amp; Malware Protection</h3>
+                  <h3 class="row block">Virus &amp; Malware Protection</h3>
                   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                 </div>
               </div>
@@ -217,57 +217,57 @@
           </div> <!-- Section -->
           <div class="section">
             <div class="container">
-              <h1>More Details</h1>
-              <div class="g8 col1of3-sm m24">
-                <div class="row">
-                  <span class="med">Firewall with Login Failure Detection</span>
+              <h1 class="mrow-xl">More Details</h1>
+              <div class="g8 col1of3-sm m24 mrow-xl">
+                <div class="row mrow-xl">
+                  <span class="text">Firewall with Login Failure Detection</span>
                   <p class="tiny grey">Detect and Block Innapropriate Access</p>
                 </div>
-                <div class="row">
-                  <span class="med">ClamAV Email Scanning, Harden Mail Server</span>
+                <div class="row mrow-xl">
+                  <span class="text">ClamAV Email Scanning, Harden Mail Server</span>
                   <p class="tiny grey">Make sure your mail service never goes down</p>
                 </div>
-                <div class="row">
-                  <span class="med">Mod_security, Mod_evasive &amp; PHP SuExec</span>
+                <div class="row mrow-xl">
+                  <span class="text">Mod_security, Mod_evasive &amp; PHP SuExec</span>
                   <p class="tiny grey">Reduce your web tier vulnerability level</p>
                 </div>
-                <div class="row">
-                  <span class="med">Audit File System &amp; Shared Memory</span>
+                <div class="row mrow-xl">
+                  <span class="text">Audit File System &amp; Shared Memory</span>
                   <p class="tiny grey">Prevents open access &amp; file system vulnerabilties</p>
                 </div>
               </div>
-              <div class="g8 col2of3-sm m24">
-                <div class="row">
+              <div class="g8 col2of3-sm m24 mrow-xl">
+                <div class="row mrow-xl">
                   <span class="text">Secure PHP</span>
                   <p class="tiny grey">Disabled Vulnerable Functions</p>
                 </div>
-                <div class="row">
+                <div class="row mrow-xl">
                   <span class="text">Secure Apache, MySQL</span>
                   <p class="tiny grey">Serve pages faster and more securely</p>
                 </div>
-                <div class="row">
+                <div class="row mrow-xl">
                   <span class="text">Secure SSH</span>
                   <p class="tiny grey">Only you will know how to access your server</p>
                 </div>
-                <div class="row">
+                <div class="row mrow-xl">
                   <span class="text">Remove unused services &amp; processes</span>
                   <p class="tiny grey">Improve performance and free up disk space</p>
                 </div>
               </div>
-              <div class="g8 col3of3-sm m24">
-                <div class="row">
+              <div class="g8 col3of3-sm m24 mrow-xl">
+                <div class="row mrow-xl">
                   <span class="text">Update Control Panel</span>
                   <p class="tiny grey">Get more value from by enabling additional features</p>
                 </div>
-                <div class="row">
+                <div class="row mrow-xl">
                   <span class="text">Shell Fork Bomb / Memory Hog Protection</span>
                   <p class="tiny grey">Protects your server from crashing</p>
                 </div>
-                <div class="row">
+                <div class="row mrow-xl">
                   <span class="text">Sysctl Check and Hardening</span>
                   <p class="tiny grey">Ensure that the hardware is running efficiently</p>
                 </div>
-                <div class="row">
+                <div class="row mrow-xl">
                   <span class="text">Check crontab for any suspicious entries</span>
                   <p class="tiny grey">Gain more effeciency from your existing resources</p>
                 </div>
@@ -277,8 +277,8 @@
           <div class="section section-dark">
             <div class="container">
               <h1>All of this for a one time payment of $29.99</h1>
-              <h2 class="row">What are you waiting for?</h2>
-              <div class="center row">
+              <h2 class="row block">What are you waiting for?</h2>
+              <div class="center row block">
                 <a class="btn-red" href="http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=24&amp;product=88">Buy Now</a>
               </div>
             </div>
@@ -289,11 +289,12 @@
         <div class="container">
           <div class="mcenter">
             <div class="wizz-logo"></div>
+            <div class="footer-copy">&copy; 2013-2014 WizzSolutions</div>
           </div>
           <div class="right mcenter">
             <ul class="nav-menu">
               <li class="nav-item"><a class="nav-item_trigger" href="index.html">home</a></li>
-              <li class="nav-item _active"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+              <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
               <li class="nav-item" data-dingo="submenu">
                 <span class="nav-item_trigger">virtual servers</span>
                 <div class="nav-submenu-indicator"></div>
@@ -303,7 +304,7 @@
                   <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
                 </ul>
               </li>
-              <li class="nav-item" data-dingo="submenu">
+              <li class="nav-item _active" data-dingo="submenu">
                 <span class="nav-item_trigger">solutions</span>
                 <div class="nav-submenu-indicator"></div>
                 <ul class="submenu">

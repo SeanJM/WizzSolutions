@@ -13,7 +13,7 @@
   </head>
   <body data-dingo="closePopouts">
     <div class="page-container">
-      <div class="nav">
+      <div class="nav" id="header">
         <div class="container">
           <a class="wizz-logo" href="index.html"></a>
           <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
@@ -54,13 +54,13 @@
             <div class="nav-control is-desktop">
               <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
               <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
-              <span class="btn-dark" href="https://client.wizzsolutions.com">login</span>
+              <a class="btn-dark" href="https://client.wizzsolutions.com">login</a>
             </div>
           </div>
           <div class="modal _is-popout" id="modal-contact">
             <div class="arrow"></div>
             <form action="#" name="MYFORM" id="MYFORM">
-              <div class="row">
+              <div class="row block">
                 <div class="g12 col1of2-sm">
                   <div class="input-group">
                     <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
@@ -80,13 +80,13 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row block">
                 <div class="input-group">
                   <textarea class="block" name="message" placeholder="Message" data-dingo="form-validate"></textarea>
                   <div class="form-validate-prompt">
                       <span class="arrow"></span>
                       Enter A Valid Message
-                    </div>
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -104,7 +104,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row center">
+              <div class="row center block">
                 <button class="btn-red" type="submit" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
               </div>
             </form>
@@ -134,7 +134,7 @@
                   <span class="hero_server-management"></span>
                   <span class="hero_feature-title block">Server Management</span>
                   <span class="hero_feature-subtitle block">Starting at $199.99</span>
-                  <a class="btn-dark" href="solutions_wizz-admin.html">Learn More</a>
+                  <a class="btn-dark" href="http://wizzadmin.wizzsolutions.com/">Learn More</a>
                 </div>
               </div>
             </div>
@@ -274,21 +274,22 @@
                     <div class="carousel-item _animated-in" id="carousel-testimonial-item_0">
                       <span class="g5 m24 mcenter mrow">
                         <span class="portrait-sm">
-                          <img src="img/testimonials/test01.png">
+                          <img src="img/testimonials/david-b_co-founder_cta_streaming_media_company.png">
                         </span>
                       </span>
                       <span class="g19 m24 mrow">
                         <div class="row">
-                          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                            natoque penatibus et magnis dis parturient montes,
-                            nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                            pellentesque eu, pretium quis, sem. Nulla consequat massa
-                            quis enim.</p>
+                          <!-- Testimonial Text, try to keep it as short as possible -->
+                          <p class="testimonial-text">We've been a customer of Wizz Solutions for three years. Enabling our business growth with
+                            innovative products, diversified locations and competitive pricing. They've been valued
+                            partners in our success and responsive supporters of our problems. Going beyond the simple
+                            sale, they offer architectural solutions that have saved us thousands of dollars and avoided
+                            embarrassing downtime. We deal with many technology providers, including Tier 1 Telco's,
+                            but none of them provide the level of support we get from Wizz.</p>
                         </div>
                         <div class="row-xl">
-                          <p>John Smith</p>
-                          <p><a href="http://www.123Go.com">123Go.com</a></p>
+                          <span class="testimonial-author">David B., Co-founder &amp; CTO</span>
+                          <span class="testimonial-site">Streaming Media Company</span>
                         </div>
                       </span>
                     </div>
@@ -301,16 +302,17 @@
                       </span>
                       <span class="g19 m24 mrow">
                         <div class="row">
-                          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                          <!-- Testimonial Text, try to keep it as short as possible -->
+                          <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                             Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
                             natoque penatibus et magnis dis parturient montes,
                             nascetur ridiculus mus. Donec quam felis, ultricies nec,
                             pellentesque eu, pretium quis, sem. Nulla consequat massa
                             quis enim.</p>
                         </div>
-                        <div class="row-xl">
-                          <p>Kevin Hart</p>
-                          <p><a href="http://www.kevhart.com">kevhart.com</a></p>
+                         <div class="row-xl">
+                          <span class="testimonial-author">David B., Co-founder &amp; CTO</span>
+                          <span class="testimonial-site">Streaming Media Company</span>
                         </div>
                       </span>
                     </div>
@@ -323,16 +325,17 @@
                       </span>
                       <span class="g19 m24 mrow">
                         <div class="row">
-                          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                          <!-- Testimonial Text, try to keep it as short as possible -->
+                          <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                             Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
                             natoque penatibus et magnis dis parturient montes,
                             nascetur ridiculus mus. Donec quam felis, ultricies nec,
                             pellentesque eu, pretium quis, sem. Nulla consequat massa
                             quis enim.</p>
                         </div>
-                        <div class="row-xl">
-                          <p>Harrison Ford</p>
-                          <p><a href="http://www.harrisonford.com">harrisonford.com</a></p>
+                         <div class="row-xl">
+                          <span class="testimonial-author">David B., Co-founder &amp; CTO</span>
+                          <span class="testimonial-site">Streaming Media Company</span>
                         </div>
                       </span>
                     </div>
@@ -371,26 +374,26 @@
                   <span class="portrait row">
                     <img src="img/about/michael.jpg">
                   </span>
-                  <span class="med row">Michael Kahn</span>
+                  <span class="med row block">Michael Kahn</span>
                   <p class="grey">Operations</p>
                 </div>
                 <div class="g8 col2of3 center m24 mrow-xl">
                   <span class="portrait row">
                     <img src="img/about/roman.jpg">
                   </span>
-                  <span class="med row">Roman Markuze</span>
+                  <span class="med row block">Roman Markuze</span>
                   <p class="grey">Sales</p>
                 </div>
                 <div class="g8 col3of3 center m24 mrow-xl">
                   <span class="portrait row">
-                    <img src="img/about/empty-male.jpg">
+                    <img src="img/about/courtnie-smith.jpg">
                   </span>
-                  <span class="med row">Anuraj M</span>
-                  <p class="grey">Support</p>
+                  <span class="med row block">Cournie Smith</span>
+                  <p class="grey">Accounting</p>
                 </div>
               </div>
               <div class="row-xl center">
-                <a class="btn-red" href="about.html">Read More<span class="carat"></span></a>
+                <a class="btn-red" href="about_our-mission.html">Read More<span class="carat"></span></a>
               </div>
             </div>
           </div>
@@ -399,6 +402,7 @@
           <div class="container">
             <div class="mcenter">
               <div class="wizz-logo"></div>
+              <div class="footer-copy">&copy; 2013-2014 WizzSolutions</div>
             </div>
             <div class="right mcenter">
               <ul class="nav-menu">

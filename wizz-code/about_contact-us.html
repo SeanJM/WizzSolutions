@@ -13,7 +13,7 @@
   </head>
   <body data-dingo="closePopouts">
     <div class="page-container">
-      <div class="nav">
+      <div class="nav" id="header">
         <div class="container">
           <a class="wizz-logo" href="index.html"></a>
           <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
@@ -21,7 +21,7 @@
           </span>
           <div class="right">
             <ul class="nav-menu" id="main-navigation">
-              <li class="nav-item _active"><a class="nav-item_trigger" href="index.html">home</a></li>
+              <li class="nav-item"><a class="nav-item_trigger" href="index.html">home</a></li>
               <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
               <li class="nav-item" data-dingo="submenu">
                 <span class="nav-item_trigger">virtual servers</span>
@@ -41,7 +41,7 @@
                   <li class="submenu-item"><a href="http://wizzadmin.wizzsolutions.com/">WizzAdmin</a></li>
                 </ul>
               </li>
-              <li class="nav-item" data-dingo="submenu">
+              <li class="nav-item _active" data-dingo="submenu">
                 <span class="nav-item_trigger">about</span>
                 <div class="nav-submenu-indicator"></div>
                 <ul class="submenu">
@@ -53,18 +53,19 @@
             </ul>
             <div class="nav-control is-desktop">
               <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
-              <span class="btn-dark" href="https://client.wizzsolutions.com">login</span>
+              <a class="btn-red _has-icon" href="#section_contact-us"><i class="icon-mail"></i></a>
+              <a class="btn-dark" href="https://client.wizzsolutions.com">login</a>
             </div>
           </div>
         </div>
       </div>
       <div class="page">
         <div class="main">
-          <div class="section">
+          <div class="section" id="section_contact-us">
             <div class="container">
               <h1>Contact Us</h1>
               <h4>We love hearing from you and what you think about us. Drop us a line anytime and we’d be glad to get back to you.</h4>
-              <form class="g10 l7" action="#" name="MYFORM" id="MYFORM">
+              <form class="g10 l7 m24" action="#" name="MYFORM" id="MYFORM">
                 <div class="g24 row">
                   <div class="input-group">
                     <label for="name">Name</label>
@@ -85,7 +86,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
+                <div class="row block">
                   <div class="input-group">
                     <label for="email">Message</label>
                     <textarea class="block" name="message" data-dingo="form-validate"></textarea>
@@ -118,20 +119,20 @@
           </div> <!-- Section -->
           <div class="section section-dark">
             <div class="container">
-              <div class="g12 col1of2">
+              <div class="g12 col1of2 m24 mrow-xl">
                 <div class="row">
-                  <div class="center row"><i class="icon-round_ticket"></i></div>
-                  <h3 class="row">Submit A Ticket</h3>
+                  <div class="center row block"><i class="icon-round_ticket"></i></div>
+                  <h3 class="row block">Submit A Ticket</h3>
                   <p>Our ticketing system helps us keep track of all of your help history and recent requests. It is documented and can always be referenced. You can submit a ticket either by email or through our client portal.</p>
                 </div>
                 <div class="center row-xl">
                   <a class="btn-red btn-large" href="https://client.wizzsolutions.com/index.php?fuse=support&amp;view=SubmitTicketForm">Submit A Ticket</a>
                 </div>
               </div>
-              <div class="g12 col2of2">
-                <div class="row">
-                  <div class="center row"><i class="icon-round_chat"></i></div>
-                 <h3 class="row">Live Chat</h3>
+              <div class="g12 col2of2 m24 mrow-xl">
+                <div class="row block">
+                  <div class="center row block"><i class="icon-round_chat"></i></div>
+                 <h3 class="row block">Live Chat</h3>
                  <p>Instant access to our highly experienced teams who have helped many people before you resolve their problems. They are corteous, understanding and readily available.</p>
                 </div>
                 <div class="center row-xl">
@@ -142,7 +143,8 @@
           </div> <!-- Section -->
           <div class="section">
             <div class="container">
-              <div class="g8 col1of3">
+              <h1>Additional Contact</h1>
+              <div class="g8 col1of3 m24 mrow-xl">
                 <div class="center g16 l4">
                   <i class="icon-round_hangouts row"></i>
                   <div class="row-xl">
@@ -151,13 +153,13 @@
                       <span class="carat"></span>
                       <ul class="submenu">
                         <span class="arrow"></span>
-                        <li class="submenu-item"><a href="virtual-servers_vps.html">wizzsolutions</a></li>
+                        <li class="submenu-item"><a href="https://plus.google.com/u/0/116200730376494781301/posts">wizzsolutions</a></li>
                       </ul>
                     </span>
                   </div>
                 </div>
               </div>
-              <div class="g8 col2of3">
+              <div class="g8 col2of3 m24 mrow-xl">
                 <div class="center g16 l4">
                   <i class="icon-round_skype row"></i>
                   <div class="row-xl">
@@ -166,14 +168,14 @@
                       <span class="carat"></span>
                       <ul class="submenu">
                         <span class="arrow"></span>
-                        <li class="submenu-item"><a href="virtual-servers_vps.html">wizzsales3</a></li>
-                        <li class="submenu-item"><a href="virtual-servers_vps.html">wizzmike</a></li>
+                        <li class="submenu-item"><a href="skype:wizzsales3?call">wizzsales3</a></li>
+                        <li class="submenu-item"><a href="skype:wizzmike?call">wizzmike</a></li>
                       </ul>
                     </span>
                   </div>
                 </div>
               </div>
-              <div class="g8 col3of3">
+              <div class="g8 col3of3 m24 mrow-xl">
                 <div class="center g16 l4">
                   <i class="icon-round_email row"></i>
                   <div class="row-xl">
@@ -182,26 +184,39 @@
                       <span class="carat"></span>
                       <ul class="submenu">
                         <span class="arrow"></span>
-                        <li class="submenu-item"><a href="virtual-servers_vps.html">Sales</a></li>
-                        <li class="submenu-item"><a href="virtual-servers_vps.html">Support</a></li>
-                        <li class="submenu-item"><a href="virtual-servers_vps.html">Accounting</a></li>
-                        <li class="submenu-item"><a href="virtual-servers_vps.html">Security</a></li>
+                        <li class="submenu-item"><a href="mailto:sales@wizzsolutions.com">Sales</a></li>
+                        <li class="submenu-item"><a href="mailto:support@wizzsolutions.com">Support</a></li>
+                        <li class="submenu-item"><a href="mailto:billing@wizzsolutions.com">Accounting</a></li>
+                        <li class="submenu-item"><a href="mailto:abuse@wizzsolutions.com">Security</a></li>
                       </ul>
                     </span>
                   </div>
                 </div>
               </div>
+              <hr>
+              <div class="g12 center m24 mrow-xl">
+                <h1>Mailing Address</h1>
+                <p> Wizzsolutions.com Group LLC<br>
+                    41 SE 5th St<br>
+                    Suite 1302<br>
+                    Miami, FL 33131</p>
+              </div>
+              <div class="g12 center m24 mrow-xl">
+                <h1>Telephone</h1>
+                <p>1-407-205-WIZZ (9499)</p>
+              </div>
             </div>
-          </div>
+          </div> <!-- Section -->
         </div>
         <div class="section section-red footer" id="footer">
           <div class="container">
             <div class="mcenter">
               <div class="wizz-logo"></div>
+              <div class="footer-copy">&copy; 2013-2014 WizzSolutions</div>
             </div>
             <div class="right mcenter">
               <ul class="nav-menu">
-                <li class="nav-item _active"><a class="nav-item_trigger" href="index.html">home</a></li>
+                <li class="nav-item"><a class="nav-item_trigger" href="index.html">home</a></li>
                 <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
                 <li class="nav-item" data-dingo="submenu">
                   <span class="nav-item_trigger">virtual servers</span>
@@ -221,7 +236,7 @@
                     <li class="submenu-item"><a href="http://wizzadmin.wizzsolutions.com/">WizzAdmin</a></li>
                   </ul>
                 </li>
-                <li class="nav-item" data-dingo="submenu">
+                <li class="nav-item _active" data-dingo="submenu">
                   <span class="nav-item_trigger">about</span>
                   <div class="nav-submenu-indicator"></div>
                   <ul class="submenu">

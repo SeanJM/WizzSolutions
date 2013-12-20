@@ -40,21 +40,35 @@ br {
   color: #7f7f8d;
 }
 
-p {
+p,
+ol.tos li .text {
   line-height: 30px;
 }
 
-p+p {
+ol.tos li .text {
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.alert+p,
+.alert+.text,
+ul+p,
+p+p,
+ul+.text,
+ol.tos .text + .text,
+ol.tos li ul + .text {
   margin-top: 30px;
 }
 
 .text,
 .med,
 .small,
-.tiny {
+.tiny,
+.large {
   display: block;
   text-align: inherit;
 }
+
 
 .tiny {
   font-size: 13px;
@@ -67,6 +81,17 @@ p+p {
 .med {
   font-size: 17px;
   line-height: 20px;
+}
+
+.med .price sup {
+  line-height: 16px;
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.large {
+  font-size: 19px;
+  line-height: 30px;
 }
 
 .section-dark .med {
@@ -94,7 +119,7 @@ h1 {
   font-size: 33px;
   line-height: 50px;
   color: #e24d3d;
-  margin-bottom: 27px;
+  margin-bottom: 37px;
   text-align: center;
 }
 
@@ -146,7 +171,7 @@ h3.xl {
 }
 
 h1 + h3 {
-  margin-top: -30px;
+  margin-top: -25px;
 }
 
 .section-dark h3 {
@@ -162,52 +187,82 @@ h4 {
 }
 
 h1 + h4 {
-  margin-top: -15px;
+  margin-top: -10px;
 }
 
 h5 {
   font-size: 17px;
   line-height: 28px;
+  margin-bottom: 10px;
+}
+
+p+h5 {
+  margin-top: 50px;
 }
 
 hr {
   border: none;
   border-top: 1px solid #e5e5eb;
-  margin: 30px 0;
+  margin: 50px 0;
 }
 
-ul {
+hr.sm {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+ol.tos li + li {
+  margin-top: 30px;
+}
+
+ul,ol {
   text-align: left;
+  margin-left: 20px;
 }
 
-li {
+p+ul,
+.text+ul {
+  margin-top: 20px;
+}
+
+li,
+ol.tos li,
+ol.tos ol li,
+ol.tos ul li {
+  font-size: 15px;
+  line-height: 26px;
+  margin: 7px 0;
+}
+
+ol.tos li {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+ul li {
   padding: 0 0 0 17px;
-  font-size: 16px;
-  line-height: 36px;
   list-style: none;
-  color: #e5e5eb;
   background-image: url(../img/sprites_li.png);
-  background-position: 0 15px;
+  background-position: 0 10px;
   background-repeat: no-repeat;
+}
+
+.section-dark li {
+  color: #e5e5eb;
+}
+
+strong {
+  font-weight: bold;
 }
 
 /* Text Color */
 
-.grey {
-  color: #babac5 !important;
-}
-
-.dark-grey {
-  color: #7f7f8d !important;
-}
-
-.blue {
-  color: #46b3e1;
-}
-
-.green {
-  color: #37b377;
-}
+.grey      { color: #babac5 !important ; }
+.dark-grey { color: #7f7f8d !important ; }
+.blue      { color: #46b3e1            ; }
+.green     { color: #37b377            ; }
+.red       { color: #e24d3d            ; }
 
 /* ------------- The Grid */
 .g3,
@@ -258,6 +313,8 @@ select,
 .mobile-nav-menu_trigger,
 .wizz-logo,
 .tab,
+.main,
+.page,
 .server,
 .vps,
 .vps_item,
@@ -362,7 +419,7 @@ select,
 .left   { text-align: left   ; }
 .center { text-align: center ; }
 
-.block,.row { width: 100% ; }
+.block { width: 100% ; }
 
 [class*="row"] + .row    { margin-top: 20px ; }
 h1 + .row-xl,
@@ -439,7 +496,7 @@ h1 + .row-xl,
 
 .container { width: 960px; text-align: left; position: relative; }
 
-.main { min-height: 700px; }
+.main { min-height: 700px; width: 100%; }
 
 .select-none *,
 .select-none {
@@ -1088,12 +1145,25 @@ th {
   height: 16px;
 }
 
+.page {
+  margin-top: 100px;
+}
+
 /* Navigation */
 
 .nav {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 100px;
   border-bottom: 1px solid #e6e6e6;
+  background: #fff;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -ms-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  transition: height 0.3s;
 }
 
 .wizz-logo {
@@ -1105,10 +1175,21 @@ th {
   position: absolute;
   left: 0;
   top: 26px;
+  -webkit-transition: top 0.3s;
+  -moz-transition: top 0.3s;
+  -ms-transition: top 0.3s;
+  -o-transition: top 0.3s;
+  transition: top 0.3s;
 }
 
 .nav-menu {
   margin-top: 26px;
+  margin-left: 0;
+  -webkit-transition: margin-top 0.3s;
+  -moz-transition: margin-top 0.3s;
+  -ms-transition: margin-top 0.3s;
+  -o-transition: margin-top 0.3s;
+  transition: margin-top 0.3s;
 }
 
 .nav-item {
@@ -1120,6 +1201,7 @@ th {
   cursor: pointer;
   padding: 0;
   background: none;
+  margin: 0;
 }
 
 .nav-item:hover,
@@ -1144,6 +1226,11 @@ th {
   top: 33px;
   left: 50%;
   margin-left: -6px;
+  -webkit-transition: top 0.3s;
+  -moz-transition: top 0.3s;
+  -ms-transition: top 0.3s;
+  -o-transition: top 0.3s;
+  transition: top 0.3s;
 }
 
 .submenu {
@@ -1195,6 +1282,8 @@ th {
 .submenu-item {
   padding: 0;
   background: none;
+  line-height: 36px;
+  margin: 0;
 }
 
 .submenu-item a {
@@ -1215,6 +1304,11 @@ th {
 .nav-control {
   margin-left: 30px;
   margin-top: 28px;
+  -webkit-transition: margin-top 0.3s;
+  -moz-transition: margin-top 0.3s;
+  -ms-transition: margin-top 0.3s;
+  -o-transition: margin-top 0.3s;
+  transition: margin-top 0.3s;
 }
 
 .nav .icon-mail,
@@ -1266,10 +1360,32 @@ th {
   transition: opacity 0.2s,top 0.3s;
 }
 
+/* Sticky Nav */
+
+.header-sticky .nav {
+  height: 60px;
+}
+
+.header-sticky .nav .wizz-logo {
+  top: 9px;
+}
+
+.header-sticky .nav .nav-menu {
+  margin-top: 8px;
+}
+
+.header-sticky .nav .nav-submenu-indicator {
+  top: 28px;
+}
+
+.header-sticky .nav .nav-control {
+  margin-top: 8px;
+}
+
 .modal .arrow {
   position: absolute;
   top: -21px;
-  right: 80px;
+  right: 88px;
   width: 30px;
   height: 30px;
   margin-left: -15px;
@@ -1581,7 +1697,7 @@ th {
 }
 
 .carousel-testimonial-item-container {
-  height: 230px;
+  height: 270px;
 }
 
 .carousel-item {
@@ -1610,6 +1726,21 @@ th {
   -ms-transition: opacity 0.2s, top 0.3s;
   -o-transition: opacity 0.2s, top 0.3s;
   transition: opacity 0.2s, top 0.3s;
+}
+
+/* Testimonials */
+
+.testimonial-author {
+  font-size: 15px;
+  color: #fff;
+  display: block;
+}
+
+.testimonial-site {
+  font-size: 13px;
+  color: #fff;
+  display: block;
+  margin-top: 5px;
 }
 
 /* Feature Banner */
@@ -2345,6 +2476,35 @@ th {
   line-height: 28px;
 }
 
+/* Alert */
+
+.alert {
+  background: #e5e5eb;
+  font-size: 15px;
+  line-height: 26px;
+  padding: 30px 40px;
+  border-radius: 20px;
+  display: block;
+}
+
+li + .alert,
+ol + .alert,
+ul + .alert,
+p + .alert {
+  margin-top: 40px;
+}
+
+.alert .title {
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0 0 5px 0;
+  text-align: left;
+}
+
+.alert .text {
+  text-align: justify;
+}
+
 /* Footer */
 
 .footer {}
@@ -2383,6 +2543,18 @@ th {
 
 .footer .fb-like {
   margin-top: 10px;
+}
+
+.footer-copy {
+  font-size: 10px;
+  color: #fff;
+  position: absolute;
+  top: 38px;
+  left: 66px;
+}
+
+.footer-copy a {
+  color: #FFAA95;
 }
 
 /* Mobile */
@@ -2478,6 +2650,18 @@ th {
     padding-right: 0;
   }
 
+  .m24[class*="l1"],
+  .m24[class*="l2"],
+  .m24.l2,
+  .m24.l3,
+  .m24.l4,
+  .m24.l5,
+  .m24.l6,
+  .m24.l7,
+  .m24.l8 {
+    margin-left: 0;
+  }
+
   [class*="row"]+.mrow {
     margin-top: 20px;
   }
@@ -2552,6 +2736,18 @@ th {
 
   h2 {
     font-size: 18px;
+  }
+
+  h1 + h4 {
+    margin-top: 0;
+  }
+
+  .section-dark h1+h2 {
+    margin-top: 0;
+  }
+
+  hr {
+    margin: 20px 0;
   }
 
   /* Mobile Table */
@@ -2707,7 +2903,7 @@ th {
   }
 
   .carousel-testimonial .carousel-scroll {
-    margin: 0 44px;
+    margin: 0 30px;
   }
 
   .carousel-servers .carousel-scroll {
@@ -2723,6 +2919,11 @@ th {
     height: 430px;
   }
 
+  .testimonial-text,.testimonial-author,.testimonial-site {
+    margin: 0 -20px;
+    text-align: justify;
+  }
+
   /* Mobile Servers */
 
   .server_title {
@@ -2735,6 +2936,11 @@ th {
     line-height: 35px;
     margin-top: 30px;
     margin-bottom: 16px;
+  }
+
+  .vps .server_price {
+    margin-top: 0px;
+    line-height: 38px;
   }
 
   .server_price_currency {
@@ -2758,6 +2964,26 @@ th {
   .server_spec_desc {
     font-size: 10px;
     line-height: 25px;
+  }
+
+  /* VPS */
+
+  .vps_spec {
+    width: 33.3%;
+  }
+
+  .vps_power-meter .slider {
+    width: 162px;
+    margin-left: -80px;
+    background-position: -76px -154px;
+    padding-left: 14px;
+    padding-right: 0;
+  }
+
+  /* Segment */
+
+  .segment {
+    min-width: 60px;
   }
 
   /* Filter module */
@@ -2974,7 +3200,7 @@ th {
   /* Carousel */
 
   .carousel-testimonial-item-container {
-    height: 550px;
+    height: 640px;
   }
 
   /* Feature Banner */
@@ -2988,6 +3214,12 @@ th {
     font-size: 13px;
   }
 
+  /* Mobile VPS */
+
+  .vps {
+    width: 100%;
+  }
+
   /* Footer */
 
   .footer .wizz-logo {
@@ -2995,7 +3227,7 @@ th {
   }
 
   .footer .social-links {
-    margin: 25px 0 0;
+    margin: 45px 0 0;
     border: none;
     padding: 0;
   }
@@ -3006,6 +3238,14 @@ th {
 
   .footer .wizz-logo {
     background-position: -174px -114px;
+  }
+
+  .footer-copy {
+    top: 30px;
+    left: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 }
 

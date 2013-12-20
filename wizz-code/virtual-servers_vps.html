@@ -14,7 +14,7 @@
   </head>
   <body data-dingo="closePopouts drag">
     <div class="page-container">
-      <div class="nav">
+      <div class="nav" id="header">
         <div class="container">
           <a class="wizz-logo" href="index.html"></a>
           <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
@@ -55,13 +55,13 @@
             <div class="nav-control is-desktop">
               <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
               <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
-              <span class="btn-dark" href="https://client.wizzsolutions.com">login</span>
+              <a class="btn-dark" href="https://client.wizzsolutions.com">login</a>
             </div>
           </div>
           <div class="modal _is-popout" id="modal-contact">
             <div class="arrow"></div>
             <form action="#" name="MYFORM" id="MYFORM">
-              <div class="row">
+              <div class="row block">
                 <div class="g12 col1of2-sm">
                   <div class="input-group">
                     <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
@@ -81,13 +81,13 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row block">
                 <div class="input-group">
                   <textarea class="block" name="message" placeholder="Message" data-dingo="form-validate"></textarea>
                   <div class="form-validate-prompt">
                       <span class="arrow"></span>
                       Enter A Valid Message
-                    </div>
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -105,7 +105,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row center">
+              <div class="row center block">
                 <button class="btn-red" type="submit" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
               </div>
             </form>
@@ -114,48 +114,27 @@
       </div>
       <div class="page">
         <div class="main">
-          <div class="section feature-banner">
-            <div class="container">
-              <div class="g6 col1of4">
-                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-ticket"></i></span>
-                <span class="feature-banner_title">24/7</span>
-                <span class="feature-banner_text">Fully Managed Support</span>
-              </div>
-              <div class="g6 col2of4">
-                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-guarantee"></i></span>
-                <span class="feature-banner_title">99.9%</span>
-                <span class="feature-banner_text">Uptime Guarantee</span>
-              </div>
-              <div class="g6 col3of4">
-                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-free"></i></span>
-                <span class="feature-banner_title">FREE</span>
-                <span class="feature-banner_text">VPS Control Panel With Linux</span>
-              </div>
-              <div class="g6 col4of4">
-                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-fast"></i></span>
-                <span class="feature-banner_title">3-6 Hour</span>
-                <span class="feature-banner_text">Average Activation Time</span>
-              </div>
-              <!-- More text, which is hidden unless toggled -->
-              <div class="feature-banner_more-info">
-                <div class="g6 col1of4">
-                  <span class="feature-banner_more-info_text">When you have a problem, do not hesitate to get in touch; create a ticket or use our livechat, we’re always standing by.</span>
-                </div>
-                <div class="g6 col2of4">
-                  <span class="feature-banner_more-info_text">We understand that we’re in the business of keeping you online. We will uphold this promise and ensure you remain online.</span>
-                </div>
-                <div class="g6 col3of4">
-                  <span class="feature-banner_more-info_text">Have full control &amp; manage your virtual environment independently; start, stop and rebuild it at any time.</span>
-                </div>
-                <div class="g6 col4of4">
-                  <span class="feature-banner_more-info_text">Because most of our VPS activations are done within a few hours, you can gain access to your server on the same day.</span>
-                </div>
-              </div>
-            </div>
-            <div class="feature-banner_toggle" data-dingo="featureBannerToggle">
-              <div class="feature-banner_toggle-icon"></div>
-            </div>
-          </div> <!-- Section Feature Banner -->
+          <div data-template="feature-banner">
+            feature-1_icon  : ticket
+            feature-1_title : 24/7
+            feature-1_text  : Fully Managed Support
+            feature-1_more  : When you have a problem, do not hesitate to get in touch; create a ticket or use our livechat, we’re always standing by.
+
+            feature-2_icon  : guarantee
+            feature-2_title : 99.9%
+            feature-2_text  : Uptime Guarantee
+            feature-2_more  : We understand that we’re in the business of keeping you online. We will uphold this promise and ensure you remain online.
+
+            feature-3_icon  : free
+            feature-3_title : FREE
+            feature-3_text  : VPS Control Panel With Linux
+            feature-3_more  : Have full control &amp; manage your virtual environment independently; start, stop and rebuild it at any time.
+
+            feature-4_icon  : fast
+            feature-4_title : 3-6 Hour
+            feature-4_text  : Average Activation Time
+            feature-4_more  : Because most of our VPS activations are done within a few hours, you can gain access to your server on the same day.
+          </div>
           <div class="section">
             <div class="container">
               <div class="center">
@@ -167,46 +146,72 @@
                   <div class="tab_content-container" id="vps-tabs">
                     <div class="tab_content _active _linux" id="vps_standard">
                       <div data-template="vps_item">
-                        title: Standard Virtual Private Server 1
-                        linux-price: 9<sup>95</sup>
-                        windows-price: 12<sup>95</sup>
-                        cpu: 2.6
-                        ram: 2
-                        hd: 500
-                        uplink: 100
-                        bandwidth: 1000
-                        state: active
+                        title         : Standard Small
+                        linux-price   : 9<sup>95</sup>
+                        windows-price : 15<sup>95</sup>
+                        cpu           : 1
+                        ram           : 512
+                        ram-unit      : MB
+                        hd            : 20
+                        uplink        : 100
+                        bandwidth     : 1,000
+                        state         : active
+                        link          : 22
                       </div>
                       <div data-template="vps_item">
-                        title: Standard Virtual Private Server 2
-                        linux-price: 19<sup>95</sup>
-                        windows-price: 22<sup>95</sup>
-                        cpu: 3.6
-                        ram: 4
-                        hd: 1000
-                        uplink: 100
-                        bandwidth: 1000
+                        title: Standard Small+
+                        linux-price   : 14<sup>95</sup>
+                        windows-price : 20<sup>95</sup>
+                        cpu           : 1.5
+                        ram           : 1
+                        hd            : 50
+                        uplink        : 100
+                        bandwidth     : 1,000
+                        link          : 23
                       </div>
                       <div data-template="vps_item">
-                        title: Standard Virtual Private Server 3
-                        linux-price: 29<sup>95</sup>
-                        windows-price: 32<sup>95</sup>
-                        cpu: 3.6
-                        ram: 4
-                        hd: 1000
-                        uplink: 100
-                        os: linux
-                        bandwidth: 1000
+                        title         : Standard Medium
+                        linux-price   : 28<sup>45</sup>
+                        windows-price : 34<sup>45</sup>
+                        cpu           : 2
+                        ram           : 1.5
+                        hd            : 100
+                        uplink        : 100
+                        bandwidth     : 2,000
+                        link          : 24
                       </div>
                       <div data-template="vps_item">
-                        title: Standard Virtual Private Server 4
-                        linux-price: 39<sup>95</sup>
-                        windows-price: 42<sup>95</sup>
-                        cpu: 3.6
-                        ram: 4
-                        hd: 1000
-                        uplink: 100
-                        bandwidth: 1000
+                        title         : Standard Medium+
+                        linux-price   : 42<sup>45</sup>
+                        windows-price : 48<sup>45</sup>
+                        cpu           : 2.5
+                        ram           : 2.5
+                        hd            : 150
+                        uplink        : 100
+                        bandwidth     : 2,000
+                        link          : 25
+                      </div>
+                      <div data-template="vps_item">
+                        title         : Standard Large
+                        linux-price   : 56<sup>45</sup>
+                        windows-price : 62<sup>45</sup>
+                        cpu           : 3
+                        ram           : 3
+                        hd            : 200
+                        uplink        : 100
+                        bandwidth     : 4,000
+                        link          : 26
+                      </div>
+                      <div data-template="vps_item">
+                        title         : Standard Large+
+                        linux-price   : 69<sup>95</sup>
+                        windows-price : 75<sup>95</sup>
+                        cpu           : 4
+                        ram           : 4
+                        hd            : 250
+                        uplink        : 100
+                        bandwidth     : 4,000
+                        link          : 27
                       </div>
                       <div class="vps_power-meter">
                         <div class="vps_power-meter_title">VPS POWER METER</div>
@@ -214,8 +219,8 @@
                           <div class="vps_power-meter_next" data-dingo="sliderNext{which: standard_vps-power-slider}"></div>
                           <div class="vps_power-meter_prev" data-dingo="sliderPrev{which: standard_vps-power-slider}"></div>
                           <div data-template="slider">
-                            range: Basic,Advanced,Elite,Super Elite
-                            default-right: Basic
+                            range: Small,Small+,Medium,Medium+,Large,Large+
+                            default-right: Small
                             function: vpsPower
                             which: standard
                             id: standard_vps-power-slider
@@ -231,45 +236,71 @@
                     </div>
                     <div class="tab_content _linux" id="vps_ssd">
                       <div data-template="vps_item">
-                        title: SSD Virtual Private Server 1
-                        linux-price: 19<sup>95</sup>
-                        windows-price: 22<sup>95</sup>
-                        cpu: 2.6
-                        ram: 2
-                        hd: 500
-                        uplink: 100
-                        bandwidth: 1000
-                        state: active
+                        title         : SSD Small
+                        linux-price   : 19<sup>95</sup>
+                        windows-price : 22<sup>95</sup>
+                        cpu           : 2.6
+                        ram           : 2
+                        hd            : 500
+                        uplink        : 100
+                        bandwidth     : 1000
+                        state         : active
+                        link          : http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=22
                       </div>
                       <div data-template="vps_item">
-                        title: SSD Virtual Private Server 2
-                        linux-price: 29<sup>95</sup>
-                        windows-price: 32<sup>95</sup>
-                        cpu: 3.6
-                        ram: 4
-                        hd: 1000
-                        uplink: 100
-                        bandwidth: 1000
+                        title         : SSD Small+
+                        linux-price   : 29<sup>95</sup>
+                        windows-price : 32<sup>95</sup>
+                        cpu           : 3.6
+                        ram           : 4
+                        hd            : 1000
+                        uplink        : 100
+                        bandwidth     : 1000
+                        link          : http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=23
                       </div>
                       <div data-template="vps_item">
-                        title: SSD Virtual Private Server 3
-                        linux-price: 39<sup>95</sup>
-                        windows-price: 42<sup>95</sup>
-                        cpu: 3.6
-                        ram: 4
-                        hd: 2000
-                        uplink: 1000
-                        bandwidth: 1000
+                        title         : SSD Medium
+                        linux-price   : 39<sup>95</sup>
+                        windows-price : 42<sup>95</sup>
+                        cpu           : 3.6
+                        ram           : 4
+                        hd            : 2000
+                        uplink        : 1000
+                        bandwidth     : 1000
+                        link          : http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=24
                       </div>
                       <div data-template="vps_item">
-                        title: SSD Virtual Private Server 4
-                        linux-price: 49<sup>95</sup>
-                        windows-price: 52<sup>95</sup>
-                        cpu: 3.6
-                        ram: 4
-                        hd: 3000
-                        uplink: 1000
-                        bandwidth: 1000
+                        title         : SSD Medium+
+                        linux-price   : 49<sup>95</sup>
+                        windows-price : 52<sup>95</sup>
+                        cpu           : 3.6
+                        ram           : 4
+                        hd            : 3000
+                        uplink        : 1000
+                        bandwidth     : 1000
+                        link          : http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=25
+                      </div>
+                      <div data-template="vps_item">
+                        title         : SSD Large
+                        linux-price   : 39<sup>95</sup>
+                        windows-price : 42<sup>95</sup>
+                        cpu           : 3.6
+                        ram           : 4
+                        hd            : 2000
+                        uplink        : 1000
+                        bandwidth     : 1000
+                        link          : http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=26
+                      </div>
+                      <div data-template="vps_item">
+                        title         : SSD Large+
+                        linux-price   : 49<sup>95</sup>
+                        windows-price : 52<sup>95</sup>
+                        cpu           : 3.6
+                        ram           : 4
+                        hd            : 3000
+                        uplink        : 1000
+                        bandwidth     : 1000
+                        link          : http://client.wizzsolutions.com/order.php?step=1&amp;productGroup=11&amp;product=27
                       </div>
                       <div class="vps_power-meter">
                         <div class="vps_power-meter_title">VPS POWER METER</div>
@@ -277,11 +308,11 @@
                           <div class="vps_power-meter_next" data-dingo="sliderNext{which: ssd_vps-power-slider}"></div>
                           <div class="vps_power-meter_prev" data-dingo="sliderPrev{which: ssd_vps-power-slider}"></div>
                           <div data-template="slider">
-                            range: Basic,Advanced,Elite,Super Elite
-                            default-right: Basic
-                            function: vpsPower
-                            which: ssd
-                            id: ssd_vps-power-slider
+                            range         : Small,Small+,Medium,Medium+,Large,Large+
+                            default-right : Small
+                            function      : vpsPower
+                            which         : ssd
+                            id            : ssd_vps-power-slider
                           </div>
                         </div>
                         <div class="vps_segment-control">
@@ -302,7 +333,7 @@
               <div class="g8 col1of3 m24 mrow">
                 <div class="center">
                   <i class="icon-round_windows row"></i>
-                  <h2 class="row blue">Windows</h2>
+                  <h2 class="row blue block">Windows</h2>
                   <ul>
                     <li>Windows Server 2003, 2008 or 2012</li>
                     <li>Full Administrator Access via RDP</li>
@@ -314,7 +345,7 @@
               <div class="g8 col2of3 m24 mrow">
                 <div class="center">
                   <i class="icon-round_linux row"></i>
-                  <h2 class="row green">Linux</h2>
+                  <h2 class="row green block">Linux</h2>
                   <ul>
                     <li>Many Linux Distros Available</li>
                     <li>Full Root Access</li>
@@ -326,7 +357,7 @@
               <div class="g8 col3of3 m24 mrow">
                 <div class="center">
                   <i class="icon-round_all-os row"></i>
-                  <h2 class="row">All Servers</h2>
+                  <h2 class="row block">All Servers</h2>
                   <ul>
                     <li>Fully Managed with WizzSecure Lite</li>
                     <li>Root / Administrator</li>
@@ -337,11 +368,11 @@
               </div>
             </div>
           </div> <!-- Section -->
-          <div class="section" id="section_all-servers">
+          <div class="section is-desktop" id="section_all-servers">
             <div class="container">
               <h1>All of our VPS servers</h1>
-              <h4 class="row">This list is the same as the VPS server widget featured above</h4>
-              <div class="center row">
+              <h4 class="row block">This list is the same as the VPS server widget featured above</h4>
+              <div class="center row block">
                 <div class="segment-control g14">
                   <div class="segment _first _active g12" data-dingo="segmentSelect{function: segmentToggle; which: vps-table_standard}">Standard</div>
                   <div class="segment _last g12" data-dingo="segmentSelect{function: segmentToggle; which: vps-table_ssd}">SSD</div>
@@ -608,13 +639,13 @@
             <div class="container">
               <h1>Upgrades</h1>
               <h4>All prices are billed on a montly cycle</h4>
-              <div class="row">
+              <div class="row block">
                 <div class="g12 col1of2">
                   <div class="center">
                     <i class="icon-round_os row"></i>
-                    <h4 class="row">Operating System</h4>
+                    <h4 class="row block">Operating System</h4>
                   </div>
-                  <div class="row">
+                  <div class="row block">
                     <div class="g20">
                       <p>Linux OS
                         <span class="more-popout-container" data-dingo="morePopout">
@@ -634,7 +665,7 @@
                       <p>$0.00</p>
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="row block">
                     <div class="g20">
                       <p>Windows OS
                         <span class="more-popout-container" data-dingo="morePopout">
@@ -661,10 +692,10 @@
                 <div class="g12 col2of2">
                   <div class="center">
                     <i class="icon-round_control-panel row"></i>
-                    <h4 class="row">Control Panel</h4>
+                    <h4 class="row block">Control Panel</h4>
                   </div>
-                  <div class="row">
-                    <div class="row-sm">
+                  <div class="row block">
+                    <div class="row-sm block">
                       <span class="text g20">cPanel / WHM</span>
                       <span class="text g4">$14.95</p>
                     </div>
@@ -687,9 +718,9 @@
                 <div class="g12 col1of2">
                   <div class="center">
                     <i class="icon-round_home row"></i>
-                    <h4 class="row">IP Addresses</h4>
+                    <h4 class="row block">IP Addresses</h4>
                   </div>
-                  <div class="row">
+                  <div class="row block">
                     <div class="row-sm">
                       <span class="text g20">/ 29 (5 Usable)</span>
                       <span class="text g4">$7.00</p>
@@ -707,9 +738,9 @@
                 <div class="g12 col2of2">
                   <div class="center">
                     <i class="icon-round_install row"></i>
-                    <h4 class="row">Auto Installers</h4>
+                    <h4 class="row block">Auto Installers</h4>
                   </div>
-                  <div class="row">
+                  <div class="row block">
                     <div class="row-sm">
                       <span class="text g20">Fantastico Deluxe</span>
                       <span class="text g4">$4.95</p>
@@ -723,9 +754,9 @@
               </div>
             </div>
           </div> <!-- Section Grey -->
-          <div class="section section-dark">
+          <div class="section section-dark is-desktop">
             <div class="container">
-              <h3 class="row">All Upgrades are configurable at checkout</h3>
+              <h3 class="row block">All Upgrades are configurable at checkout</h3>
               <div class="center row-xl">
                 <a class="btn-red" href="#section_all-servers">Select A Server</a>
               </div>
@@ -737,12 +768,13 @@
         <div class="container">
           <div class="mcenter">
             <div class="wizz-logo"></div>
+            <div class="footer-copy">&copy; 2013-2014 WizzSolutions</div>
           </div>
           <div class="right mcenter">
             <ul class="nav-menu">
               <li class="nav-item"><a class="nav-item_trigger" href="index.html">home</a></li>
-              <li class="nav-item _active"><a class="nav-item_trigger" href="servers.html">servers</a></li>
-              <li class="nav-item" data-dingo="submenu">
+              <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+              <li class="nav-item _active" data-dingo="submenu">
                 <span class="nav-item_trigger">virtual servers</span>
                 <div class="nav-submenu-indicator"></div>
                 <ul class="submenu">

@@ -14,7 +14,7 @@
   </head>
   <body data-dingo="closePopouts drag">
     <div class="page-container">
-      <div class="nav">
+      <div class="nav" id="header">
         <div class="container">
           <a class="wizz-logo" href="index.html"></a>
           <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
@@ -55,13 +55,13 @@
             <div class="nav-control is-desktop">
               <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
               <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
-              <span class="btn-dark" href="https://client.wizzsolutions.com">login</span>
+              <a class="btn-dark" href="https://client.wizzsolutions.com">login</a>
             </div>
           </div>
           <div class="modal _is-popout" id="modal-contact">
             <div class="arrow"></div>
             <form action="#" name="MYFORM" id="MYFORM">
-              <div class="row">
+              <div class="row block">
                 <div class="g12 col1of2-sm">
                   <div class="input-group">
                     <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
@@ -81,13 +81,13 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row block">
                 <div class="input-group">
                   <textarea class="block" name="message" placeholder="Message" data-dingo="form-validate"></textarea>
                   <div class="form-validate-prompt">
                       <span class="arrow"></span>
                       Enter A Valid Message
-                    </div>
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -105,7 +105,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row center">
+              <div class="row center block">
                 <button class="btn-red" type="submit" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
               </div>
             </form>
@@ -114,54 +114,33 @@
       </div>
       <div class="page">
         <div class="main">
-          <div class="section feature-banner">
-            <div class="container">
-              <div class="g6 col1of4">
-                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-ticket"></i></span>
-                <span class="feature-banner_title">24/7</span>
-                <span class="feature-banner_text">Fully Managed Support</span>
-              </div>
-              <div class="g6 col2of4">
-                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-guarantee"></i></span>
-                <span class="feature-banner_title">99.9%</span>
-                <span class="feature-banner_text">Uptime Guarantee</span>
-              </div>
-              <div class="g6 col3of4">
-                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-free"></i></span>
-                <span class="feature-banner_title">FREE</span>
-                <span class="feature-banner_text">VPS Control Panel With Linux</span>
-              </div>
-              <div class="g6 col4of4">
-                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-fast"></i></span>
-                <span class="feature-banner_title">3-6 Hour</span>
-                <span class="feature-banner_text">Average Activation Time</span>
-              </div>
-              <!-- More text, which is hidden unless toggled -->
-              <div class="feature-banner_more-info">
-                <div class="g6 col1of4">
-                  <span class="feature-banner_more-info_text">When you have a problem, do not hesitate to get in touch; create a ticket or use our livechat, we’re always standing by.</span>
-                </div>
-                <div class="g6 col2of4">
-                  <span class="feature-banner_more-info_text">We understand that we’re in the business of keeping you online. We will uphold this promise and ensure you remain online.</span>
-                </div>
-                <div class="g6 col3of4">
-                  <span class="feature-banner_more-info_text">Have full control &amp; manage your virtual environment independently; start, stop and rebuild it at any time.</span>
-                </div>
-                <div class="g6 col4of4">
-                  <span class="feature-banner_more-info_text">Because most of our VPS activations are done within a few hours, you can gain access to your server on the same day.</span>
-                </div>
-              </div>
-            </div>
-            <div class="feature-banner_toggle" data-dingo="featureBannerToggle">
-              <div class="feature-banner_toggle-icon"></div>
-            </div>
-          </div> <!-- Section Feature Banner -->
+          <div data-template="feature-banner">
+            feature-1_icon  : ticket
+            feature-1_title : 24/7
+            feature-1_text  : Fully Managed Support
+            feature-1_more  : When you have a problem, do not hesitate to get in touch; create a ticket or use our livechat, we’re always standing by.
+
+            feature-2_icon  : guarantee
+            feature-2_title : 99.9%
+            feature-2_text  : Uptime Guarantee
+            feature-2_more  : We understand that we’re in the business of keeping you online. We will uphold this promise and ensure you remain online.
+
+            feature-3_icon  : free
+            feature-3_title : FREE
+            feature-3_text  : VPS Control Panel With Linux
+            feature-3_more  : Have full control &amp; manage your virtual environment independently; start, stop and rebuild it at any time.
+
+            feature-4_icon  : fast
+            feature-4_title : 3-6 Hour
+            feature-4_text  : Average Activation Time
+            feature-4_more  : Because most of our VPS activations are done within a few hours, you can gain access to your server on the same day.
+          </div>
           <div class="section" id="section_all-servers">
             <div class="container">
               <h1>Cloud Servers</h1>
-              <h4 class="row">Select a cloud server from our various plans</h4>
+              <h4 class="row block">Select a cloud server from our various plans</h4>
               <!-- Standard Hard Drive -->
-              <div class="special-table row-xl">
+              <div class="special-table row-xl is-desktop">
                 <div class="g20 l4">
                   <!-- Price, Label -->
                   <div class="special-table_heading g1of5">
@@ -262,7 +241,58 @@
                   </div>
                 </div> <!-- Special Table Footer -->
               </div> <!-- Special Table -->
-
+              <div data-template="cloud-table_mobile">
+                title     : Cloud 1
+                price     : 9<sup>95</sup>
+                cpu       : 1
+                ram       : 256
+                ram-units : MB
+                hd        : 10
+                bandwidth : 5
+                link      : 79
+              </div>
+              <hr>
+              <div data-template="cloud-table_mobile">
+                title     : Cloud 2
+                price     : 14<sup>45</sup>
+                cpu       : 1
+                ram       : 512
+                ram-units : MB
+                hd        : 25
+                bandwidth : 20
+                link      : 80
+              </div>
+              <hr>
+              <div data-template="cloud-table_mobile">
+                title     : Cloud 3
+                price     : 28<sup>55</sup>
+                cpu       : 2
+                ram       : 2
+                hd        : 100
+                bandwidth : 30
+                link      : 63
+              </div>
+              <hr>
+              <div data-template="cloud-table_mobile">
+                title     : Cloud 4
+                price     : 42<sup>45</sup>
+                cpu       : 4
+                ram       : 8
+                hd        : 500
+                bandwidth : 50
+                link      : 81
+              </div>
+              <hr>
+              <div data-template="cloud-table_mobile">
+                title     : Cloud 5
+                price     : 56<sup>45</sup>
+                cpu       : 8
+                ram       : 16
+                hd        : 1
+                hd-units  : TB
+                bandwidth : 100
+                link      : 82
+              </div>
             </div>
           </div> <!-- VPS Table Section -->
           <div class="section section-dark">
@@ -270,7 +300,7 @@
               <div class="g8 col1of3 m24 mrow">
                 <div class="center">
                   <i class="icon-round_windows row"></i>
-                  <h2 class="row blue">Windows</h2>
+                  <h2 class="row blue block">Windows</h2>
                   <ul>
                     <li>Windows Server 2003, 2008 or 2012</li>
                     <li>Full Administrator Access via RDP</li>
@@ -282,7 +312,7 @@
               <div class="g8 col2of3 m24 mrow">
                 <div class="center">
                   <i class="icon-round_linux row"></i>
-                  <h2 class="row green">Linux</h2>
+                  <h2 class="row green block">Linux</h2>
                   <ul>
                     <li>Many Linux Distros Available</li>
                     <li>Full Root Access</li>
@@ -294,7 +324,7 @@
               <div class="g8 col3of3 m24 mrow">
                 <div class="center">
                   <i class="icon-round_all-os row"></i>
-                  <h2 class="row">All Servers</h2>
+                  <h2 class="row block">All Servers</h2>
                   <ul>
                     <li>Fully Managed with WizzSecure Lite</li>
                     <li>Root / Administrator</li>
@@ -313,8 +343,8 @@
           </div> <!-- Section -->
           <div class="section section-dark">
             <div class="container">
-              <h3 class="row">Choose a cloud hosting plan for flexible high availability application hosting today</h3>
-              <div class="center row-xl">
+              <h3 class="row block">Choose a cloud hosting plan for flexible high availability application hosting today</h3>
+              <div class="center row block">
                 <a class="btn-red" href="#section_all-servers">Select A Server</a>
               </div>
             </div>
@@ -325,12 +355,13 @@
         <div class="container">
           <div class="mcenter">
             <div class="wizz-logo"></div>
+            <div class="footer-copy">&copy; 2013-2014 WizzSolutions</div>
           </div>
           <div class="right mcenter">
             <ul class="nav-menu">
               <li class="nav-item"><a class="nav-item_trigger" href="index.html">home</a></li>
-              <li class="nav-item _active"><a class="nav-item_trigger" href="servers.html">servers</a></li>
-              <li class="nav-item" data-dingo="submenu">
+              <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+              <li class="nav-item _active" data-dingo="submenu">
                 <span class="nav-item_trigger">virtual servers</span>
                 <div class="nav-submenu-indicator"></div>
                 <ul class="submenu">

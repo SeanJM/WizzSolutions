@@ -14,7 +14,7 @@
   </head>
   <body data-dingo="closePopouts drag">
     <div class="page-container">
-      <div class="nav">
+      <div class="nav" id="header">
         <div class="container">
           <a class="wizz-logo" href="index.html"></a>
           <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
@@ -55,13 +55,13 @@
             <div class="nav-control is-desktop">
               <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
               <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
-              <span class="btn-dark" href="https://client.wizzsolutions.com">login</span>
+              <a class="btn-dark" href="https://client.wizzsolutions.com">login</a>
             </div>
           </div>
           <div class="modal _is-popout" id="modal-contact">
             <div class="arrow"></div>
             <form action="#" name="MYFORM" id="MYFORM">
-              <div class="row">
+              <div class="row block">
                 <div class="g12 col1of2-sm">
                   <div class="input-group">
                     <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
@@ -81,13 +81,13 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row block">
                 <div class="input-group">
                   <textarea class="block" name="message" placeholder="Message" data-dingo="form-validate"></textarea>
                   <div class="form-validate-prompt">
                       <span class="arrow"></span>
                       Enter A Valid Message
-                    </div>
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -105,7 +105,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row center">
+              <div class="row center block">
                 <button class="btn-red" type="submit" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
               </div>
             </form>
@@ -114,93 +114,30 @@
       </div>
       <div class="page">
         <div class="main">
-          <div class="section feature-banner">
-            <div class="container is-desktop">
-              <div class="g6 col1of4">
-                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-ticket"></i></span>
-                <span class="feature-banner_title">24/7</span>
-                <span class="feature-banner_text">Fully Managed Support</span>
-              </div>
-              <div class="g6 col2of4">
-                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-guarantee"></i></span>
-                <span class="feature-banner_title">99.9%</span>
-                <span class="feature-banner_text">Uptime Guarantee</span>
-              </div>
-              <div class="g6 col3of4">
-                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-free"></i></span>
-                <span class="feature-banner_title">FREE</span>
-                <span class="feature-banner_text">OS Reinstalls</span>
-              </div>
-              <div class="g6 col4of4">
-                <span class="g24 center feature-banner_icon"><i class="icon-round_feature-optimize"></i></span>
-                <span class="feature-banner_title">OPTIMIZED</span>
-                <span class="feature-banner_text">Networks For Streaming</span>
-              </div>
-              <!-- More text, which is hidden unless toggled -->
-              <div class="feature-banner_more-info">
-                <div class="g6 col1of4">
-                  <span class="feature-banner_more-info_text">When you have a problem, do not hesitate to get in touch; create a ticket or use our livechat, we’re always standing by.</span>
-                </div>
-                <div class="g6 col2of4">
-                  <span class="feature-banner_more-info_text">We understand that we’re in the business of keeping you online. We will uphold this promise and ensure you remain online.</span>
-                </div>
-                <div class="g6 col3of4">
-                  <span class="feature-banner_more-info_text">No surprise charges and no hidden fees. We won’t for charge small server maintenance tasks.</span>
-                </div>
-                <div class="g6 col4of4">
-                  <span class="feature-banner_more-info_text">The networks that we choose, are robust. They can handle the traffic required for high bandwidth streaming.</span>
-                </div>
-              </div>
-            </div>
-            <div class="container is-mobile">
-              <div class="row">
-                <div class="m12 col1of2">
-                  <span class="g24 center feature-banner_icon"><i class="icon-round_feature-ticket"></i></span>
-                  <span class="feature-banner_title">24/7</span>
-                  <span class="feature-banner_text">Managed Support</span>
-                </div>
-                <div class="m12 col2of2">
-                  <span class="g24 center feature-banner_icon"><i class="icon-round_feature-guarantee"></i></span>
-                  <span class="feature-banner_title">99.9%</span>
-                  <span class="feature-banner_text">Uptime Guarantee</span>
-                </div>
-                <div class="feature-banner_more-info">
-                  <div class="m12 col1of2">
-                    <span class="feature-banner_more-info_text">When you have a problem, do not hesitate to get in touch; create a ticket or use our livechat, we’re always standing by.</span>
-                  </div>
-                  <div class="m12 col2of2">
-                    <span class="feature-banner_more-info_text">We understand that we’re in the business of keeping you online. We will uphold this promise and ensure you remain online.</span>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="m12 col1of2">
-                  <span class="g24 center feature-banner_icon"><i class="icon-round_feature-free"></i></span>
-                  <span class="feature-banner_title">FREE</span>
-                  <span class="feature-banner_text">OS Reinstalls</span>
-                </div>
-                <div class="m12 col2of2">
-                  <span class="g24 center feature-banner_icon"><i class="icon-round_feature-optimize"></i></span>
-                  <span class="feature-banner_title">OPTIMIZED</span>
-                  <span class="feature-banner_text">Networks</span>
-                </div>
-                <div class="feature-banner_more-info">
-                  <div class="m12 col1of2">
-                    <span class="feature-banner_more-info_text">No surprise charges and no hidden fees. We won’t for charge small server maintenance tasks.</span>
-                  </div>
-                  <div class="m12 col2of2">
-                    <span class="feature-banner_more-info_text">The networks that we choose, are robust. They can handle the traffic required for high bandwidth streaming.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="feature-banner_toggle" data-dingo="featureBannerToggle">
-              <div class="feature-banner_toggle-icon"></div>
-            </div>
-          </div> <!-- Section Feature Banner -->
+          <div data-template="feature-banner">
+            feature-1_icon  : ticket
+            feature-1_title : 24/7
+            feature-1_text  : Fully Managed Support
+            feature-1_more  : When you have a problem, do not hesitate to get in touch; create a ticket or use our livechat, we’re always standing by.
+
+            feature-2_icon  : guarantee
+            feature-2_title : 99.9%
+            feature-2_text  : Uptime Guarantee
+            feature-2_more  : We understand that we’re in the business of keeping you online. We will uphold this promise and ensure you remain online.
+
+            feature-3_icon  : free
+            feature-3_title : FREE
+            feature-3_text  : OS Reinstalls
+            feature-3_more  : No surprise charges and no hidden fees. We won’t for charge small server maintenance tasks.
+
+            feature-4_icon  : optimize
+            feature-4_title : OPTIMIZED
+            feature-4_text  : Networks For Streaming
+            feature-4_more  : The networks that we choose, are robust. They can handle the traffic required for high bandwidth streaming.
+          </div>
           <div class="section">
             <div class="container">
-              <div class="carousel carousel-servers row" id="carousel-servers">
+              <div class="carousel carousel-servers row block" id="carousel-servers">
                 <div class="carousel-selections">
                   <div class="g12 center m24">
                     <div class="g6 center carousel-select _animated-in" data-dingo="carouselSelect{which: servers}">
@@ -498,17 +435,17 @@
           <div class="section section-dark">
             <div class="container">
               <div class="g12 col1of2 m24 mrow">
-                <div class="center row">
+                <div class="center row block">
                   <i class="icon-round_wizz-monitor"></i>
                 </div>
-                <h2 class="row">wizzmonitor</h2>
+                <h2 class="row block">wizzmonitor</h2>
                 <p>Our Linux and Windows servers include access to our WizzMonitor graphing portal. WizzMonitor will provide you with the data to know how your service is performing. It includes details such as load average, memory usage, and port traffic. Once sigend up, you will receive a login and password with your login information.</p>
               </div>
               <div class="g12 col2of2 m24 mrow-xl">
-                <div class="center row">
+                <div class="center row block">
                   <i class="icon-round_wizz-secure"></i>
                 </div>
-                <h2 class="row">wizzsecure</h2>
+                <h2 class="row block">wizzsecure</h2>
                 <p>We developed WizzSecure to provide server operators with a managed security service with guidance and support. We had client servers that were constantly under attack from malevolent hackers. This was unacceptable, so we developed a robust solution that consistently protects our clients from attack.</p>
               </div>
             </div> <!-- Container -->
@@ -652,7 +589,7 @@
               <h1>Don't see what you want here?</h1>
               <h4>Let us design a custom solution for you </h4>
               <form class="g10 l7 m24 ml0" id="custom-solution">
-                <div class="row">
+                <div class="row block">
                   <div class="input-group">
                     <label for="name">Name</label>
                     <input class="block" type="text" name="name" data-dingo="form-validate">
@@ -662,7 +599,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
+                <div class="row block">
                   <div class="input-group">
                     <label for="email">Email Address</label>
                     <input class="block" type="text" name="email" data-dingo="form-validate">
@@ -672,7 +609,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
+                <div class="row block">
                   <div class="input-group">
                     <label for="hosting">What Are You Hosting?</label>
                     <input class="block" type="text" name="hosting" data-dingo="form-validate">
@@ -682,7 +619,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
+                <div class="row block">
                   <div class="g8 col1of2">
                     <div class="input-group">
                       <label for="servers"># Of Servers</label>
@@ -717,6 +654,7 @@
         <div class="container">
           <div class="mcenter">
             <div class="wizz-logo"></div>
+            <div class="footer-copy">&copy; 2013-2014 WizzSolutions</div>
           </div>
           <div class="right mcenter">
             <ul class="nav-menu">

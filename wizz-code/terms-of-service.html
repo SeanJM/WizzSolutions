@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+<HTML>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UX-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta http-equiv="cleartype" content="on">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body data-dingo="closePopouts">
+    <div class="page-container">
+      <div class="nav" id="header">
+        <div class="container">
+          <a class="wizz-logo" href="index.html"></a>
+          <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
+            <i class="icon-nav-menu"></i>
+          </span>
+          <div class="right">
+            <ul class="nav-menu" id="main-navigation">
+              <li class="nav-item"><a class="nav-item_trigger" href="index.html">home</a></li>
+              <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">virtual servers</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+                  <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">solutions</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+                  <li class="submenu-item"><a href="http://wizzadmin.wizzsolutions.com/">WizzAdmin</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" data-dingo="submenu">
+                <span class="nav-item_trigger">about</span>
+                <div class="nav-submenu-indicator"></div>
+                <ul class="submenu">
+                  <span class="arrow"></span>
+                  <li class="submenu-item"><a href="about_our-mission.html">Our Mission</a></li>
+                  <li class="submenu-item"><a href="about_contact-us.html">Contact Us</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="nav-control is-desktop">
+              <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
+              <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
+              <a class="btn-dark" href="https://client.wizzsolutions.com">login</a>
+            </div>
+          </div>
+          <div class="modal _is-popout" id="modal-contact">
+            <div class="arrow"></div>
+            <form action="#" name="MYFORM" id="MYFORM">
+              <div class="row block">
+                <div class="g12 col1of2-sm">
+                  <div class="input-group">
+                    <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter Your Name
+                    </div>
+                  </div>
+                </div>
+                <div class="g12 col2of2-sm">
+                  <div class="input-group">
+                    <input class="block" type="text" name="email" placeholder="Email" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter An Email Address
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row block">
+                <div class="input-group">
+                  <textarea class="block" name="message" placeholder="Message" data-dingo="form-validate"></textarea>
+                  <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Enter A Valid Message
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="g12 col1of2-sm">
+                  <img src="get_captcha.php" alt="" id="captcha-image" class="ib captcha-image">
+                  <div class="captcha-refresh" data-dingo="captchaRefresh"></div>
+                </div>
+                <div class="g12 col2of2-sm">
+                  <div class="input-group">
+                    <input class="block" name="code" type="text" id="code" placeholder="Enter the Captcha Text" data-dingo="form-validate">
+                    <div class="form-validate-prompt">
+                      <span class="arrow"></span>
+                      Please Enter The Captcha Text
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row center block">
+                <button class="btn-red" type="submit" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="page">
+        <div class="main">
+          <div class="section">
+            <div class="container">
+              <h1>Terms of Service</h1>
+              <h3>This Terms of Service Agreement ("TOS Agreement") constitutes a valid, binding and enforceable legal contract by and between you, the "Subscriber", and Wizzsolutions.com Group LLC ("Wizzsolutions").</h3>
+              <hr>
+              <ol class="tos">
+                <li>
+                  Provision of Service: Acceptance of this TOS Agreement and Acceptance of Wizzsolutions Acceptable Use Policy
+                  <span class="text">Wizzsolutions provision of service to Subscriber, and Subscribers acceptance and use of said service, constitute Subscribers acceptance of, and agreement to, this TOS Agreement as well as Subscribers acceptance of, and agreement to, Wizzsolutions Acceptable Use Policy ("Wizzsolutions AUP") -- which is herewith made a part of this TOS Agreement. This TOS Agreement, including Wizzsolutions AUP, constitutes the entire agreement between the parties, and supersedes any prior agreements between the parties.</span>
+                </li>
+                <li>
+                  Cancellation of Service:
+                  <span class="text">Wizzsolutions reserves the right to cancel this TOS Agreement and to permanently disconnect the service that Wizzsolutions provides to Subscriber hereunder at anytime without further obligation. Subscriber may cancel this TOS Agreement and the service that Wizzsolutions provides to Subscriber hereunder by requesting cancellation via opening a help ticket through the helpdesk at http://www.wizzsolutions.com at least seven (7) days prior to Subscribers next monthly billing date. Wizzsolutions will not honor notice of cancellation by any other means of communication. Subscriber must be current on all payments and must have all account information available at the time of such request for said requested cancellation to become effective. It is Subscribers responsibility to separately confirm that Wizzsolutions has timely received notice of requested cancellation, and Subscriber must make arrangements to pick up any server computer that it owns for removal from Wizzsolutions facility.</span>
+                </li>
+                <li>
+                  Disconnection of Service:
+                  <span class="text">Not by way of limitation of Wizzsolutions right to, at any time for any reason, cancel this TOS Agreement and permanently disconnect the service that Wizzsolutions provides to Subscriber, Wizzsolutions also reserves the right to temporarily disconnect (suspend) the service that Wizzsolutions provides to Subscriber (or any one of them, if Subscriber has more than one account or server):</span>
+                  <span class="text">For Subscribers failure to timely pay any fee or amount due to Wizzsolutions, in which case Wizzsolutions will first send Subscriber an email indicating that Subscribers account is overdue and advising Subscriber that the service that Wizzsolutions provides to Subscriber may be terminated if payment is not made within 24 hours; and/or</span>
+                  <span class="text">If Wizzsolutions determines, in its sole judgment, that Subscriber is in violation of this TOS Agreement (which includes Wizzsolutions AUP), and Wizzsolutions believes that Subscriber can timely and appropriately cure said violation. If, in Wizzsolutions sole discretion, a potential violation is detected, the service (including all services on all server computers of Subscriber, if Subscriber uses more than one) that Wizzsolutions provides to Subscriber may be terminated, without notice to Subscriber, until Wizzsolutions investigation is complete, which investigation Wizzsolutions shall attempt to complete within a reasonable time period.</span>
+                  <span class="text">Subscriber will not be credited, under any circumstances, for any time that the service that Wizzsolutions provides to Subscriber is suspended, interrupted or terminated.</span>
+                </li>
+                <li>
+                  Wizzsolutions Not Obligated To Review Activities or Notify of Violations:
+                  <span class="text">Wizzsolutions is under no obligation to review Subscribers and/or any of Subscribers Sub-Users (the term "Subscribers Sub-User" is defined below) activities to determine if a violation of this TOS Agreement (which includes Wizzsolutions AUP) has occurred. Further, Wizzsolutions does not assume any responsibility by virtue of this TOS Agreement (which includes Wizzsolutions AUP) to monitor, enforce or police Internet-related activities or to notify Subscriber of any actual or suspected violations.</span>
+                </li>
+                <li>
+                  Amendment:
+                  <span class="text">Wizzsolutions reserves the right to amend, and may amend, from time to time, within its sole discretion, the terms and conditions of this TOS Agreement (including Wizzsolutions AUP). Wizzsolutions will provide notice of such amendment(s) by posting such amendment(s) on Wizzsolutions website at <a href="https://client.wizzsolutions.com/index.php?fuse=admin&amp;view=Announcements">https://client.wizzsolutions.com/index.php?fuse=admin&amp;view=Announcements</a>, and Subscribers use of Wizzsolutions services after Wizzsolutions posts such amendment(s) on its website shall constitute Subscribers acceptance of any/all such amendments. Amendment(s) shall not constitute grounds for Subscribers early cancellation of this TOS Agreement or the service, nor grounds for Subscribers non-payment for the service that Wizzsolutions provides to Subscriber after the effective date of such amendment(s), and Subscriber shall continue to be bound by the terms and conditions of this TOS Agreement, as amended, for any service provided by Wizzsolutions to Subscriber thereafter. It is Subscribers responsibility to review, from time to time, this TOS Agreement (including Wizzsolutions AUP), as published on Wizzsolutions website, for any amendment(s).</span>
+                </li>
+                <li>
+                  Assignment:
+                  <span class="text">Subscriber may not transfer or assign this TOS Agreement without the prior written consent of Wizzsolutions. Wizzsolutions may transfer and assign this TOS Agreement, the Service and all of Wizzsolutions rights, titles and interests thereunder at any time without consent from or notice to Subscriber.</span>
+                </li>
+                <li>
+                  Waiver:
+                  <span class="text">Waiver by Wizzsolutions of Subscribers breach of any term or condition of this TOS Agreement (including Wizzsolutions AUP) shall not operate as or be construed as a continuing or subsequent waiver thereof or as a waiver of any breach of any other term or condition of this TOS Agreement (including Wizzsolutions AUP).</span>
+                </li>
+                <li>
+                  Compliance with law:
+                  <span class="text">Inasmuch as the service that Wizzsolutions provides to Subscriber is controlled and operated by Wizzsolutions from its facilities in the United States, Subscriber shall comply with all U.S. local, state, federal and national laws, statutes, ordinances and regulations that apply to Subscribers use of the service that Wizzsolutions provides to Subscriber, as well as with all laws in all other jurisdictions that apply to Subscribers use of the service that Wizzsolutions provides to Subscriber.</span>
+                </li>
+                <li>
+                  Choice of Law / Jurisdiction / Venue / Statute of Limitations:
+                  <span class="text">This TOS Agreement shall be construed in all respects in accordance with the laws of the state of Illinois applicable to contracts enforceable in that state. By entering into this TOS Agreement and accepting and using Wizzsolutions services hereunder, Subscriber submits to jurisdiction and venue in the courts of Cook County, Illinois, for any dispute(s) related to or rising out of this TOS Agreement. Notwithstanding any contrary provision of law, any claim or cause of action arising out of this TOS Agreement and/or related to the service that Wizzsolutions provides, or is to provide, to Subscriber must be filed within one (1) year after such claim or cause of action arose or be forever barred.</span>
+                </li>
+                <li>
+                  Responsibilities:
+                  <span class="text">Subscriber Shall Defend and Indemnify Wizzsolutions: Subscriber shall fully defend, indemnify, pay and hold harmless Wizzsolutions and its managers, members, employees, affiliates, attorneys, agents, contractors and licensors (such Wizzsolutions related parties collectively referred to under this Section 10.A. as "Wizzsolutions-related party") for any Subscriber violation(s) of this TOS Agreement (which includes Wizzsolutions AUP) and for any violation(s) by a sub-subscriber of, client of, customer of, reseller of, user of, sub-user of, or similar party related to, Subscriber (collectively referred to as a "Subscribers Sub-User"), that results in any loss, damage, cost or expense to Wizzsolutions or an Wizzsolutions-related party, or in any claim made or threatened against Wizzsolutions or an Wizzsolutions-related party by any third-party. If Wizzsolutions or an Wizzsolutions-related party is sued (or if a suit is threatened against Wizzsolutions or an Wizzsolutions-related party) because of Subscribers or a Subscribers Sub-Users act or omission, Subscriber shall pay any and all damages awarded against Wizzsolutions and any Wizzsolutions-related party immediately upon such award (whether or not any appeal is available/taken), plus any and all of Wizzsolutions and any Wizzsolutions-related partys expenses and costs (including Wizzsolutions and any Wizzsolutions-related partys reasonable attorneys fees) related thereto;</span>
+                  <span class="text">Wizzsolutions Not Liable: The service that Wizzsolutions provides to, or is to provide to, Subscriber is provided on an "as is" and "as available" basis, and Subscribers use of said service is at Subscribers sole risk. In no case shall Wizzsolutions or any of its managers, members, employees, affiliates, attorneys, agents, contractors or licensors be liable for any direct, indirect, incidental, punitive, exemplary, special or consequential damages, losses, costs or expenses, including, but not limited to, loss of profits, loss of data, loss or damage to goodwill, or loss of use of data or other intangible losses, or for any claim(s) related thereto, even if said party has been advised of the possibility of such damages, losses, costs, expenses or claims, arising from or related to:</span>
+                  <ul>
+                    <li>Subscribers or Subscribers Sub-Users use or inability to use the service (whether from Service Faults or otherwise) that Wizzsolutions provides to, or is to provide to, Subscriber;</li>
+                    <li>Any destruction, damage, taking, unavailability or other loss of Subscribers or any Subscribers Sub-Users system, server or data;</li>
+                    <li>The cost to procure any substitute service;</li>
+                    <li>Any unauthorized access or use of Subscribers account; or</li>
+                    <li>Any third party conduct or other matter relating to the service;</li>
+                  </ul>
+                  <span class="text">Content Responsibility: Wizzsolutions takes no responsibility or accountability for, and Subscriber is entirely responsible and accountable for, any and all Subscriber and third-party data, information and content transmitted by (via email, uploading, posting or otherwise), stored on, inputted to/through, linked to/through and/or served by, Subscribers server computer (or any server computer internally assigned to Subscriber) at Wizzsolutions premises and/or using the service that Wizzsolutions provides to Subscriber;</span>
+                  <span class="text">Subscribers Responsibility to Enforce: It is Subscribers responsibility to ensure that Subscriber and all of Subscribers Sub-Users continuously adhere to the terms and conditions contained in this TOS Agreement (including Wizzsolutions AUP), and Subscriber is, and will be held, responsible for Subscribers acts and omissions and for the acts and omissions of Subscribers Sub-Users related thereto. It is in Subscribers best interest to implement a similar policy of acceptable use and compliance among Subscribers Sub-Users;</span>
+                  <span class="text">Subscribers Network / Security: Subscriber is solely responsible for ensuring that its network and the network(s) of Subscribers Sub-User(s) are configured in a secure manner. Subscriber is solely responsible for any intrusions into, or security breaches of, any of its server computers, networks or systems. Subscriber is solely responsible and accountable for, and Wizzsolutions shall not be responsible or accountable for, any/all activities that occur on or through Subscribers service computers, networks and systems, including any and all acts or omissions by, or attributable to, any third party, using the service that Wizzsolutions provides to Subscriber;</span>
+                  <span class="text">Subscribers Responsibility to Backup System/Data - Deletion of System/Data: Wizzsolutions is not responsible for, and Subscriber is solely responsible for, backing up Subscribers system/data, including any/all system/data of any Subscribers Sub-User, related to Subscribers server computer (or any server computer internally assigned to Subscriber) at Wizzsolutions premises and/or to the service that Wizzsolutions provides to Subscriber. Any server computer owned by Subscriber on Wizzsolutions premises or otherwise under Wizzsolutions possession or control will be considered abandoned and forfeited thirty (30) days after cancellation of this TOS Agreement for non-payment, at which time, Wizzsolutions will delete any and all Subscriber and Subscribers Sub-User system/data. For any server computer not owned by Subscriber but that is or may be internally assigned to Subscriber, Wizzsolutions will delete any and all Subscriber and Subscribers Sub-User system/data immediately upon cancellation of this TOS Agreement for non-payment.;</span>
+                  <span class="text">Subscribers Responsibility To Insure: Wizzsolutions is not responsible for, and Subscriber is solely responsible for, fully insuring Subscribers and Subscribers Sub-Users system/data against destruction, damage, taking, unavailability or other loss, and Wizzsolutions is not responsible for, and Subscriber is solely responsible for, fully insuring any/all server computers, components and equipment owned or controlled by Subscriber against loss and damage during shipment, handling, placement and use, whether said server computer/equipment is in Wizzsolutions possession or control or otherwise;</span>
+                  <span class="text">Subscribers Responsibility For Server/Equipment: Subscriber is solely responsible for packaging and removing from Wizzsolutions premises/control any/all servers and equipment owned or controlled by Subscriber. Subscriber shall pay Wizzsolutions a $20.00 handling fee plus all shipping costs per package for any server/equipment which is shipped The Subscriber is responsible for insuring any/all shipments. Any server or equipment not removed within 30 days after cancellation of this TOS Agreement for any reason will be considered abandoned and forfeited.</span>
+                </li>
+                <li>
+                  Subscriber Contact Information, Updates &amp; ID:
+                  <span class="text">Subscriber shall, at <a href="http://www.wizzsolutions.com">http://www.wizzsolutions.com</a>, provide Wizzsolutions with, and shall update Wizzsolutions immediately upon any change(s) with, accurate, current and complete contact information (including email, fax, telephone and street address contacts) so that Wizzsolutions may register Subscriber, charge payments to Subscriber and otherwise contact Subscriber as may be required from time to time in the course of this TOS Agreement. In addition, Subscriber agrees to provide photo identification to Wizzsolutions prior to Subscribers preliminary visit, if any, to Wizzsolutions data center.</span>
+                </li>
+                <li>
+                  Age/ Legal Authority:
+                  <span class="text">If Subscriber is an individual, Subscriber must be eighteen (18) years of age or older in order to enter into this TOS Agreement to subscribe to the service that Wizzsolutions provides to Subscriber, and Subscriber herewith assures Wizzsolutions that Subscriber meets said age requirement. If Subscriber is an entity, Subscriber herewith assures Wizzsolutions that it has all the legal authority necessary to enter into this TOS Agreement to subscribe to the service Wizzsolutions provides to Subscriber.</span>
+                </li>
+                <li>
+                  Payment Information:
+                  <span class="text">Service Rates: The nature of the service that Wizzsolutions provides to Subscriber, and the rates and fees thereof, have been communicated to Subscriber by Wizzsolutions. Wizzsolutions may amend its rates and fees from time to time, at Wizzsolutions discretion, by posting said change(s) on Wizzsolutions website at <a href="http://www.wizzsolutions.com">http://www.wizzsolutions.com</a>, which rate change shall become effective as outlined in said posting;</span>
+                  <span class="text">Payment: Wizzsolutions may charge Subscriber a one-time, pre-agreed set-up fee before Wizzsolutions establishes any service for Subscriber. Subscriber shall thereafter pay, on each monthly anniversary date thereafter, an ongoing service charge in advance for Wizzsolutions continued provision of the service that Wizzsolutions provides to Subscriber. Subscriber agrees that Wizzsolutions may automatically charge Subscribers credit card each month, and may process Subscribers payment as early as five (5) days before the due date, to ensure that Wizzsolutions receives payment on or before the due date;</span>
+                  <span class="text">
+                    <span class="g4 right col1of2-sm">Single Orders:</span><span class="g20 col2of2-sm">Wizzsolutions allows single, monthly payments on server orders with a quantity of one (1) to five (5) machines.</span>
+                    <br>
+                    <span class="g4 right col1of2-sm">Bulk Orders:</span><span class="g20 col2of2-sm">Wizzsolutions requires server orders of six (6) to ten (10) machines at one time (within a three day period) to make a two (2) month up front payment for the first payment of services. After those two (2) months, month to month payments will begin.</span>
+                    <br>
+                    <span class="g4 right col1of2-sm">Infrastructure Orders:</span><span class="g20 col2of2-sm">Wizzsolutions requires server orders of 10+ machines at one time (within a three day period) to make a three (3) month up front payment. After those three (3) months, regular month to month billing will continue unless otherwise arranged.</span>
+                  </span>
+                  <span class="text">At anytime Wizzsolutions can request to initiate and continue with Infrastructure orders on a contract term (6 or 12 months) for future provided services.
+                    <br>
+                      Wizzsolutions has the right to reject and refund orders that do not comply with these payment terms.</span>
+                  <span class="text">Invoicing: Wizzsolutions does not send out invoices automatically. If Subscriber requires an invoice he may log into his account and obtain an invoice.</span>
+                  <span class="text">Refunds and Disputes: All payments made to Wizzsolutions by Subscriber or on Subscribers behalf are nonrefundable - including the one-time set-up fee, if any, as well as any/all subsequent monthly charges (regardless of usage). Overcharges or billing disputes must be reported to Wizzsolutions within thirty (30) days of occurrence, otherwise Subscriber shall have waived all claims related thereto. If Subscriber disputes a charge to its credit card issuer, which charge Wizzsolutions deems, in its sole discretion, to be valid under the terms and conditions of this TOS Agreement, Subscriber shall pay Wizzsolutions, in addition to said disputed charge, an Administrative Fee of not less than $50.00 and not more than $150.00;</span>
+                  <span class="text">Payment Declination/Rejection Charge: Should Subscribers credit card or any payment be declined or rejected for any reason, Wizzsolutions may charge Subscriber a $15.00 administrative fee per occurrence;</span>
+                  <span class="text">Additional Charges for Failure to Timely Pay: Without limiting Wizzsolutions right to, at any time for any reason, cancel this TOS Agreement and permanently disconnect the service that Wizzsolutions provides to Subscriber, should Wizzsolutions suspend the service that Wizzsolutions provides to Subscriber because of Subscribers failure to timely pay any fee or amount due to Wizzsolutions, Subscriber may be required to pay Wizzsolutions, in addition to any fees and amounts due a $15.00 late fee.. Suspension of service does not relieve Subscriber of any responsibilities. If Wizzsolutions is forced to take Subscriber services offline or disable Subscribers services for lack of payment or abuse Subscriber will be required to pay a $100.00 reconnection fee for each service; </span>
+                </li>
+                <li>Service and Support:
+                  <span class="text">Support &amp; Support Boundaries: Within Wizzsolutions field of service and ability, Wizzsolutions offers 24 hours/day x 7 days/week technical support to Subscriber, except during a few holidays and company meetings when we temporarily close our facility. Subscribers server computer(s) housed at Wizzsolutions facility is(are) unmanaged, and Wizzsolutions offers only that the service provided by Wizzsolutions to Subscribers server computer(s) is online and remotely accessible. Wizzsolutions does not offer technical support for application-specific issues, and Wizzsolutions shall not provide technical support to Subscribers Sub-Users. Subscriber should contact Wizzsolutions by opening a help ticket with the support desk for technical assistance at http://crm.Wizzsolutionservers.net. In the event Wizzsolutions needs to ship out of Wizzsolutions premises any failed component of a server owned or controlled by Subscriber for any reason, a $20.00 handling fee per shipment plus all shipping costs will be applied; </span>
+                  <span class="text">Service Faults / No Wizzsolutions Liability / No Warranty: Wizzsolutions does not guarantee that the service that Wizzsolutions provides, or is to provide, to Subscriber is or will be free from errors, omissions, corruption, attack, viruses, interference, loss, hacking, security intrusion, delays, non-delivery, wrong delivery or any other causes of interruption or damage (collectively "Service Faults"). As a reminder of, and not as a limitation of, Wizzsolutions limitation of liability under Section 10.B. above, in no case shall Wizzsolutions or any of its managers, members, employees, affiliates, attorneys, agents, contractors or licensors be liable for any direct, indirect, incidental, punitive, exemplary, special or consequential damages, losses, costs or expenses, including, but not limited to, loss of profits, loss of data, loss or damage to goodwill, or loss of use of data or other intangible losses, or for any claim(s) related thereto, even if said party has been advised of the possibility of such damages, losses, costs, expenses or claims, arising from or related to the following:</span>
+                  <ul>
+                    <li>Subscribers or Subscribers Sub-Users use or inability to use the service (whether from Service Faults or otherwise) that Wizzsolutions provides to, or is to provide to, Subscriber,</li>
+                    <li>Any destruction, damage, taking, unavailability or other loss of Subscribers or any Subscribers Sub-Users system, server or data,</li>
+                    <li>The cost to procure any substitute service,</li>
+                    <li>Any unauthorized access or use of Subscribers account or</li>
+                    <li>Any third-party conduct or other matter relating to the service.</li>
+                  </ul>
+                  <div class="alert"><span class="text">Wizzsolutions AND ITS MANAGERS, MEMBERS, EMPLOYEES, AFFILIATES, ATTORNEYS, AGENTS, CONTRACTORS AND LICENSORS HEREWITH EXPRESSLY DISCLAIM ANY AND ALL EXPRESS AND IMPLIED WARRANTIES OF ANY KIND, INCLUDING, BUT NOT LIMITED TO, ANY AND ALL IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. NO REQUEST OR ADVICE FROM SUBSCRIBER TO Wizzsolutions, IN ANY FORM OF MEDIA, SHALL CREATE ANY WARRANTY. SUBSCRIBER IS SOLELY RESPONSIBLE FOR ANY DAMAGE TO SUBSCRIBERS NETWORK AND SYSTEM AND FOR ANY LOSSES THAT RESULT FROM SUBSCRIBERS USE OF, OR INABILITY TO USE, THE SERVICE THAT Wizzsolutions PROVIDES, OR IS TO PROVIDE, TO SUBSCRIBER;</span></div>
+                  <span class="text">Facility Access: Visits to Wizzsolutions facility must be scheduled at least twenty-four (24) hours prior to the visit. Should Subscriber need emergency access to Subscribers server computer, Subscriber must contact Wizzsolutions technical support and request access at least fifteen (15) minutes prior to the emergency visit. Subscriber shall pay any/all related charges (such as for a security pass, property pass, time and assistance provided by Wizzsolutions, etc.). and Subscriber shall submit a photo ID for Wizzsolutions records prior to Subscribers initial visit to Wizzsolutions facility. Guided tours for prospective clients (non-subscribers) are permitted, at the sole discretion of Wizzsolutions, only during regular business hours, Monday-Friday, and should be scheduled at least twenty-four (24) hours in advance;</span>
+                  <span class="text">IP Address Allocation / Ownership: If Wizzsolutions assigns Subscriber an Internet Protocol ("IP") address and/or number(s) for Subscribers use, the right to use that IP address/number shall belong solely to Wizzsolutions, and Subscriber shall have no right to use that IP address/number except as permitted by Wizzsolutions in its sole discretion in connection with the services provided by Wizzsolutions to Subscriber during the term of this TOS Agreement. Wizzsolutions shall maintain and control ownership of all IP addresses and numbers that may be assigned to Subscriber by Wizzsolutions, and Wizzsolutions reserves the right to change or remove any and all such IP addresses/numbers, in its sole and absolute discretion. Wizzsolutions allocation of IP addresses/numbers is limited by the policies, as they exist from time to time, of the American Registry for Internet Numbers ("ARIN"), including policies providing that the use of IP addresses or numbers for IP-based virtual hosts are not acceptable as justification for new IP addresses or numbers. Pursuant to ARINs policies, as they exist from time to time, Subscriber must use name-based hosting whenever possible. Wizzsolutions will periodically review IP address usage, and if Wizzsolutions finds that Subscriber and/or Subscribers Sub-Users are using IP addresses or numbers where name-based hosting could be used, Wizzsolutions will revoke authorization for the use of those IP addresses/numbers. All IP addresses/numbers that are allocated to Subscriber must be utilized within forty-eight (48) hours of allocation, otherwise Wizzsolutions may retract said unused IP address or number without prior notification to Subscriber.</span>
+                </li>
+                <li>
+                  Unauthorized Use of Account:
+                  <span class="text">Subscriber shall not reveal Subscribers account information to anyone, Subscriber shall protect and maintain the confidentiality and security of Subscribers account, Subscriber shall not use anyone elses account, and Subscriber shall immediately notify Wizzsolutions of any unauthorized use of Subscribers account or any other breach of security. Subscriber is solely responsible and accountable for, and Wizzsolutions shall not be responsible or accountable for, any/all activities that occur on or through Subscribers account, including any and all acts or omissions by, or attributable to, any third party, using the service that Wizzsolutions provides to Subscriber.</span>
+                </li>
+                <li>
+                  Disclosure of Subscribers Information to Law Enforcement and to Third Parties:
+                  <span class="text">Subscriber herewith acknowledges and agrees that the Wizzsolutions may disclose any and all Subscriber information, including, but not limited to, Subscriber contact information, assigned IP addresses/numbers, account history, account use, etc., to any law enforcement agent who requests it, without further consent or notification to Subscriber. In addition, as may be allowed by ARIN policies from time to time, Wizzsolutions will provide any third party with Subscriber contact information (including the name, telephone number, email address and other contact information of Subscriber). Wizzsolutions shall apply the terms of this section to any/all of Subscribers Sub-Users, and Subscriber shall notify all of Subscribers Sub-Users of these terms,</span>
+                </li>
+                <li>
+                  SPAM / Unsolicited Commercial Email (UCE) / Unsolicited Bulk Email (UBE):
+                  <span class="text">DO NOT SPAM FROM YOUR ACCOUNT. Subscriber may not use or permit others to use the service that Wizzsolutions provides to Subscriber to transmit (including by email, uploading, posting or other transmission), originate, pass through or otherwise transact any SPAM, UCE and/or UBE. Violations of this policy carry, as well as possible suspension or cancellation of service, additional penalties and/or remedies, including, but not limited to:</span>
+                  <span class="text">Wizzsolutions reserves the right to drop the section of any IP space involved in any SPAM/ UCE/ UBE or Denial of Service (DOS) complaints if Wizzsolutions determines, in its sole discretion, that the offending activity is causing, or may cause, harm to other parties on the Internet (particularly if open relays are on Subscribers network or on a Subscribers Sub-Users network, or if DOS attacks are originating from Subscribers network);</span>
+                  <ul>
+                    <li>Subscriber will pay "Research Fees" of $175.00 per hour to compensate Wizzsolutions for employee time spent investigating Subscribers violation. Wizzsolutions reserves the right to pursue civil remedies for any costs associated with the investigation of a substantiated violation;</li>
+                    <li>First violations of Wizzsolutions SPAM/ UCE/ UBE policy will result in an "Administrative Fee" of $250.00; a second violation will result in an "Administrative Fee" of $500.00, and immediate cancellation of Subscribers service; and</li>
+                    <li>Wizzsolutions may notify law enforcement officials if the violation is believed to be a criminal offense;</li>
+                    <li>Wizzsolutions remedies are cumulative and they may be exercised concurrently or separately at any time.</li>
+                    <li>Lack of action by Wizzsolutions with respect to any remedy shall not serve as a waiver of that or any other remedy at any time;</li>
+                  </ul>
+                  <span class="alert">
+                    <span class="title">Important Notice</span>
+                    <span class="text">A Subscriber hosting websites or services on Subscribers server computer supporting spammers or resulting in any of Wizzsolutions IP space to be listed in any of the various Spam Databases or black hole lists will have its service immediately disconnected. Such suspended service will not be reconnected until such time that Subscriber agrees to remove ANY and ALL traces of the offending material immediately upon reconnection, and agrees to allow Wizzsolutions access to its server computer(s) to confirm that all material has been COMPLETELY removed.</span>
+                  </span>
+                  <span class="text">Because Subscriber is ultimately responsible for the actions and omissions of Subscribers Sub-Users, it is advisable that Subscriber develop a similar policy for its Sub-Users.</span>
+                </li>
+                <li>
+                  Compliance with Wizzsolutions AUP:
+                  <p>Wizzsolutions AUP is an integral part of this TOS Agreement, and Subscriber agrees to comply with Wizzsolutions AUP, and to take reasonable steps to ensure that Subscribers Sub-Users comply with Wizzsolutions AUP at all times. Wizzsolutions AUP applies to Subscriber and to each/all of Subscribers Sub-Users and to each/all server computer, network, device and/or system under Subscribers control or assigned to Subscriber related to the service Wizzsolutions provides to Subscriber. Subscriber is, and will be held, responsible and accountable for any and all activity and/or omission by, or attributable to, any third party directly or indirectly using or benefiting from Wizzsolutions services that violates any of the terms of Wizzsolutions AUP;</p>
+                  <p>Wizzsolutions reserves the right to investigate actual, suspected or alleged violations of Wizzsolutions AUP, which includes the right to access data, information, contents and records on, or associated with, any server computer(s) of, or assigned to, Subscriber. Wizzsolutions shall not be in default of this TOS Agreement if Wizzsolutions investigation causes Subscriber to incur downtime or requires the sequestering of all or a portion of the Subscribers server computers;</p>
+                  <p>Wizzsolutions may involve, and cooperate with, law enforcement authorities in investigating and/or prosecuting Subscriber and/or Subscribers Sub-Users who are involved in any violation of Wizzsolutions AUP. Subscriber shall assist Wizzsolutions to comply with all laws, ordinances, regulations and rules related to the service Wizzsolutions provides to Subscriber. Subscriber shall cooperate and comply with any/all civil or criminal investigations regarding activity through, and data, information, contents and records on, or associated with, any server computer(s) of, or assigned to, Subscriber, including, without limitation, discovery orders, subpoenas, freeze orders, search warrants, information requests, wire taps, electronic intercepts and surveillance, preservation requests, and any other order from a court or government entity (each an "Investigation"). Without limiting any other right of Wizzsolutions, Wizzsolutions reserves the right to comply with any Investigation without notice to Subscriber;</p>
+                  <p>Without limiting Wizzsolutions right to, at any time for any reason, cancel this TOS Agreement and permanently disconnect the service that Wizzsolutions provides to Subscriber, Wizzsolutions may also, in its sole discretion, take any one or more of the following remedies for a violation of Wizzsolutions AUP:</p>
+                  <ul>
+                    <li>Disable access to Subscribers content that violates Wizzsolutions AUP;</li>
+                    <li>Remove DNS records from Subscribers server computer(s);</li>
+                    <li>Block email or any other network services;</li>
+                    <li>Effect IP address null routing;</li>
+                    <li>Take direct action against Subscribers Sub-Users;</li>
+                    <li>Charge Subscriber for remedial actions, and recover any and all expenses from Subscriber in connection with any violation of Wizzsolutions AUP attributable to Subscriber.</li>
+                    <li>Wizzsolutions remedies are cumulative and they may be exercised concurrently or separately at any time.</li>
+                    <li>Lack of action by Wizzsolutions with respect to any remedy shall not serve as a waiver of that or any other remedy at any time;</li>
+                  </ul>
+                </li>
+                <li>
+                  IRC:
+                  <span class="text">If Subscriber runs IRC on our standard network, Wizzsolutions will disconnect the service that Wizzsolutions provides to Subscriber until Subscriber agrees to be moved to Wizzsolutions IRC network</span>
+                </li>
+                <li>
+                  Wizzsolutions Remedies Cumulative / No Waiver:
+                  <span class="text">Wizzsolutions remedies under this TOS Agreement are cumulative, and they may be exercised concurrently or separately at any time. Lack of action by Wizzsolutions with respect to any remedy shall not serve as a waiver of that or any other remedy at any time</span>
+                </li>
+                <li>
+                  Wizzsolutions Trademarks:
+                  <span class="text">All trademarks, service marks, logos, product names and service names of Wizzsolutions comprise the trademarks of Wizzsolutions, and Subscriber shall not, and shall not allow any third party to, display or use in any manner said trademarks without Wizzsolutions prior written permission.</span>
+                </li>
+                <li>
+                  Colocation Servers/Equipment and Insurance:
+                  <span class="text">Not by way of limitation of the other provisions of this TOS Agreement, particularly the provisions of Sections 10.G and 10.H., Wizzsolutions is not responsible for, and Subscriber is solely responsible for, fully insuring Subscribers and Subscribers Sub-Userscolocation system/data against destruction, damage, taking, unavailability or other loss, and Wizzsolutions is not responsible for, and Subscriber is solely responsible for, fully insuring any/all colocation server computers, components and equipment owned or controlled by Subscriber against loss and damage during shipment, handling, placement and use, whether said server computer/equipment is in Wizzsolutions possession or control or otherwise. Subscriber is solely responsible for packaging and removing from Wizzsolutions premises/control any/all colocation servers and equipment owned or controlled by Subscriber. Subscriber shall pay Wizzsolutions a $20.00 handling fee plus shipping costs per package for any server/equipment that Subscriber requests Wizzsolutions to ship. Any colocation server or equipment not removed within thirty (30) days after cancellation of this TOS Agreement for any reason will be considered abandoned and forfeited.</span>
+                </li>
+                <li>
+                  Bandwidth:
+                  <span class="text">The bandwidth allocation that comes with your server (100mbps, 1gbps, or 10gbps) is completely usable and you can burst (short period of usage, typically minutes or few hours) to the full port size.  If your usage (over 30 days) exceeds 35% of this allocated rate (35mbps, 350mbps, or 3.5gbps) on metered (100TB- 150TB) plans your account may be subject for review. This does not apply for unmetered or unlimited bandwidth plans. You understand that we will bill you for bandwidth overages in the amount of $0.40/GB for both dedicated servers, VPS and cloud services that exceed the purchase bandwidth (ex: 100TB- 150TB). This does not apply for unmetered or unlimited bandwidth plans. Your continual usage (for a period of 24+ hours) cannot exceed 50% of the uplink on 10Gbps Optical Servers (5Gbps) or your account may be subject for review.</span>
+                  <span class="text">WizzAdmin Support Services</span>
+                  <ol>
+                    <li>
+                      WizzAdmin Server Management Plans:
+                      <span class="text">WizzAdmin Server Management Plans (cPanel, DirectAdmin, Plesk) are intended for server optimization improvement tasks, and ongoing support for control panel based servers. These plans are a recurring package (monthly) for extended server management and administration assistance. These plans include assistance for installing software, fixing failed services, anything listed on the services product pages. For support tickets, we offer and guarantee an initial response within 3 hours, and subsequent responses and resolutions within 24 hours, per ticket. Our average response time is within 1 hour, and our average resolution time is within 3 hours. Depending on the complexity of the issue, if a ticket requires more time, we will inform you of this within the timeframe and update you throughout the process. Tickets are reviewed in the order they are received, first in first out, and answered consecutively. Subscribers are able to submit a maximum of 3 new tickets per day or 21 tickets per week. Wizzsolutions.com Group LLC Management reserves the right to determine a subscribers usage beyond the plan guidelines and can discontinue services at anytime. </span>
+                    </li>
+                    <li>
+                      WizzAdmin Daily Server Management Services:
+                      <span class="text">WizzAdmin Daily Server Management Services are intended for more specific projects and tasks that may or may not have a timeframe for completion. The WizzAdmin Daily (1 day), Private Admin (3 days), Rent-A-Team (7 days), and Monthly (30 days) recurring packages are intended for projects and longer term tasks that may occur on server infrastructure. Common tasks are outlined on the product page. For support tickets, we offer and guarantee an initial response within 1 hour, and subsequent responses and resolutions within 24 hours, per ticket. Our average response time is within 20 minutes, and our average resolution time is within 3 hours. Depending on the complexity of the issue, if a ticket requires more time, we will inform you of this within the timeframe and update you throughout the process. Tickets are reviewed in the order they are received, first in first out, and answered consecutively. WizzAdmin Daily Server Management Services expire after the purchased timeframe, Daily (1 day), Private Admin (3 days), Rent-A-Team (7 days), unless recurring (Monthly 30 day package). Wizzsolutions.com Group LLC Management reserves the right to determine a subscribers usage beyond the plan guidelines and can discontinue services at anytime. Livechat and Skype support is available for this service line.</span>
+                    </li>
+                    <li>
+                      WizzAdmin Emergency Support Services:
+                      <span class="text">WizzAdmin Emergency Support Services are intended for urgent business and service impacting server issues. Common issues covered would be corrupt databases, data restore or migration, site or server hacked, high load, out of disk space, out of memory, services failing, and any tasks outlined on the product page. For support tickets, we offer and guarantee an initial response within 30 minutes, and subsequent responses and resolutions on the hour, per ticket. Our average response time is within 20 minutes, and our average resolution time is within 3 hours. Depending on the complexity of the issue, if a ticket requires more time, we will inform you of this within the timeframe and update you throughout the process. Tickets are reviewed in the order they are received, first in first out, and answered consecutively. Subscribers are able to submit a maximum of 3 new tickets per day or 21 tickets per week. Wizzsolutions.com Group LLC Management reserves the right to determine a subscribers usage beyond the plan guidelines and can discontinue services at anytime. Livechat and Skype support is available for this service line.</span>
+                    </li>
+                    <li>
+                      WizzSecure:
+                      <span class="text">WizzSecure is a server hardening service for Linux based operating systems. This service is intended to create a stronger barrier between your server and the outside world, protecting your data. WizzSecure includes a detailed check process that increases the security and hardening on your servers access points. WizzSecure is not intended as a server support service, but instead as a server hardening and securing service. We will provide 30 days of support on your secure and any of the work completed. This is intended as a warranty on any of the changes or modifications that we complete on your server. The 30 days of support are intended to correct and resolve any issues that you may notice after the increased security has been applied to your server. If you are in need of a server security support package, please choose the WizzAdmin Emergency Support Service.</span>
+                    </li>
+                  </ol>
+                </li>
+                <div class="alert"><span class="text">Last Updated June 2013</span></div>
+              </ol>
+            </div> <!-- Container -->
+          </div> <!-- Section -->
+        </div>
+        <div class="section section-red footer" id="footer">
+          <div class="container">
+            <div class="mcenter">
+              <div class="wizz-logo"></div>
+              <div class="footer-copy">&copy; 2013-2014 WizzSolutions</div>
+            </div>
+            <div class="right mcenter">
+              <ul class="nav-menu">
+                <li class="nav-item"><a class="nav-item_trigger" href="index.html">home</a></li>
+                <li class="nav-item"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+                <li class="nav-item" data-dingo="submenu">
+                  <span class="nav-item_trigger">virtual servers</span>
+                  <div class="nav-submenu-indicator"></div>
+                  <ul class="submenu">
+                    <span class="arrow"></span>
+                    <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+                    <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-dingo="submenu">
+                  <span class="nav-item_trigger">solutions</span>
+                  <div class="nav-submenu-indicator"></div>
+                  <ul class="submenu">
+                    <span class="arrow"></span>
+                    <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+                    <li class="submenu-item"><a href="http://wizzadmin.wizzsolutions.com/">WizzAdmin</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" data-dingo="submenu">
+                  <span class="nav-item_trigger">about</span>
+                  <div class="nav-submenu-indicator"></div>
+                  <ul class="submenu">
+                    <span class="arrow"></span>
+                    <li class="submenu-item"><a href="about_our-mission.html">Our Mission</a></li>
+                    <li class="submenu-item"><a href="about_contact-us.html">Contact Us</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="social-links">
+                <a href="http://plus.google.com/u/0/116200730376494781301/posts" class="icon-social_google-plus"></a>
+                <a href="http://twitter.com/wizzsolutions" class="icon-social_twitter"></a>
+                <a href="https://www.facebook.com/wizzsolutions" class="icon-social_facebook"></a>
+              </div>
+            </div>
+            <hr>
+            <div class="g12 m24 mrow">
+              <a class="btn-stroke mblock mrow" href="terms-of-service.html">Terms Of Service</a>
+              <a class="btn-stroke mblock mrow" href="acceptable-use-policy.html">Acceptable Use Policy</a>
+            </div>
+            <div class="g12 right m24 mrow mcenter">
+              <div class="fb-like" data-href="http://www.wizzsolutions.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+            </div>
+          </div> <!-- Footer Container -->
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</HTML>

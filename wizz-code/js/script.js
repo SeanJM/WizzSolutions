@@ -1,3 +1,11 @@
+function nullBool(value) {
+  if (value) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 // Jquery Placeholder
 /*! http://mths.be/placeholder v2.0.7 by @mathias */
 
@@ -540,6 +548,11 @@ var dingo = {
     dingo.on($('[data-dingo]'));
   },
   on: function (el) {
+    $(window).on('scroll',function (event) {
+      if (typeof dingo.scroll === 'function') {
+        dingo.scroll(event);
+      }
+    });
     if (typeof el.attr('data-dingo') === 'string') {
       $.each(dingo.htmlEvents(),function (i,htmlEvent) {
         el.off(htmlEvent);
@@ -579,14 +592,6 @@ function formValidate(el) {
       }
     }
     return out.join('');
-  }
-
-  function nullBool(value) {
-    if (value) {
-      return true;
-    } else {
-      return false;
-    }
   }
 
   return {
@@ -986,9 +991,39 @@ function template(context) {
       }
     },
     fill: function (object) {
-      return context.replace(/\{\{[a-zA-Z0-9_-]+}}/g,function (m) {
-        m = m.match(/(?:\{\{)([a-zA-Z0-9_-]+)(?:\}\})/)[1];
-        return (object.hasOwnProperty(m))?object[m]:'';
+      function convert(string) {
+        if (nullBool(string.match(/\\/))) {
+          return string.replace(/\\/,'');
+        } else {
+          return (object.hasOwnProperty(string))?object[string]:'';
+        }
+      }
+      function condition(string) {
+        var variable, alternate;
+        var match = string.match(/\{\{([a-zA-Z0-9_-]+)\?([\S\s]*?)}}/);
+        if (nullBool(match)) {
+          variable  = convert(match[1]);
+          alternate = convert(match[2]);
+          if (variable.length > 0) {
+            return variable;
+          } else {
+            return alternate;
+          }
+        } else {
+          return string;
+        }
+      }
+      function fill(string) {
+        var match = string.match(/(?:\{\{)([a-zA-Z0-9_-]+)(?:\}\})/);
+        if (nullBool(match)) {
+          string = convert($.trim(match[1]));
+        }
+        return string;
+      }
+      return context.replace(/\{\{[\?\\a-zA-Z0-9_-]+\}\}/g,function (m) {
+        m = condition(m);
+        m = fill(m);
+        return m;
       });
     },
     init: function (options) {
@@ -1114,6 +1149,24 @@ var segmentControl = {
     var toggles = $('[id*="' + which.match('([a-zA-Z0-9-]+)_([a-zA-Z0-9]+)')[1] + '"]');
     toggles.filter('._active').removeClass('_active');
     $('#' + which).addClass('_active');
+  }
+}
+
+/* Sticky Header */
+
+function stickHeader(event) {
+  function init() {
+    var scroll = $(window).scrollTop();
+    var headerHeight = $('#header').outerHeight();
+
+    if (scroll > headerHeight && !$('body').hasClass('header-sticky')) {
+      $('body').addClass('header-sticky');
+    } else if (scroll < headerHeight && $('body').hasClass('header-sticky')) {
+      $('body').removeClass('header-sticky');
+    }
+  }
+  if (!dingo.isMobile()) {
+    init();
   }
 }
 
@@ -1478,6 +1531,10 @@ dingo.blur = {
     }
   }
 };
+
+dingo.scroll = function (event) {
+  stickHeader(event);
+}
 
 /* ------------- Execute ------------- */
 
