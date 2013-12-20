@@ -1053,6 +1053,11 @@ th {
   margin-right: auto;
 }
 
+[class*="icon-round-xl"] {
+  background-image: url(../img/sprites_icon-round-xl.png);
+}
+
+
 .product-title_wizz-secure {
   background-position: 0 -64px;
 }
@@ -1121,7 +1126,6 @@ th {
 [class*="icon-round-xl"] {
   width: 202px;
   height: 202px;
-  background-image: url(../img/sprites_icon-round-xl.png);
 }
 
 .icon-round-xl_wizz-secure {
@@ -3265,5 +3269,57 @@ p + .alert {
 /* Retina Image Assignment */
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-}
+  .wizz-logo,
+  .nav-submenu-indicator,
+  .nav .icon-chat,
+  .nav .icon-mail,
+  .arrow,
+  .captcha-refresh,
+  .carat,
+  .carousel-control_left,
+  .carousel-control_right,
+  .carousel-pill,
+  .carousel-pill-background,
+  .form-validate-prompt .arrow,
+  [class*="icon-social_"],
+  .icon-nav-menu,
+  .feature-banner_toggle,
+  .feature-banner_toggle-icon,
+  .server_spec,
+  .vps_power-meter .slider,
+  .vps_power-meter_prev,
+  .vps_power-meter_next,
+  .special-table_rank .indicator,
+  .icon_more-arrow {
+    background-image: url(../img/sprites_main_retina.png);
+    background-size: 459px 210px;
+  }
 
+  .hero_cloud-hosting,
+  .hero_dedicated-servers,
+  .hero_server-management,
+  [class*="value-prop_icon_"] {
+    background-image: url(../img/sprites_hero_mobile_retina.png);
+    background-size: 465px 219px;
+  }
+
+  [class*="icon-round_"] {
+    background-image: url(../img/sprites_icon-round_retina.png);
+    background-size: 576px 480px;
+  }
+
+  [class*="icon-round-tiny_"] {
+    background-image: url(../img/sprites_icon-round-tiny_retina.png);
+    background-size: 230px 230px;
+  }
+
+  [class*="product-title_"] {
+    background-image: url(../img/sprites_product-titles_retina.png);
+    background-size: 256px 128px;
+  }
+
+  [class*="icon-round-xl"] {
+    background-image: url(../img/sprites_icon-round-xl_retina.png);
+    background-size: 202px 202px;
+  }
+}
