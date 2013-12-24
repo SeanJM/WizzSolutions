@@ -1,0 +1,157 @@
+<template name="header">
+  <div class="nav" id="header">
+    <div class="container">
+      <a class="wizz-logo" href="index.html"></a>
+      <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
+        <i class="icon-nav-menu"></i>
+      </span>
+      <div class="right">
+        <ul class="nav-menu" id="main-navigation">
+          <li class="nav-item" data-nav="home"><a class="nav-item_trigger" href="index.html">home</a></li>
+          <li class="nav-item" data-nav="servers"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+          <li class="nav-item" data-nav="virtual-servers" data-dingo="submenu">
+            <span class="nav-item_trigger">virtual servers</span>
+            <div class="nav-submenu-indicator"></div>
+            <ul class="submenu">
+              <span class="arrow"></span>
+              <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+              <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" data-nav="solutions" data-dingo="submenu">
+            <span class="nav-item_trigger">solutions</span>
+            <div class="nav-submenu-indicator"></div>
+            <ul class="submenu">
+              <span class="arrow"></span>
+              <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+              <li class="submenu-item"><a href="http://wizzadmin.wizzsolutions.com/">WizzAdmin</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" data-nav="about" data-dingo="submenu">
+            <span class="nav-item_trigger">about</span>
+            <div class="nav-submenu-indicator"></div>
+            <ul class="submenu">
+              <span class="arrow"></span>
+              <li class="submenu-item"><a href="about_our-mission.html">Our Mission</a></li>
+              <li class="submenu-item"><a href="about_contact-us.html">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="nav-control is-desktop">
+          <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
+          <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
+          <a class="btn-dark" href="https://client.wizzsolutions.com">login</a>
+        </div>
+      </div>
+      <div class="modal _is-popout" id="modal-contact">
+        <div class="arrow"></div>
+        <form action="#" name="MYFORM" id="MYFORM">
+          <div class="row block">
+            <div class="g12 col1of2-sm">
+              <div class="input-group">
+                <input class="block" type="text" name="name" placeholder="Name" data-dingo="form-validate">
+                <div class="form-validate-prompt">
+                  <span class="arrow"></span>
+                  Enter Your Name
+                </div>
+              </div>
+            </div>
+            <div class="g12 col2of2-sm">
+              <div class="input-group">
+                <input class="block" type="text" name="email" placeholder="Email" data-dingo="form-validate">
+                <div class="form-validate-prompt">
+                  <span class="arrow"></span>
+                  Enter An Email Address
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row block">
+            <div class="input-group">
+              <textarea class="block" name="message" placeholder="Message" data-dingo="form-validate"></textarea>
+              <div class="form-validate-prompt">
+                  <span class="arrow"></span>
+                  Enter A Valid Message
+              </div>
+            </div>
+          </div>
+          <div class="row block">
+            <div class="g12 col1of2-sm">
+              <img src="get_captcha.php" alt="" id="captcha-image" class="ib captcha-image">
+              <div class="captcha-refresh" data-dingo="captchaRefresh"></div>
+            </div>
+            <div class="g12 col2of2-sm">
+              <div class="input-group">
+                <input class="block" name="code" type="text" id="code" placeholder="Enter the Captcha Text" data-dingo="form-validate">
+                <div class="form-validate-prompt">
+                  <span class="arrow"></span>
+                  Please Enter The Captcha Text
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row center block">
+            <button class="btn-red" type="submit" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="footer">
+  <div class="section section-red footer" id="footer">
+    <div class="container">
+      <div class="mcenter">
+        <div class="wizz-logo"></div>
+        <div class="footer-copy">&copy; 2013-2014 WizzSolutions</div>
+      </div>
+      <div class="right mcenter">
+        <ul class="nav-menu">
+          <li class="nav-item" data-nav="home"><a class="nav-item_trigger" href="index.html">home</a></li>
+          <li class="nav-item" data-nav="servers"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+          <li class="nav-item" data-nav="virtual-servers" data-dingo="submenu">
+            <span class="nav-item_trigger">virtual servers</span>
+            <div class="nav-submenu-indicator"></div>
+            <ul class="submenu">
+              <span class="arrow"></span>
+              <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+              <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" data-nav="solutions" data-dingo="submenu">
+            <span class="nav-item_trigger">solutions</span>
+            <div class="nav-submenu-indicator"></div>
+            <ul class="submenu">
+              <span class="arrow"></span>
+              <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+              <li class="submenu-item"><a href="http://wizzadmin.wizzsolutions.com/">WizzAdmin</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" data-nav="about" data-dingo="submenu">
+            <span class="nav-item_trigger">about</span>
+            <div class="nav-submenu-indicator"></div>
+            <ul class="submenu">
+              <span class="arrow"></span>
+              <li class="submenu-item"><a href="about_our-mission.html">Our Mission</a></li>
+              <li class="submenu-item"><a href="about_contact-us.html">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="social-links">
+          <a href="http://plus.google.com/u/0/116200730376494781301/posts" class="icon-social_google-plus"></a>
+          <a href="http://twitter.com/wizzsolutions" class="icon-social_twitter"></a>
+          <a href="https://www.facebook.com/wizzsolutions" class="icon-social_facebook"></a>
+        </div>
+      </div>
+      <hr>
+      <div class="g12 m24 mrow">
+        <a class="btn-stroke mblock mrow" data-nav="tos" href="terms-of-service.html">Terms Of Service</a>
+        <a class="btn-stroke mblock mrow" data-nav="aup" href="acceptable-use-policy.html">Acceptable Use Policy</a>
+      </div>
+      <div class="g12 right m24 mrow mcenter">
+        <div class="fb-like" data-href="http://www.wizzsolutions.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+      </div>
+    </div> <!-- Footer Container -->
+  </div>
+</template>

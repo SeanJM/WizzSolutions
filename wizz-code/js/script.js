@@ -945,6 +945,7 @@ function slider(el,event) {
 }
 
 var template_store = {};
+var template_fn = {};
 function template(context) {
   return {
     load: function (templateFile,callback) {
@@ -1030,12 +1031,14 @@ function template(context) {
       function getData(string) {
         var contents = string.match(/^(\s+|)[a-zA-Z0-9_-]+(\s+|):(\s+|)([\s\S]*?$)/gm);
         var out = {};
-        $.each(contents,function (i,k) {
-          if ($.trim(k).length > 0) {
-            var match = k.match(/([a-zA-Z0-9_-]+)(?:\s+|):(?:\s+|)([^}]*)/);
-            out[match[1]] = $.trim(match[2]);
-          }
-        });
+        if (contents !== null) {
+          $.each(contents,function (i,k) {
+            if ($.trim(k).length > 0) {
+              var match = k.match(/([a-zA-Z0-9_-]+)(?:\s+|):(?:\s+|)([^}]*)/);
+              out[match[1]] = $.trim(match[2]);
+            }
+          });
+        }
         return out;
       };
       function scan(string,file) {
@@ -1077,6 +1080,9 @@ function template(context) {
         function init(object) {
           if (typeof template_store[object.which] === 'object') {
             var processed = $(template(template_store[object.which].content).fill(object.data));
+            if (typeof template_fn[object.which] === 'function') {
+              template_fn[object.which](object,processed);
+            }
             object.el.replaceWith(processed);
             dingo.on(processed);
             dingo.on(processed.find('[data-dingo]'));
@@ -1084,11 +1090,10 @@ function template(context) {
         }
         $('[data-template]').each(function () {
           var el     = $(this);
-          var string = el.html();
           var out    = {
             el    : el,
             which : el.attr('data-template'),
-            data  : getData(string)
+            data  : getData(el.html())
           }
           init(out);
         });
@@ -1096,6 +1101,27 @@ function template(context) {
     }
   }
 };
+
+function changeCaptcha(arr) {
+  $.each(arr,function (i,k) {
+    if (k.find('#captcha-image').size() > 0) {
+      k.find('#captcha-image')[0].src = 'get_captcha.php';
+    }
+  });
+};
+
+function navActivate(el,which) {
+  el.find('[data-nav="' + which +'"]').addClass('_active');
+}
+
+template_fn.header = function (object,processed) {
+  changeCaptcha([processed,$('body')]);
+  navActivate(processed,object.data.page);
+}
+
+template_fn.footer = function (object,processed) {
+  navActivate(processed,object.data.page);
+}
 
 /* Carousel */
 
@@ -1130,10 +1156,6 @@ function carousel(el) {
       carousel(el).select(index-1)
     },
   }
-};
-
-function changeCaptcha() {
-  $('#captcha-image')[0].src = 'get_captcha.php';
 };
 
 /* Segment Control */
@@ -1540,7 +1562,6 @@ dingo.scroll = function (event) {
 
 $(function() {
   dingo.init();
-  changeCaptcha();
   template().init();
   $('textarea,input').placeholder();
 });

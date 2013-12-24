@@ -662,6 +662,7 @@ th {
 
 .btn-stroke              { border: 1px solid #7f7f8d; color: #62626f; }
 .section-red .btn-stroke { border-color: #ffaa95; color: #ffaa95; }
+.section-red .btn-stroke._active { border-color: #fff; color: #fff; }
 
 [class*="btn"]._has-icon        { padding: 0 8px; }
 [class*="btn"] [class*="icon-"] { margin-top: 6px; }
