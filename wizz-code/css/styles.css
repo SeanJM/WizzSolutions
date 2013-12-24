@@ -3268,7 +3268,7 @@ p + .alert {
 
 /* Retina Image Assignment */
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2) and (max-width: 480px), (min-resolution: 192dpi) and (max-width: 480px) {
   .wizz-logo,
   .nav-submenu-indicator,
   .nav .icon-chat,
