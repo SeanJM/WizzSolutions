@@ -666,6 +666,10 @@ function formValidate(el) {
           },
           phone: function () {
             return (nullBool(string.replace(/\s|\(|\)|\-/g,'').match(/^([0-9]{7}|[0-9]{10})$/)));
+          },
+		  captcha:function () {
+           //return (nullBool(string.match(/^[0-9\.\-\,]+$/)));
+		   alert("check")
           }
         }
       }; // Rules
@@ -746,6 +750,7 @@ function formValidate(el) {
       }
     }
   }
+  alert(ValidBotBoot());
 };
 
 /* Filters */
@@ -1560,8 +1565,131 @@ dingo.scroll = function (event) {
 
 /* ------------- Execute ------------- */
 
+
 $(function() {
   dingo.init();
   template().init();
   $('textarea,input').placeholder();
+  
 });
+
+function showcalc()
+{
+//alert("calc");
+var lowerBound = 1;
+	var upperBound = 10;
+	var a = Math.floor(Math.random() * (upperBound - lowerBound + 1)) + lowerBound;
+	var b = Math.floor(Math.random() * (upperBound - lowerBound + 1)) + lowerBound;
+	var c=a+b;
+//alert(c);	
+$("input#answer").val(a+b);		
+	$("label#test").html(a + " + " + b + " = ");
+	}
+
+function showmaincalc()
+{
+//alert("calc");
+var lowerBound = 1;
+	var upperBound = 10;
+	var a = Math.floor(Math.random() * (upperBound - lowerBound + 1)) + lowerBound;
+	var b = Math.floor(Math.random() * (upperBound - lowerBound + 1)) + lowerBound;
+	var c=a+b;
+//alert(c);	
+$("input#answerx").val(a+b);		
+        $("label#navform").html(a + " + " + b + " = ");
+	}
+
+
+
+function checkcalc()
+{
+$('#Send').click(function() {  
+	 	
+			// name validation
+			
+			
+		
+	$.post("post.php?"+$("#custom-solution").serialize(), {
+		
+			}, function(response){
+			
+			if(response==1)
+			{
+				$("#after_submit").html('');
+				$("#mess").after('<label class="success" id="after_submit">Your message has been submitted.</label>');
+                                clear_form();
+				
+				
+			}
+			else
+			{
+				$("#after_submit").html('');
+				$("#mess").after('<label class="error" id="after_submit">Error ! invalid captcha code .</label>');
+			}
+			
+			
+		});
+				
+		return false;
+
+})
+}
+
+function checkmaincalc()
+{
+$('#Sendx').click(function() {  
+	 	
+			// name validation
+			
+			
+		
+			$.post("post.php?"+$("#MYFORM").serialize(), {
+		
+			}, function(response){
+			
+			if(response==1)
+			{
+				$("#after_submit").html('');
+				$("#messx").after('<label class="success" id="after_submit">Your message has been submitted.</label>');
+                                clear_form();
+				
+				
+			}
+			else
+			{
+				$("#after_submit").html('');
+				$("#messx").after('<label class="error" id="after_submit">Error ! invalid captcha code .</label>');
+			}
+			
+			
+		});
+				
+		return false;
+
+})
+}
+
+
+function clear_form()
+	 {
+	 	//alert("clear form");
+                $("#name").val('');
+		$("#email").val('');
+                $("#message").val('');
+                $("#hosting").val('');
+		$("#serversnumber").val('');
+		$("#budgetcurrency").val('');
+                $("#captchanumber").val('');
+                $("#answer").val('');
+
+                $("#namex").val('');
+		$("#emailx").val('');
+                $("#messagex").val('');
+                
+		
+		
+                $("#captchanumberx").val('');
+                $("#answerx").val('');
+                showcalc();
+                showmaincalc()		
+	 }
