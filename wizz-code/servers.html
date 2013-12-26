@@ -8,17 +8,128 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta http-equiv="cleartype" content="on">
+<script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/script.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/styles.css">
     <link template="templates/servers.html">
     <link template="templates/header-footer.html">
+	
+	<script>
+	$(document).ready(function() {	
+showcalc();
+showmaincalc();
+checkmaincalc();
+checkcalc();
+       
+	});
+	</script>
   </head>
   <body data-dingo="closePopouts drag">
     <div class="page-container">
       <!-- This is the header -->
-      <div data-template="header">
-        page: servers
+<div class="nav" id="header">
+    <div class="container">
+      <a class="wizz-logo" href="index.html"></a>
+      <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
+        <i class="icon-nav-menu"></i>
+      </span>
+      <div class="right">
+        <ul class="nav-menu" id="main-navigation">
+          <li class="nav-item" data-nav="home"><a class="nav-item_trigger" href="index.html">home</a></li>
+          <li class="nav-item" data-nav="servers"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+          <li class="nav-item" data-nav="virtual-servers" data-dingo="submenu">
+            <span class="nav-item_trigger">virtual servers</span>
+            <div class="nav-submenu-indicator"></div>
+            <ul class="submenu">
+              <span class="arrow"></span>
+              <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+              <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" data-nav="solutions" data-dingo="submenu">
+            <span class="nav-item_trigger">solutions</span>
+            <div class="nav-submenu-indicator"></div>
+            <ul class="submenu">
+              <span class="arrow"></span>
+              <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+              <li class="submenu-item"><a href="http://wizzadmin.wizzsolutions.com/">WizzAdmin</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" data-nav="about" data-dingo="submenu">
+            <span class="nav-item_trigger">about</span>
+            <div class="nav-submenu-indicator"></div>
+            <ul class="submenu">
+              <span class="arrow"></span>
+              <li class="submenu-item"><a href="about_our-mission.html">Our Mission</a></li>
+              <li class="submenu-item"><a href="about_contact-us.html">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="nav-control is-desktop">
+          <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
+          <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
+          <a class="btn-dark" href="https://client.wizzsolutions.com">login</a>
+        </div>
       </div>
+      <div class="modal _is-popout" id="modal-contact">
+        <div class="arrow"></div>
+        <form action="#" name="MYFORM" id="MYFORM">
+          <div class="row block">
+            <div class="g12 col1of2-sm">
+              <div class="input-group">
+                <input class="block" type="text" name="name" id="namex" placeholder="Name"  data-dingo="form-validate">
+                <div class="form-validate-prompt">
+                  <span class="arrow"></span>
+                  Enter Your Name
+                </div>
+              </div>
+            </div>
+            <div class="g12 col2of2-sm">
+              <div class="input-group">
+                <input class="block" type="text" name="email" id="emailx" placeholder="Email" data-dingo="form-validate">
+                <div class="form-validate-prompt">
+                  <span class="arrow"></span>
+                  Enter An Email Address
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row block">
+            <div class="input-group">
+              <textarea class="block" name="message" id="messagex" placeholder="Message" data-dingo="form-validate"></textarea>
+              <div class="form-validate-prompt">
+                  <span class="arrow"></span>
+                  Enter A Valid Message
+              </div>
+            </div>
+          </div>
+          <div class="row block">
+            <div class="g12 col1of2-sm">
+               <label id="navform" for="textCAPTCHA">cap</label>
+            </div>
+            <div class="g12 col2of2-sm">
+              <div class="input-group">
+               
+                <input  type="text" maxlength="2" size="2" name="captchanumber"  id="captchanumberx" class="block" data-dingo="form-validate"/>
+				<input id="answerx" name="answer" id="answerx" type="hidden"/>
+                <div class="form-validate-prompt">
+                  <span class="arrow"></span>
+                  Please Enter Value
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row center block">
+            <button class="btn-red" type="submit" id="Sendx" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
+            <div id="messx"></div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+      <!-- end -->
       <div class="page">
         <div class="main">
           <div data-template="feature-banner">
@@ -495,11 +606,12 @@
             <div class="container">
               <h1>Don't see what you want here?</h1>
               <h4>Let us design a custom solution for you </h4>
+
               <form class="g10 l7 m24 ml0" id="custom-solution">
                 <div class="row block">
                   <div class="input-group">
                     <label for="name">Name</label>
-                    <input class="block" type="text" name="name" data-dingo="form-validate">
+                    <input class="block" type="text" name="name" id="name" data-dingo="form-validate">
                     <div class="form-validate-prompt">
                       <span class="arrow"></span>
                       Enter your name
@@ -509,7 +621,7 @@
                 <div class="row block">
                   <div class="input-group">
                     <label for="email">Email Address</label>
-                    <input class="block" type="text" name="email" data-dingo="form-validate">
+                    <input class="block" type="text" name="email" id="email" data-dingo="form-validate">
                     <div class="form-validate-prompt">
                       <span class="arrow"></span>
                       Enter a valid email address
@@ -519,7 +631,7 @@
                 <div class="row block">
                   <div class="input-group">
                     <label for="hosting">What Are You Hosting?</label>
-                    <input class="block" type="text" name="hosting" data-dingo="form-validate">
+                    <input class="block" type="text" name="hosting" id="hosting" data-dingo="form-validate">
                     <div class="form-validate-prompt">
                       <span class="arrow"></span>
                       Enter your kind of data (video, music, game server, etc...)
@@ -530,7 +642,7 @@
                   <div class="g8 col1of2">
                     <div class="input-group">
                       <label for="servers"># Of Servers</label>
-                      <input class="block" type="text" name="servers-number" data-dingo="form-validate">
+                      <input class="block" type="text" name="serversnumber" id="serversnumber" data-dingo="form-validate">
                       <div class="form-validate-prompt">
                         <span class="arrow"></span>
                         # of servers
@@ -540,7 +652,7 @@
                   <div class="g16 col12of2">
                     <div class="input-group">
                       <label for="budget-currency">Monthly Budget</label>
-                      <input class="block _has-type" type="text" name="budget-currency" data-dingo="form-validate">
+                      <input class="block _has-type" type="text" name="budget-currency" id="budgetcurrency" data-dingo="form-validate">
                       <span class="input-type">$</span>
                       <div class="form-validate-prompt">
                         <span class="arrow"></span>
@@ -549,8 +661,22 @@
                     </div>
                   </div>
                 </div>
+				 <div class="row block">
+				  <div class="input-group">
+				<label id="test" for="textCAPTCHA">cap</label>
+				
+				<!--<input id="Button1" type="button" value="Check" name="captcha-number" class="block" data-dingo="form-validate" />-->
+				<input type="text" maxlength="2" size="2" name="captchanumber" id="captchanumber" class="block" data-dingo="form-validate"/>
+				<input id="answer" name="answer" type="hidden"/>
+				<div class="form-validate-prompt">
+                        <span class="arrow"></span>
+                        Enter the value?
+                      </div>
+				</div>
+				</div>
                 <div class="row-xl">
-                  <button class="btn-red block btn-large" type="submit" data-dingo="form-validate-submit{which:custom-solution}">Contact Us</button>
+                  <button class="btn-red block btn-large" type="submit" id="Send" data-dingo="form-validate-submit{which:custom-solution}">Contact Us</button>
+<div id="mess"></div>
                 </div>
               </form>
             </div>
@@ -571,7 +697,6 @@
       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/script.js"></script>
+    
   </body>
 </HTML>
