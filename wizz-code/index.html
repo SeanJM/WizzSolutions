@@ -11,13 +11,127 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/styles.css">
     <link template="templates/header-footer.html">
+    
+<script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/script.js"></script>
+<script>
+	$(document).ready(function() {	
+showcalc();
+showmaincalc();
+checkmaincalc();
+checkcalc();
+       
+	});
+	</script>
   </head>
   <body data-dingo="closePopouts">
     <div class="page-container">
-      <!-- This is the header -->
-      <div data-template="header">
-        page: home
+       <!-- This is the header -->
+<div class="nav" id="header">
+    <div class="container">
+      <a class="wizz-logo" href="index.html"></a>
+      <span class="mobile-nav-menu_trigger" data-dingo="navMenuInit{which:main-navigation}">
+        <i class="icon-nav-menu"></i>
+      </span>
+      <div class="right">
+        <ul class="nav-menu" id="main-navigation">
+          <li class="nav-item" data-nav="home"><a class="nav-item_trigger" href="index.html">home</a></li>
+          <li class="nav-item" data-nav="servers"><a class="nav-item_trigger" href="servers.html">servers</a></li>
+          <li class="nav-item" data-nav="virtual-servers" data-dingo="submenu">
+            <span class="nav-item_trigger">virtual servers</span>
+            <div class="nav-submenu-indicator"></div>
+            <ul class="submenu">
+              <span class="arrow"></span>
+              <li class="submenu-item"><a href="virtual-servers_vps.html">VPS</a></li>
+              <li class="submenu-item"><a href="virtual-servers_cloud-servers.html">Cloud Servers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" data-nav="solutions" data-dingo="submenu">
+            <span class="nav-item_trigger">solutions</span>
+            <div class="nav-submenu-indicator"></div>
+            <ul class="submenu">
+              <span class="arrow"></span>
+              <li class="submenu-item"><a href="solutions_wizz-secure.html">WizzSecure</a></li>
+              <li class="submenu-item"><a href="http://wizzadmin.wizzsolutions.com/">WizzAdmin</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" data-nav="about" data-dingo="submenu">
+            <span class="nav-item_trigger">about</span>
+            <div class="nav-submenu-indicator"></div>
+            <ul class="submenu">
+              <span class="arrow"></span>
+              <li class="submenu-item"><a href="about_our-mission.html">Our Mission</a></li>
+              <li class="submenu-item"><a href="about_contact-us.html">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="nav-control is-desktop">
+          <span class="btn-blue _has-icon" onclick="LC_API.open_chat_window();return false;"><i class="icon-chat"></i></span>
+          <span class="btn-red _has-icon" data-dingo="modal{which:contact}"><i class="icon-mail"></i></span>
+          <a class="btn-dark" href="https://client.wizzsolutions.com">login</a>
+        </div>
       </div>
+      <div class="modal _is-popout" id="modal-contact">
+        <div class="arrow"></div>
+        <form action="#" name="MYFORM" id="MYFORM">
+          <div class="row block">
+            <div class="g12 col1of2-sm">
+              <div class="input-group">
+                <input class="block" type="text" name="name" id="namex" placeholder="Name"  data-dingo="form-validate">
+                <div class="form-validate-prompt">
+                  <span class="arrow"></span>
+                  Enter Your Name
+                </div>
+              </div>
+            </div>
+            <div class="g12 col2of2-sm">
+              <div class="input-group">
+                <input class="block" type="text" name="email" id="emailx" placeholder="Email" data-dingo="form-validate">
+                <div class="form-validate-prompt">
+                  <span class="arrow"></span>
+                  Enter An Email Address
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row block">
+            <div class="input-group">
+              <textarea class="block" name="message" id="messagex" placeholder="Message" data-dingo="form-validate"></textarea>
+              <div class="form-validate-prompt">
+                  <span class="arrow"></span>
+                  Enter A Valid Message
+              </div>
+            </div>
+          </div>
+          <div class="row block">
+            <div class="g12 col1of2-sm">
+               <label id="navform" for="textCAPTCHA">cap</label>
+            </div>
+            <div class="g12 col2of2-sm">
+              <div class="input-group">
+               
+                <input  type="text" maxlength="2" size="2" name="captchanumber"  id="captchanumberx" class="block" data-dingo="form-validate"/>
+				<input id="answerx" name="answer" id="answerx" type="hidden"/>
+                <div class="form-validate-prompt">
+                  <span class="arrow"></span>
+                  Please Enter Value
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row center block">
+            <button class="btn-red" type="submit" id="Sendx" data-dingo="form-validate-submit{which:MYFORM}">Contact Us</button>
+            <div id="messx"></div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+      <!-- end -->
+      
+      
+      
       <div class="page">
         <div class="main">
           <div class="section hero">
@@ -204,22 +318,18 @@
                     <div class="carousel-item " id="carousel-testimonial-item_1">
                       <span class="g5 m24 mcenter mrow">
                         <span class="portrait-sm">
-                          <img src="img/testimonials/kevin.png">
+                          <img src="img/testimonials/castamp.png">
                         </span>
                       </span>
                       <span class="g19 m24 mrow">
                         <div class="row block">
                           <!-- Testimonial Text, try to keep it as short as possible -->
-                          <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                            natoque penatibus et magnis dis parturient montes,
-                            nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                            pellentesque eu, pretium quis, sem. Nulla consequat massa
-                            quis enim.</p>
+                          <p class="testimonial-text">
+                          We been with WizzSolutions for few years now. During this time we have tried other services and we got to say that WizzSolutions has 						been the best choice for us. They have made our experience running multiple servers much easier and we are really proud to be working 						with them. With great friendly 24/7 customer support, affordable costs, and offering a service that we can always rely on you can't go 						wrong with WizzSolutions.</p>
                         </div>
                          <div class="row-xl">
-                          <span class="testimonial-author">David B., Co-founder &amp; CTO</span>
-                          <span class="testimonial-site">Streaming Media Company</span>
+                          <span class="testimonial-author">Roger Mason</span>
+                          <span class="testimonial-site">CastAMP</span>
                         </div>
                       </span>
                     </div>
