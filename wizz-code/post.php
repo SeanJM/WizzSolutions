@@ -9,7 +9,7 @@ $hosting = $_GET['hosting'];
 
 
 //$to = "mike@wizzsolutions.com";
-$to = "mkahnucf@gmail.com";
+$to = "sales@wizzsolutions.com";
 $subject = "Message from ". strip_tags($sender);
 
 $headers = "From: " . strip_tags($sender) . "\r\n";
